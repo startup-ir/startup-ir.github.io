@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>پوزتفولیو</title>
+<title>پورتفولیو</title>
 <meta name="description" content="پورتفولیوی توسعه‌دهنده وب؛ نسخه رنگارنگ و خلاقانه با افکت‌های اسکرول و کارت‌های سه‌بعدی.">
 <!-- TODO: وقتی محتوای واقعی (نام، پروژه‌ها، لینک‌ها) رو جایگزین کردید و سایت آماده‌ی دیده‌شدنه، این خط رو پاک کنید تا گوگل بتونه ایندکسش کنه -->
 <meta name="robots" content="noindex, nofollow">
@@ -34,6 +34,8 @@
     --c-books:#e2483f;
     --c-cosmetics:#e8478f;
     --c-art:#8452ea;
+    --c-camp:#8a6d3b;
+    --c-watch:#1f9e93;
   }
   [data-theme="dark"]{
     --bg:#14121b;
@@ -381,7 +383,7 @@
   <section class="hero wrap">
     <p class="lead">
       <!-- TODO: بیوی کوتاه خودتان را جایگزین کنید -->
-      از صنعت تا هنر؛ برای هر کسب‌وکار یک وب‌سایت و فروشگاه اینترنتی متفاوت طراحی و توسعه می‌دهم — سریع، واکنش‌گرا و آماده برای فروش.
+      از صنعت تا هنر؛ برای هر کسب‌وکار یک وب‌سایت و فروشگاه اینترنتی متفاوت — سریع، واکنش‌گرا و آماده برای فروش.
     </p>
     <div class="hero-ctas">
       <a href="#projects" class="btn btn-primary">مشاهده نمونه کارها</a>
@@ -393,7 +395,7 @@
       <!-- TODO: هر svg رو می‌تونید با هر شکل خطی دیگه‌ای جایگزین کنید؛ فقط کافیه محتوای تگ <svg> عوض بشه -->
       <div class="sign" tabindex="0" aria-label="خودرو" style="--i:0; --sign-color:var(--c-auto)">
         <img src="Icons/car.png" alt="" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <svg class="sign-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 16v-3l2-5h12l2 5v3"/><path d="M4 16h16v2H4z"/><circle cx="8" cy="18.3" r="1.3"/><circle cx="16" cy="18.3" r="1.3"/></svg>
+        <svg class="sign-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5"/><path d="M12 4v5.3M12 14.7V20M4 12h5.3M14.7 12H20"/></svg>
         <span class="sign-tip" aria-hidden="true">خودرو</span>
       </div>
       <div class="sign" tabindex="0" aria-label="طراحی وب" style="--i:1; --sign-color:var(--c-art)">
@@ -415,6 +417,21 @@
         <img src="Icons/bookstore.png" alt="" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         <svg class="sign-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 6c-2-1.3-4.3-1.6-6-1.4v13c1.7-.2 4 .1 6 1.4 2-1.3 4.3-1.6 6-1.4v-13c-1.7-.2-4 .1-6 1.4Z"/><path d="M12 6v13"/></svg>
         <span class="sign-tip" aria-hidden="true">کتاب</span>
+      </div>
+      <div class="sign" tabindex="0" aria-label="آفرود و کمپینگ" style="--i:5; --sign-color:var(--c-camp)">
+        <img src="Icons/offroad-camping.png" alt="" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <svg class="sign-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 4 4 19h16L12 4Z"/><path d="M12 4v15"/></svg>
+        <span class="sign-tip" aria-hidden="true">آفرود و کمپینگ</span>
+      </div>
+      <div class="sign" tabindex="0" aria-label="نوشت‌افزار" style="--i:6; --sign-color:var(--c-stationery)">
+        <img src="Icons/stationery.png" alt="" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <svg class="sign-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3 6 17l6 4 6-4-6-14Z"/><path d="M12 3v18"/></svg>
+        <span class="sign-tip" aria-hidden="true">نوشت‌افزار</span>
+      </div>
+      <div class="sign" tabindex="0" aria-label="ساعت" style="--i:7; --sign-color:var(--c-watch)">
+        <img src="Icons/watch.png" alt="" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <svg class="sign-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 7.5v4.8l3.2 1.8"/></svg>
+        <span class="sign-tip" aria-hidden="true">ساعت</span>
       </div>
     </div>
     <p class="sign-caption">از صنعت‌های مختلف؛ برای هرکدام یک ویترین دیجیتال جداگانه</p>
@@ -482,7 +499,7 @@
             <h3 class="project-title"><!-- TODO: نام واقعی پروژه -->کارنکسو</h3>
             <p class="project-desc"><!-- TODO: توضیح واقعی پروژه -->پلتفرمی برای معرفی و مقایسه‌ی خودرو، با گالری تصاویر، مشخصات فنی کامل هر مدل و فرم درخواست مشاوره‌ی خرید.</p>
             <div class="project-plaque">
-              <a href="https://carnexo.ir" class="project-link">مشاهده سایت</a>
+              <a href="https://carnexo.ir" class="project-link" target="_blank" rel="noopener noreferrer">مشاهده سایت</a>
             </div>
           </div>
         </article>
@@ -502,7 +519,7 @@
             <h3 class="project-title"><!-- TODO: نام واقعی پروژه -->اُتو</h3>
             <p class="project-desc"><!-- TODO: توضیح واقعی پروژه -->پلتفرم خرید و فروش خودرو با امکان مقایسه‌ی مدل‌های مختلف خودرو، گالری تصاویر و درخواست مشاوره‌ی آنلاین.</p>
             <div class="project-plaque">
-              <a href="https://oto.ir" class="project-link">مشاهده سایت</a>
+              <a href="https://oto.ir" class="project-link" target="_blank" rel="noopener noreferrer">مشاهده سایت</a>
             </div>
           </div>
         </article>
@@ -522,7 +539,7 @@
             <h3 class="project-title"><!-- TODO: نام واقعی پروژه -->آریا خودرو</h3>
             <p class="project-desc"><!-- TODO: توضیح واقعی پروژه -->نمایشگاه آنلاین خودرو با فهرست به‌روز موجودی، مشخصات فنی هر خودرو و فرم تماس سریع برای مشاوره.</p>
             <div class="project-plaque">
-              <a href="https://aryakhodro.netlify.app" class="project-link">مشاهده سایت</a>
+              <a href="https://aryakhodro.netlify.app" class="project-link" target="_blank" rel="noopener noreferrer">مشاهده سایت</a>
             </div>
           </div>
         </article>
@@ -542,7 +559,7 @@
             <h3 class="project-title"><!-- TODO: نام واقعی پروژه -->وب آرت</h3>
             <p class="project-desc"><!-- TODO: توضیح واقعی پروژه -->آژانس خلاقیت وب‌آرت؛ طراحی و توسعه‌ی وب‌سایت و هویت بصری برای برندها و کسب‌وکارهای مختلف.</p>
             <div class="project-plaque">
-              <a href="https://web-art.co" class="project-link">مشاهده سایت</a>
+              <a href="https://web-art.co" class="project-link" target="_blank" rel="noopener noreferrer">مشاهده سایت</a>
             </div>
           </div>
         </article>
@@ -562,7 +579,7 @@
             <h3 class="project-title"><!-- TODO: نام واقعی پروژه -->فروشگاه لوازم آرایشی</h3>
             <p class="project-desc"><!-- TODO: توضیح واقعی پروژه -->فروشگاهی شیک برای محصولات آرایشی و مراقبت پوست، با فیلتر بر اساس نوع پوست و راهنمای انتخاب محصول.</p>
             <div class="project-plaque">
-              <a href="https://paletteshop.netlify.app/" class="project-link">مشاهده سایت</a>
+              <a href="https://paletteshop.netlify.app/" class="project-link" target="_blank" rel="noopener noreferrer">مشاهده سایت</a>
             </div>
           </div>
         </article>
@@ -582,7 +599,7 @@
             <h3 class="project-title"><!-- TODO: نام واقعی پروژه -->کیمیا</h3>
             <p class="project-desc"><!-- TODO: توضیح واقعی پروژه -->فروشگاه اینترنتی محصولات مراقبت پوستی کیمیا؛ محصولات آرایشی و بهداشتی اورجینال با ارسال سریع و پشتیبانی مستقیم مشتری.</p>
             <div class="project-plaque">
-              <a href="https://kimiashop.netlify.app/" class="project-link">مشاهده سایت</a>
+              <a href="https://kimiashop.netlify.app/" class="project-link" target="_blank" rel="noopener noreferrer">مشاهده سایت</a>
             </div>
           </div>
         </article>
@@ -602,7 +619,7 @@
             <h3 class="project-title"><!-- TODO: نام واقعی پروژه -->فروشگاه اینترنتی پالت</h3>
             <p class="project-desc"><!-- TODO: توضیح واقعی پروژه -->فروشگاه اینترنتی عطر و ادکلن با دسته‌بندی رایحه‌ها، معرفی برندها و راهنمای انتخاب عطر مناسب.</p>
             <div class="project-plaque">
-              <a href="https://paletteshop.netlify.app/" class="project-link">مشاهده سایت</a>
+              <a href="https://paletteshop.netlify.app/" class="project-link" target="_blank" rel="noopener noreferrer">مشاهده سایت</a>
             </div>
           </div>
         </article>
@@ -622,7 +639,7 @@
             <h3 class="project-title"><!-- TODO: نام واقعی پروژه -->فروشگاه اینترنتی نفس</h3>
             <p class="project-desc"><!-- TODO: توضیح واقعی پروژه -->ویترین آنلاین عطرهای نفس؛ معرفی مجموعه‌ی رایحه‌های باکیفیت و عطرهای دست ساز با امکان خرید مستقیم.</p>
             <div class="project-plaque">
-              <a href="https://nperfumes.netlify.app/" class="project-link">مشاهده سایت</a>
+              <a href="https://nperfumes.netlify.app/" class="project-link" target="_blank" rel="noopener noreferrer">مشاهده سایت</a>
             </div>
           </div>
         </article>
@@ -639,70 +656,73 @@
           </div>
           <div class="project-body">
             <span class="project-category">فروشگاه آنلاین . کتاب</span>
-            <h3 class="project-title"><!-- TODO: نام واقعی پروژه -->کتالفروشی ورق</h3>
+            <h3 class="project-title"><!-- TODO: نام واقعی پروژه -->کتابفروشی ورق</h3>
             <p class="project-desc"><!-- TODO: توضیح واقعی پروژه -->کتاب‌فروشی آنلاین ورق؛ جست‌وجوی کتاب بر اساس ژانر و نویسنده، با معرفی و امتیازدهی به عناوین محبوب.</p>
             <div class="project-plaque">
-              <a href="https://varaghbooks.netlify.app/" class="project-link">مشاهده سایت</a>
+              <a href="https://varaghbooks.netlify.app/" class="project-link" target="_blank" rel="noopener noreferrer">مشاهده سایت</a>
             </div>
           </div>
         </article>
       </div>
 
       <div class="tilt-wrap reveal">
-        <article id="project-book-1" class="project-card" style="--card-color:var(--c-books)">
+        <article id="project-stationery-1" class="project-card" style="--card-color:var(--c-stationery)">
           <div class="project-visual">
             <!-- TODO: عکس این پروژه را با همین نام در پوشه‌ی images قرار دهید -->
-            <img src="images/image.jpg" alt="اسکرین‌شات کتاب‌فروشی ورق" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <img src="images/davaat.jpg" alt="اسکرین‌شات فروشگاه نوشت‌افزار دوات" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="visual-fallback">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 6c-2-1.3-4.3-1.6-6-1.4v13c1.7-.2 4 .1 6 1.4 2-1.3 4.3-1.6 6-1.4v-13c-1.7-.2-4 .1-6 1.4Z"/><path d="M12 6v13"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 3 6 17l6 4 6-4-6-14Z"/><path d="M12 3v18"/></svg>
             </div>
           </div>
           <div class="project-body">
-            <span class="project-category">فروشگاه آنلاین</span>
+            <span class="project-category">فروشگاه اینترنتی · نوشت‌افزار</span>
             <h3 class="project-title"><!-- TODO: نام واقعی پروژه -->فروشگاه آنلاین دوات</h3>
-            <p class="project-desc"><!-- TODO: توضیح واقعی پروژه -->کتاب‌فروشی آنلاین ورق؛ جست‌وجوی کتاب بر اساس ژانر و نویسنده، با معرفی و امتیازدهی به عناوین محبوب.</p>
+            <p class="project-desc"><!-- TODO: توضیح واقعی پروژه -->فروشگاه اینترنتی دوات؛ عرضه‌ی نوشت‌افزار و لوازم‌التحریر باکیفیت، از خودکار و دفتر تا کیف و لوازم اداری.</p>
             <div class="project-plaque">
-              <a href="https://varaghbooks.netlify.app/" class="project-link">مشاهده سایت</a>
+              <!-- TODO: لینک واقعی پروژه را جایگزین # کنید -->
+              <a href="https://davaat.netlify.app/" class="project-link" target="_blank" rel="noopener noreferrer">مشاهده سایت</a>
             </div>
           </div>
         </article>
       </div>
 
       <div class="tilt-wrap reveal">
-        <article id="project-book-1" class="project-card" style="--card-color:var(--c-books)">
+        <article id="project-watch-1" class="project-card" style="--card-color:var(--c-watch)">
           <div class="project-visual">
             <!-- TODO: عکس این پروژه را با همین نام در پوشه‌ی images قرار دهید -->
-            <img src="images/image.jpg" alt="اسکرین‌شات کتاب‌فروشی ورق" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <img src="images/miras.jpg" alt="اسکرین‌شات فروشگاه آنلاین ساعت میراث" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="visual-fallback">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 6c-2-1.3-4.3-1.6-6-1.4v13c1.7-.2 4 .1 6 1.4 2-1.3 4.3-1.6 6-1.4v-13c-1.7-.2-4 .1-6 1.4Z"/><path d="M12 6v13"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 7.5v4.8l3.2 1.8"/></svg>
             </div>
           </div>
           <div class="project-body">
-            <span class="project-category">فروشگاه آنلاین</span>
+            <span class="project-category">فروشگاه اینترنتی · ساعت</span>
             <h3 class="project-title"><!-- TODO: نام واقعی پروژه -->فروشگاه آنلاین میراث</h3>
-            <p class="project-desc"><!-- TODO: توضیح واقعی پروژه -->کتاب‌فروشی آنلاین ورق؛ جست‌وجوی کتاب بر اساس ژانر و نویسنده، با معرفی و امتیازدهی به عناوین محبوب.</p>
+            <p class="project-desc"><!-- TODO: توضیح واقعی پروژه -->فروشگاه آنلاین ساعت میراث؛ مجموعه‌ای از ساعت‌های مچی کلاسیک و مدرن با ضمانت اصالت کالا.</p>
             <div class="project-plaque">
-              <a href="https://varaghbooks.netlify.app/" class="project-link">مشاهده سایت</a>
+              <!-- TODO: لینک واقعی پروژه را جایگزین # کنید -->
+              <a href="https://mirasshop.netlify.app/" class="project-link" target="_blank" rel="noopener noreferrer">مشاهده سایت</a>
             </div>
           </div>
         </article>
       </div>
 
       <div class="tilt-wrap reveal">
-        <article id="project-book-1" class="project-card" style="--card-color:var(--c-books)">
+        <article id="project-camp-1" class="project-card" style="--card-color:var(--c-camp)">
           <div class="project-visual">
             <!-- TODO: عکس این پروژه را با همین نام در پوشه‌ی images قرار دهید -->
-            <img src="images/image.jpg" alt="اسکرین‌شات کتاب‌فروشی ورق" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <img src="images/ridgeline.jpg" alt="اسکرین‌شات فروشگاه لوازم آفرود و کمپینگ ریج‌لاین" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="visual-fallback">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 6c-2-1.3-4.3-1.6-6-1.4v13c1.7-.2 4 .1 6 1.4 2-1.3 4.3-1.6 6-1.4v-13c-1.7-.2-4 .1-6 1.4Z"/><path d="M12 6v13"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 4 4 19h16L12 4Z"/><path d="M12 4v15"/></svg>
             </div>
           </div>
           <div class="project-body">
-            <span class="project-category">فروشگاه آنلاین</span>
+            <span class="project-category">فروشگاه اینترنتی · آفرود و کمپینگ</span>
             <h3 class="project-title"><!-- TODO: نام واقعی پروژه -->فروشگاه آنلاین ریج لاین</h3>
-            <p class="project-desc"><!-- TODO: توضیح واقعی پروژه -->کتاب‌فروشی آنلاین ورق؛ جست‌وجوی کتاب بر اساس ژانر و نویسنده، با معرفی و امتیازدهی به عناوین محبوب.</p>
+            <p class="project-desc"><!-- TODO: توضیح واقعی پروژه -->فروشگاه لوازم آفرود و کمپینگ ریج‌لاین؛ تجهیزات سفرهای جاده‌ای و طبیعت‌گردی، از چادر تا لوازم جانبی خودرو.</p>
             <div class="project-plaque">
-              <a href="https://varaghbooks.netlify.app/" class="project-link">مشاهده سایت</a>
+              <!-- TODO: لینک واقعی پروژه را جایگزین # کنید -->
+              <a href="https://ridgeline.netlify.app/" class="project-link" target="_blank" rel="noopener noreferrer">مشاهده سایت</a>
             </div>
           </div>
         </article>
