@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>کیس استادی — بهینه‌سازی فانل تبدیل</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green: #1D9E75; --green-light: #E1F5EE; --green-dark: #0F6E56;
+    --blue: #185FA5; --blue-light: #E6F1FB;
+    --amber-light: #FAEEDA; --amber-dark: #854F0B;
+    --red-text: #A32D2D;
+    --text-primary: #1a1a1a; --text-secondary: #555; --text-muted: #888;
+    --border: #e5e5e5; --bg: #ffffff; --bg-secondary: #f7f7f5;
+    --radius: 10px; --radius-sm: 6px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text-primary: #f0f0f0; --text-secondary: #aaa; --text-muted: #666;
+      --border: #2a2a2a; --bg: #111; --bg-secondary: #1a1a1a;
+      --green-light: #0a3328; --green: #2dcf9a; --green-dark: #5ee8bb;
+      --blue-light: #0a1e33; --blue: #5aaaf0;
+      --amber-light: #2a1e08; --amber-dark: #f5b95a;
+      --red-text: #f08080;
+    }
+  }
+  body { font-family: 'Vazirmatn', sans-serif; background: var(--bg); color: var(--text-primary); font-size: 15px; line-height: 1.8; }
+
+  nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; height: 56px; }
+  .nav-logo { font-size: 15px; font-weight: 600; color: var(--text-primary); text-decoration: none; }
+  .nav-back { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-secondary); text-decoration: none; transition: color 0.15s; }
+  .nav-back:hover { color: var(--green); }
+  .nav-back svg { transform: rotate(180deg); }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .case-header { padding: 3rem 0 2.5rem; border-bottom: 1px solid var(--border); }
+  .case-tag { display: inline-block; font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 20px; margin-bottom: 1rem; background: var(--amber-light); color: var(--amber-dark); }
+  .case-header h1 { font-size: 28px; font-weight: 600; line-height: 1.35; margin-bottom: 0.75rem; }
+  .case-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.25rem; }
+  .meta-item { font-size: 13px; color: var(--text-muted); display: flex; align-items: center; gap: 5px; }
+  .meta-item strong { color: var(--text-secondary); }
+
+  .kpi-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 2rem 0; border-bottom: 1px solid var(--border); }
+  @media (max-width: 480px) { .kpi-bar { grid-template-columns: 1fr 1fr; } }
+  .kpi { background: var(--bg-secondary); border-radius: var(--radius); padding: 1.25rem; text-align: center; }
+  .kpi-num { font-size: 28px; font-weight: 600; color: var(--green); line-height: 1; }
+  .kpi-label { font-size: 12px; color: var(--text-muted); margin-top: 6px; }
+
+  .content-section { padding: 2.5rem 0; border-bottom: 1px solid var(--border); }
+  .content-section:last-of-type { border-bottom: none; }
+  .section-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; }
+  .section-title { font-size: 18px; font-weight: 600; margin-bottom: 1rem; }
+  .prose { font-size: 15px; color: var(--text-secondary); line-height: 1.85; }
+  .prose p { margin-bottom: 1rem; }
+  .prose p:last-child { margin-bottom: 0; }
+
+  .highlight-box { background: var(--amber-light); border-right: 3px solid var(--amber-dark); border-radius: var(--radius-sm); padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 14px; color: var(--amber-dark); line-height: 1.7; }
+
+  /* FUNNEL VISUAL */
+  .funnel-wrap { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 6px; }
+  .funnel-step { border-radius: var(--radius-sm); padding: 0.875rem 1.25rem; display: flex; justify-content: space-between; align-items: center; }
+  .funnel-label { font-size: 14px; font-weight: 500; }
+  .funnel-num { font-size: 14px; font-weight: 600; }
+  .funnel-arrow { text-align: center; color: var(--text-muted); font-size: 12px; padding: 2px 0; }
+
+  .steps { display: flex; flex-direction: column; margin-top: 1.25rem; }
+  .step { display: flex; gap: 1.25rem; padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+  .step:last-child { border-bottom: none; padding-bottom: 0; }
+  .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--amber-light); color: var(--amber-dark); font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .step-title { font-size: 15px; font-weight: 600; margin-bottom: 5px; }
+  .step-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+
+  .before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 1.25rem; }
+  @media (max-width: 480px) { .before-after { grid-template-columns: 1fr; } }
+  .ba-block { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1rem 1.25rem; }
+  .ba-label { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+  .ba-item { font-size: 13px; color: var(--text-secondary); padding: 5px 0; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 8px; }
+  .ba-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .ba-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
+
+  .lessons-list { display: flex; flex-direction: column; gap: 10px; margin-top: 1.25rem; }
+  .lesson-item { display: flex; gap: 10px; align-items: flex-start; background: var(--bg-secondary); border-radius: var(--radius-sm); padding: 0.875rem 1rem; font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+  .lesson-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; margin-top: 7px; }
+
+  .next-cases { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 1.25rem; }
+  @media (max-width: 480px) { .next-cases { grid-template-columns: 1fr; } }
+  .next-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; text-decoration: none; color: inherit; transition: border-color 0.15s; display: block; }
+  .next-card:hover { border-color: var(--green); }
+  .next-tag { font-size: 11px; color: var(--text-muted); margin-bottom: 5px; }
+  .next-title { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .next-kpi { font-size: 13px; color: var(--green); font-weight: 500; }
+
+  footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border); margin-top: 1rem; }
+  .reveal { opacity: 0; transform: translateY(12px); transition: opacity 0.4s, transform 0.4s; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* PULSE DOT */
+  .pulse-dot {
+    display: inline-block;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--green);
+    position: relative;
+    margin-left: 8px;
+    vertical-align: middle;
+    flex-shrink: 0;
+  }
+  .pulse-dot::before, .pulse-dot::after {
+    content: ''; position: absolute; inset: 0;
+    border-radius: 50%; background: var(--green);
+    animation: pulse-ring 2s ease-out infinite;
+  }
+  .pulse-dot::after { animation-delay: 0.7s; }
+  @keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(3); opacity: 0; }
+  }
+  @media (max-width: 520px) {
+    .contact-title { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">خانه</a>
+  <a class="nav-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    بازگشت
+  </a>
+</nav>
+
+<div class="container">
+
+  <div class="case-header">
+    <span class="case-tag">بهینه‌سازی فانل تبدیل</span>
+    <h1>بهینه‌سازی فانل چندمرحله‌ای<br>خرید اقساطی خودرو</h1>
+    <div class="case-meta">
+      <div class="meta-item"><strong>صنعت:</strong> پلتفرم خودرو</div>
+      <div class="meta-item"><strong>نقش:</strong> مدیر دیجیتال مارکتینگ</div>
+      <div class="meta-item"><strong>همکاری:</strong> تیم محصول و فنی</div>
+      <div class="meta-item"><strong>فناوری:</strong> Next.js / Go</div>
+    </div>
+  </div>
+
+  <div class="kpi-bar reveal">
+    <div class="kpi"><div class="kpi-num">۴%</div><div class="kpi-label">نرخ تبدیل لید به حضوری</div></div>
+    <div class="kpi"><div class="kpi-num">۱۲ ساعت</div><div class="kpi-label">حداکثر زمان تماس کال‌سنتر</div></div>
+    <div class="kpi"><div class="kpi-num">۹۰٪</div><div class="kpi-label">نرخ پاسخ‌دهی به تماس</div></div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">زمینه پروژه</div>
+    <div class="section-title">فانلی با پنج مرحله تا تبدیل نهایی</div>
+    <div class="prose">
+      <p>سرویس خرید اقساطی خودرو یکی از محصولات اصلی پلتفرم بود. مسیر تبدیل کاربر از لحظه ورود به لندینگ پیج تا مراجعه حضوری، پنج مرحله مجزا داشت و هر مرحله نقطه احتمالی ریزش بود.</p>
+    </div>
+
+    <div class="funnel-wrap">
+      <div class="funnel-step" style="background:var(--blue-light); color:var(--blue);">
+        <span class="funnel-label">ورود به لندینگ پیج</span>
+        <span class="funnel-num">۱۰۰٪</span>
+      </div>
+      <div class="funnel-arrow">↓</div>
+      <div class="funnel-step" style="background:#EEF2FF; color:#4338CA;">
+        <span class="funnel-label">شروع تکمیل فرم چندمرحله‌ای</span>
+        <span class="funnel-num">~۴۰٪</span>
+      </div>
+      <div class="funnel-arrow">↓</div>
+      <div class="funnel-step" style="background:var(--amber-light); color:var(--amber-dark);">
+        <span class="funnel-label">تکمیل فرم و ارسال درخواست</span>
+        <span class="funnel-num">~۲۵٪</span>
+      </div>
+      <div class="funnel-arrow">↓</div>
+      <div class="funnel-step" style="background:var(--green-light); color:var(--green-dark);">
+        <span class="funnel-label">تماس کال‌سنتر و ثبت در CRM</span>
+        <span class="funnel-num">~۲۲٪</span>
+      </div>
+      <div class="funnel-arrow">↓</div>
+      <div class="funnel-step" style="background:var(--green-light); color:var(--green-dark); border: 1.5px solid var(--green);">
+        <span class="funnel-label">مراجعه حضوری</span>
+        <span class="funnel-num">~۴٪</span>
+      </div>
+    </div>
+
+    <div class="highlight-box" style="margin-top: 1.25rem;">
+      نرخ ۴٪ از لید به مراجعه حضوری در صنعت خودرو — که تصمیمی پرریسک و پرهزینه است — عددی قابل قبول محسوب می‌شود. چالش اصلی افزایش حجم ورودی فانل و کاهش ریزش در مراحل میانی بود.
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">مساله</div>
+    <div class="section-title">دو نقطه ریزش اصلی در فانل</div>
+    <div class="prose">
+      <p>بررسی رفتار کاربران نشان داد که ریزش عمده در دو نقطه اتفاق می‌افتد: ابتدا در خود لندینگ پیج که طراحی آن اعتماد کافی برای شروع فرم ایجاد نمی‌کرد، و سپس در مرحله تکمیل فرم چندمرحله‌ای.</p>
+      <p>فرم درخواست دارای مشکل فنی در کامپوننت انتخاب تاریخ (Date Picker) بود که در برخی مرورگرها و دستگاه‌ها به‌درستی کار نمی‌کرد و کاربر را مجبور به رها کردن فرم می‌کرد. این مشکل به‌صورت مستقیم روی نرخ تکمیل فرم تأثیر منفی داشت.</p>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">اقدام</div>
+    <div class="section-title">بهینه‌سازی در دو لایه موازی</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">۱</div>
+        <div>
+          <div class="step-title">شناسایی نقاط ریزش</div>
+          <div class="step-desc">با بررسی داده‌های رفتاری کاربران و تحلیل مسیر تبدیل، مراحلی که بیشترین ریزش را داشتند شناسایی شدند. این داده‌ها مبنای اولویت‌بندی اقدامات بهینه‌سازی قرار گرفت.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">۲</div>
+        <div>
+          <div class="step-title">بازطراحی لندینگ پیج</div>
+          <div class="step-desc">در همکاری با تیم محصول، لندینگ پیج خرید اقساطی بازطراحی شد. تمرکز بازطراحی بر افزایش اعتماد کاربر، شفاف‌سازی مزایای سرویس، و هدایت واضح‌تر به سمت فرم درخواست بود.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">۳</div>
+        <div>
+          <div class="step-title">رفع مشکل فنی فرم</div>
+          <div class="step-desc">مشکل کامپوننت Date Picker به تیم فنی (Next.js) گزارش و اولویت‌بندی شد. پس از رفع باگ، نرخ تکمیل فرم بهبود محسوسی پیدا کرد. این مورد نشان داد که گاه یک مشکل فنی به‌ظاهر کوچک می‌تواند تأثیر قابل توجهی بر نرخ تبدیل داشته باشد.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">۴</div>
+        <div>
+          <div class="step-title">بهینه‌سازی زمان پاسخ‌دهی</div>
+          <div class="step-desc">فرآیند کال‌سنتر به‌گونه‌ای تنظیم شد که حداکثر ۱۲ ساعت پس از ثبت درخواست — حتی برای درخواست‌های آخر شب — تماس گرفته شود. این رویکرد نرخ پاسخ‌دهی به تماس را در سطح ۹۰٪ حفظ کرد.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="before-after">
+      <div class="ba-block">
+        <div class="ba-label" style="color:var(--red-text);">قبل از بهینه‌سازی</div>
+        <div class="ba-item"><div class="ba-dot" style="background:var(--red-text);"></div>لندینگ پیج با طراحی قدیمی و فاقد اعتمادساز</div>
+        <div class="ba-item"><div class="ba-dot" style="background:var(--red-text);"></div>Date Picker معیوب در فرم چندمرحله‌ای</div>
+        <div class="ba-item"><div class="ba-dot" style="background:var(--red-text);"></div>ریزش بالا در مرحله تکمیل فرم</div>
+      </div>
+      <div class="ba-block">
+        <div class="ba-label" style="color:var(--green-dark);">بعد از بهینه‌سازی</div>
+        <div class="ba-item"><div class="ba-dot" style="background:var(--green);"></div>لندینگ پیج بازطراحی‌شده با تمرکز بر تبدیل</div>
+        <div class="ba-item"><div class="ba-dot" style="background:var(--green);"></div>رفع باگ Date Picker و بهبود نرخ تکمیل</div>
+        <div class="ba-item"><div class="ba-dot" style="background:var(--green);"></div>بهبود محسوس نرخ تبدیل کلی فانل</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">نتیجه</div>
+    <div class="section-title">بهبود تبدیل در چند نقطه از فانل</div>
+    <div class="prose">
+      <p>رفع مشکل فنی فرم و بازطراحی لندینگ، نرخ تکمیل فرم را بهبود بخشید. کال‌سنتر با نرخ پاسخ‌دهی ۹۰٪ و زمان تماس حداکثر ۱۲ ساعته عمل می‌کرد و نرخ نهایی مراجعه حضوری در سطح ۴٪ از لیدهای ورودی قرار گرفت.</p>
+      <p>این پروژه نشان داد که در فانل‌های چندمرحله‌ای، همکاری میان تیم‌های مارکتینگ، محصول و فنی برای شناسایی و رفع گلوگاه‌ها ضروری است و گاه ساده‌ترین مشکلات فنی بیشترین تأثیر را بر نرخ تبدیل دارند.</p>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">درس‌های این پروژه</div>
+    <div class="section-title">آنچه از این پروژه آموختم</div>
+    <div class="lessons-list">
+      <div class="lesson-item"><div class="lesson-dot"></div>در فانل‌های چندمرحله‌ای، داده‌محور بودن در شناسایی نقاط ریزش از حدس و گمان بسیار مؤثرتر است — باید با داده تصمیم گرفت نه با احساس.</div>
+      <div class="lesson-item"><div class="lesson-dot"></div>مشکلات فنی به‌ظاهر جزئی مانند یک کامپوننت معیوب می‌توانند تأثیر مستقیم و قابل اندازه‌گیری بر نرخ تبدیل داشته باشند — پایش مستمر تجربه کاربری ضروری است.</div>
+      <div class="lesson-item"><div class="lesson-dot"></div>در صنایع با تصمیم خرید پرریسک مانند خودرو، سرعت پاسخ‌دهی به لید به اندازه کیفیت لید اهمیت دارد.</div>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">پروژه‌های دیگر</div>
+    <div class="next-cases">
+      <a href="auto-seo.html" class="next-card">
+        <div class="next-tag">سئو</div>
+        <div class="next-title">رشد ترافیک ارگانیک به ۱۰۰۰ بازدیدکننده روزانه</div>
+        <div class="next-kpi">در ۶ ماه از صفر</div>
+      </a>
+      <a href="auto-campaign.html" class="next-card">
+        <div class="next-tag">مدیریت کمپین</div>
+        <div class="next-title">مدیریت کمپین‌های پرفورمنس در پلتفرم خرید و فروش خودرو</div>
+        <div class="next-kpi">۵۰ لید روزانه</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>© ۱۴۰۵</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

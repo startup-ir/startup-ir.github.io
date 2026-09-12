@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>پروپوزال — استراتژی دیجیتال مارکتینگ شرکت تامین مالی</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green: #1D9E75; --green-light: #E1F5EE; --green-dark: #0F6E56;
+    --blue: #185FA5; --blue-light: #E6F1FB;
+    --purple: #534AB7; --purple-light: #EEEDFE;
+    --amber: #854F0B; --amber-light: #FAEEDA;
+    --text-primary: #1a1a1a; --text-secondary: #555; --text-muted: #888;
+    --border: #e5e5e5; --bg: #ffffff; --bg-secondary: #f7f7f5;
+    --radius: 10px; --radius-sm: 6px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text-primary: #f0f0f0; --text-secondary: #aaa; --text-muted: #666;
+      --border: #2a2a2a; --bg: #111; --bg-secondary: #1a1a1a;
+      --green-light: #0a3328; --green: #2dcf9a; --green-dark: #5ee8bb;
+      --blue-light: #0a1e33; --blue: #5aaaf0;
+      --purple-light: #1a1540; --purple: #a99ef7;
+      --amber-light: #2a1e08; --amber: #f5b95a;
+    }
+  }
+  body { font-family: 'Vazirmatn', sans-serif; background: var(--bg); color: var(--text-primary); font-size: 15px; line-height: 1.8; }
+
+  nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; height: 56px; }
+  .nav-logo { font-size: 15px; font-weight: 600; color: var(--text-primary); text-decoration: none; }
+  .nav-back { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-secondary); text-decoration: none; transition: color 0.15s; }
+  .nav-back:hover { color: var(--green); }
+  .nav-back svg { transform: rotate(180deg); }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .case-header { padding: 3rem 0 2.5rem; border-bottom: 1px solid var(--border); }
+  .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; }
+  .case-tag { display: inline-block; font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 20px; }
+  .case-header h1 { font-size: 28px; font-weight: 600; line-height: 1.35; margin-bottom: 0.75rem; }
+  .case-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.25rem; }
+  .meta-item { font-size: 13px; color: var(--text-muted); }
+  .meta-item strong { color: var(--text-secondary); }
+
+  .kpi-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 2rem 0; border-bottom: 1px solid var(--border); }
+  @media (max-width: 480px) { .kpi-bar { grid-template-columns: 1fr 1fr; } }
+  .kpi { background: var(--bg-secondary); border-radius: var(--radius); padding: 1.25rem; text-align: center; }
+  .kpi-num { font-size: 24px; font-weight: 600; color: var(--green); line-height: 1; }
+  .kpi-label { font-size: 12px; color: var(--text-muted); margin-top: 6px; }
+
+  .content-section { padding: 2.5rem 0; border-bottom: 1px solid var(--border); }
+  .content-section:last-of-type { border-bottom: none; }
+  .section-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; }
+  .section-title { font-size: 18px; font-weight: 600; margin-bottom: 1rem; }
+  .prose { font-size: 15px; color: var(--text-secondary); line-height: 1.85; }
+  .prose p { margin-bottom: 1rem; }
+  .prose p:last-child { margin-bottom: 0; }
+
+  .highlight-box { background: var(--green-light); border-right: 3px solid var(--green); border-radius: var(--radius-sm); padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 14px; color: var(--green-dark); line-height: 1.7; }
+  .note-box { background: var(--amber-light); border-right: 3px solid var(--amber); border-radius: var(--radius-sm); padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 14px; color: var(--amber); line-height: 1.7; }
+
+  /* PERSONAS */
+  .personas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 1.25rem; }
+  @media (max-width: 520px) { .personas { grid-template-columns: 1fr; } }
+  .persona-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
+  .persona-icon { font-size: 24px; margin-bottom: 0.5rem; }
+  .persona-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+  .persona-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.6; }
+  .persona-channel { font-size: 11px; color: var(--text-muted); margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border); }
+
+  /* PILLARS */
+  .pillars { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 1.25rem; }
+  @media (max-width: 480px) { .pillars { grid-template-columns: 1fr; } }
+  .pillar-card { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1rem 1.25rem; }
+  .pillar-num { font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+  .pillar-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+  .pillar-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+  /* CHANNELS */
+  .channels { display: flex; flex-direction: column; gap: 10px; margin-top: 1.25rem; }
+  .channel-row { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem 1.25rem; border: 1px solid var(--border); border-radius: var(--radius-sm); }
+  .channel-icon { width: 36px; height: 36px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+  .channel-name { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .channel-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+  .channel-kpi { font-size: 12px; color: var(--green); font-weight: 500; margin-top: 6px; }
+
+  /* TIMELINE */
+  .timeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 1.25rem; }
+  @media (max-width: 520px) { .timeline { grid-template-columns: 1fr; } }
+  .timeline-card { background: var(--bg-secondary); border-radius: var(--radius-sm); padding: 1rem 1.25rem; }
+  .timeline-period { font-size: 12px; font-weight: 600; color: var(--green); margin-bottom: 8px; }
+  .timeline-item { font-size: 13px; color: var(--text-secondary); display: flex; gap: 6px; align-items: flex-start; padding: 3px 0; }
+  .timeline-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green); flex-shrink: 0; margin-top: 8px; }
+
+  /* KPI TABLE */
+  .kpi-table { width: 100%; border-collapse: collapse; margin-top: 1.25rem; font-size: 13px; }
+  .kpi-table th { text-align: right; padding: 10px 12px; background: var(--bg-secondary); border-bottom: 1px solid var(--border); font-weight: 600; color: var(--text-secondary); font-size: 12px; }
+  .kpi-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); color: var(--text-secondary); }
+  .kpi-table tr:last-child td { border-bottom: none; }
+
+  .next-cases { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 1.25rem; }
+  @media (max-width: 480px) { .next-cases { grid-template-columns: 1fr; } }
+  .next-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; text-decoration: none; color: inherit; transition: border-color 0.15s; display: block; }
+  .next-card:hover { border-color: var(--green); }
+  .next-tag { font-size: 11px; color: var(--text-muted); margin-bottom: 5px; }
+  .next-title { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .next-kpi { font-size: 13px; color: var(--green); font-weight: 500; }
+
+  footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border); margin-top: 1rem; }
+  .reveal { opacity: 0; transform: translateY(12px); transition: opacity 0.4s, transform 0.4s; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">خانه</a>
+  <a class="nav-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    بازگشت
+  </a>
+</nav>
+
+<div class="container">
+
+  <div class="case-header">
+    <div class="tags">
+      <span class="case-tag" style="background:var(--green-light); color:var(--green-dark);">سئو</span>
+      <span class="case-tag" style="background:var(--blue-light); color:var(--blue);">بازاریابی محتوا</span>
+      <span class="case-tag" style="background:var(--purple-light); color:var(--purple);">کمپین تبلیغاتی</span>
+      <span class="case-tag" style="background:var(--bg-secondary); color:var(--text-muted); border:1px solid var(--border);">استراتژی دیجیتال مارکتینگ</span>
+    </div>
+    <h1>استراتژی جامع دیجیتال مارکتینگ<br>برای شرکت تامین مالی</h1>
+    <div class="case-meta">
+      <div class="meta-item"><strong>صنعت:</strong> تامین مالی و تسهیلات</div>
+      <div class="meta-item"><strong>بازار:</strong> B2B و B2C</div>
+      <div class="meta-item"><strong>افق زمانی:</strong> ۱۲ ماه</div>
+      <div class="meta-item"><strong>وضعیت:</strong> استراتژی دیجیتال مارکتینگ</div>
+    </div>
+  </div>
+
+  <div class="kpi-bar reveal">
+    <div class="kpi"><div class="kpi-num">۵ کانال</div><div class="kpi-label">سئو، محتوا، اینستاگرام، تلگرام، لینکدین</div></div>
+    <div class="kpi"><div class="kpi-num">۳ پرسونا</div><div class="kpi-label">مشتریان هدف تعریف‌شده</div></div>
+    <div class="kpi"><div class="kpi-num">۴ ستون</div><div class="kpi-label">چارچوب استراتژیک</div></div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">زمینه پروژه</div>
+    <div class="section-title">صنعتی که اعتماد، اساس همه چیز است</div>
+    <div class="prose">
+      <p>صنعت تامین مالی از منحصربه‌فردترین حوزه‌ها در بازاریابی دیجیتال است. برخلاف بسیاری از کسب‌وکارها که می‌توانند با تبلیغات آنی مشتری جذب کنند، در اینجا مشتری پیش از هر تصمیمی، ماه‌ها در حال تحقیق، مقایسه و اعتمادسازی است. تصمیم برای دریافت تسهیلات یا سرمایه‌گذاری، یکی از حساس‌ترین تصمیمات مالی افراد است.</p>
+      <p>هدف این استراتژی: طراحی یک سیستم پایدار جذب لید که هم اعتماد بسازد، هم آموزش بدهد، و هم به‌صورت قابل اندازه‌گیری به کسب‌وکار متصل باشد.</p>
+    </div>
+    <div class="highlight-box">
+      نکته کلیدی این صنعت: دیجیتال مارکتینگ برای یک شرکت تامین مالی نه یک ابزار تبلیغاتی، بلکه یک پلتفرم اعتبارسازی است. هر نقطه تماس باید اعتماد را تقویت کند.
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">شناخت مخاطب</div>
+    <div class="section-title">سه پرسونای متمایز با نیازهای کاملاً متفاوت</div>
+    <div class="personas">
+      <div class="persona-card">
+        <div class="persona-icon">🏢</div>
+        <div class="persona-title">صاحب کسب‌وکار</div>
+        <div class="persona-desc">۳۰ تا ۵۰ ساله، به دنبال سرمایه در گردش یا تامین مالی پروژه. تصمیم‌گیری منطقی بر اساس تحلیل مالی.</div>
+        <div class="persona-channel">کانال اصلی: لینکدین، جستجوی گوگل</div>
+      </div>
+      <div class="persona-card">
+        <div class="persona-icon">👤</div>
+        <div class="persona-title">افراد حقیقی</div>
+        <div class="persona-desc">۲۵ تا ۴۵ ساله، به دنبال وام مسکن، خودرو یا مصرفی. نگران ضامن، مدارک و زمان تصویب.</div>
+        <div class="persona-channel">کانال اصلی: اینستاگرام، تلگرام</div>
+      </div>
+      <div class="persona-card">
+        <div class="persona-icon">📈</div>
+        <div class="persona-title">سرمایه‌گذار</div>
+        <div class="persona-desc">۳۵ تا ۶۰ ساله، به دنبال بازدهی امن. اولویت: امنیت سرمایه، شفافیت، نقدشوندگی.</div>
+        <div class="persona-channel">کانال اصلی: لینکدین، محتوای تحلیلی</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">چارچوب استراتژیک</div>
+    <div class="section-title">چهار ستون — از اعتماد تا تبدیل</div>
+    <div class="pillars">
+      <div class="pillar-card">
+        <div class="pillar-num">ستون اول</div>
+        <div class="pillar-title">ساخت اعتماد و اعتبار</div>
+        <div class="pillar-desc">محتوای تخصصی که واقعاً به مشتری کمک می‌کند. شفافیت کامل در نرخ‌ها، شرایط و محدودیت‌ها. نمایش مجوزها و تاییدیه‌های نظارتی.</div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">ستون دوم</div>
+        <div class="pillar-title">بهینه‌سازی فانل فروش</div>
+        <div class="pillar-desc">هدایت هوشمند مشتری از آگاهی تا تبدیل. محتوای متناسب با هر مرحله از سفر خرید. کاهش موانع روانی ورود.</div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">ستون سوم</div>
+        <div class="pillar-title">رویکرد چندکاناله یکپارچه</div>
+        <div class="pillar-desc">حضور در تمام پلتفرم‌های هدف با پیام‌رسانی یکسان. ردیابی رفتار کاربر در کانال‌های مختلف. تجربه کاربری یکپارچه.</div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">ستون چهارم</div>
+        <div class="pillar-title">تصمیم‌گیری داده‌محور</div>
+        <div class="pillar-desc">ردیابی دقیق تمام KPIها از روز اول. تست A/B مستمر. بهینه‌سازی بر اساس داده واقعی، نه حدس.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">کانال‌های اجرایی</div>
+    <div class="section-title">پنج کانال با اولویت‌بندی مشخص</div>
+    <div class="channels">
+      <div class="channel-row">
+        <div class="channel-icon" style="background:var(--green-light);">🔍</div>
+        <div>
+          <div class="channel-name">سئو و بازاریابی محتوا</div>
+          <div class="channel-desc">تمرکز بر کلیدواژه‌های Long-tail با قصد خرید بالا. تولید ۲ تا ۳ مقاله هفتگی در چهار ستون موضوعی: آموزش مالی، معرفی خدمات، اخبار صنعت، و داستان‌های موفقیت. ابزارهای تعاملی مانند محاسبه‌گر اقساط برای جذب لید.</div>
+          <div class="channel-kpi">هدف ۶ ماهه: ۱۵ کلیدواژه در صفحه اول — ۱۰۰۰۰ بازدید ماهانه</div>
+        </div>
+      </div>
+      <div class="channel-row">
+        <div class="channel-icon" style="background:#FDE8F0;">📸</div>
+        <div>
+          <div class="channel-name">اینستاگرام</div>
+          <div class="channel-desc">تبدیل مفاهیم پیچیده مالی به محتوای ساده و بصری. ترکیب ۴۰٪ آموزشی، ۲۰٪ معرفی خدمات، ۲۰٪ پشت صحنه، ۲۰٪ داستان مشتریان. ریلزهای آموزشی ۳۰ تا ۶۰ ثانیه‌ای و کاروسل‌های چندمرحله‌ای.</div>
+          <div class="channel-kpi">هدف ۶ ماهه: ۵۰۰۰ فالوور هدفمند — نرخ تعامل ۳ تا ۵٪</div>
+        </div>
+      </div>
+      <div class="channel-row">
+        <div class="channel-icon" style="background:#E8F4FD;">✈️</div>
+        <div>
+          <div class="channel-name">تلگرام</div>
+          <div class="channel-desc">کانال اطلاع‌رسانی سریع و تعامل مستمر با مخاطبان. انتشار خلاصه مقالات، اعلام پیشنهادات ویژه، فایل‌های PDF آموزشی و پرسش و پاسخ متنی هفتگی.</div>
+          <div class="channel-kpi">هدف ۶ ماهه: کانال فعال با ۲۰۰۰+ عضو مرتبط</div>
+        </div>
+      </div>
+      <div class="channel-row">
+        <div class="channel-icon" style="background:var(--blue-light);">💼</div>
+        <div>
+          <div class="channel-name">لینکدین</div>
+          <div class="channel-desc">تمرکز بر پرسونای B2B و سرمایه‌گذاران. محتوای تحلیلی و داده‌محور، مطالعات موردی تخصصی، و اثبات تخصص از طریق مقالات عمیق.</div>
+          <div class="channel-kpi">هدف: جذب لیدهای کسب‌وکاری واجد شرایط</div>
+        </div>
+      </div>
+      <div class="channel-row">
+        <div class="channel-icon" style="background:var(--amber-light);">📧</div>
+        <div>
+          <div class="channel-name">ایمیل مارکتینگ</div>
+          <div class="channel-desc">خبرنامه ماهانه با محتوای ارزشمند. کمپین‌های Drip برای پرورش لیدها. Gated Content مانند whitepaper و راهنماهای جامع برای جمع‌آوری لید.</div>
+          <div class="channel-kpi">هدف ۶ ماهه: ۱۰۰۰ مشترک با نرخ باز ۲۵٪</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">هدف‌گذاری زمانی</div>
+    <div class="section-title">نقشه راه سه مرحله‌ای</div>
+    <div class="timeline">
+      <div class="timeline-card">
+        <div class="timeline-period">ماه ۱ تا ۳</div>
+        <div class="timeline-item"><div class="timeline-dot"></div>راه‌اندازی GA4 و Tag Manager</div>
+        <div class="timeline-item"><div class="timeline-dot"></div>آدیت فنی سئو و رفع مشکلات</div>
+        <div class="timeline-item"><div class="timeline-dot"></div>طراحی لندینگ‌های تبدیل‌محور</div>
+        <div class="timeline-item"><div class="timeline-dot"></div>تولید محتوای پایه و Gated Content</div>
+        <div class="timeline-item"><div class="timeline-dot"></div>اولین لیدهای واجد شرایط</div>
+      </div>
+      <div class="timeline-card">
+        <div class="timeline-period">ماه ۴ تا ۶</div>
+        <div class="timeline-item"><div class="timeline-dot"></div>رتبه‌گیری برای ۱۵ کلیدواژه</div>
+        <div class="timeline-item"><div class="timeline-dot"></div>۱۰۰۰۰ بازدید ارگانیک ماهانه</div>
+        <div class="timeline-item"><div class="timeline-dot"></div>۵۰۰۰ فالوور اینستاگرام</div>
+        <div class="timeline-item"><div class="timeline-dot"></div>۱۰۰۰ مشترک خبرنامه</div>
+        <div class="timeline-item"><div class="timeline-dot"></div>کاهش CPL</div>
+      </div>
+      <div class="timeline-card">
+        <div class="timeline-period">ماه ۷ تا ۱۲</div>
+        <div class="timeline-item"><div class="timeline-dot"></div>تثبیت جایگاه برند معتبر</div>
+        <div class="timeline-item"><div class="timeline-dot"></div>جریان پایدار لید ارگانیک</div>
+        <div class="timeline-item"><div class="timeline-dot"></div>افزایش ۵۰٪ ارزش طول عمر مشتری</div>
+        <div class="timeline-item"><div class="timeline-dot"></div>ROI مثبت از تمام کانال‌ها</div>
+        <div class="timeline-item"><div class="timeline-dot"></div>کاهش وابستگی به تبلیغات پرداختی</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">چارچوب اندازه‌گیری</div>
+    <div class="section-title">KPIهایی که مستقیماً به کسب‌وکار متصلند</div>
+    <table class="kpi-table">
+      <tr>
+        <th>دسته</th>
+        <th>KPI</th>
+        <th>چرا اهمیت دارد</th>
+      </tr>
+      <tr>
+        <td>جذب</td>
+        <td>ترافیک ارگانیک، CTR، CPC</td>
+        <td>کارایی کانال‌های جذب را نشان می‌دهد</td>
+      </tr>
+      <tr>
+        <td>تعامل</td>
+        <td>Time on Site، رتبه کلیدواژه، Engagement Rate</td>
+        <td>کیفیت محتوا و تطابق با نیاز کاربر</td>
+      </tr>
+      <tr>
+        <td>تبدیل</td>
+        <td>تعداد لید، نرخ تکمیل فرم، تماس</td>
+        <td>خروجی مستقیم قابل اندازه‌گیری</td>
+      </tr>
+      <tr>
+        <td>کسب‌وکار</td>
+        <td>CPL، CAC، LTV، نرخ تبدیل لید به مشتری</td>
+        <td>ROI واقعی استراتژی</td>
+      </tr>
+    </table>
+    <div class="highlight-box" style="margin-top: 1.25rem;">
+      نرخ تبدیل ۳ تا ۵٪ از لید به مشتری برای صنعت تامین مالی هدف واقع‌بینانه‌ای است که با بهینه‌سازی مستمر قابل افزایش است.
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">پروژه‌های دیگر</div>
+    <div class="next-cases">
+      <a href="proposal-roofing.html" class="next-card">
+        <div class="next-tag">کمپین + سئو — پروپوزال</div>
+        <div class="next-title">استراتژی جذب لید برای شرکت ساخت سوله</div>
+        <div class="next-kpi">فانل ۳ مرحله‌ای Awareness تا Retargeting</div>
+      </a>
+      <a href="auto-campaign.html" class="next-card">
+        <div class="next-tag">کمپین — اجرا شده</div>
+        <div class="next-title">مدیریت کمپین‌های پرفورمنس در پلتفرم خودرو</div>
+        <div class="next-kpi">۵۰ لید روزانه</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>© ۱۴۰۵</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

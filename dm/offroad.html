@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>کیس استادی — سئو و کمپین فروشگاه لوازم آفرود</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green: #1D9E75; --green-light: #E1F5EE; --green-dark: #0F6E56;
+    --blue: #185FA5; --blue-light: #E6F1FB;
+    --purple: #534AB7; --purple-light: #EEEDFE;
+    --amber: #854F0B; --amber-light: #FAEEDA;
+    --pink: #993556; --pink-light: #FBEAF0;
+    --red-text: #A32D2D;
+    --text-primary: #1a1a1a; --text-secondary: #555; --text-muted: #888;
+    --border: #e5e5e5; --bg: #ffffff; --bg-secondary: #f7f7f5;
+    --radius: 10px; --radius-sm: 6px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text-primary: #f0f0f0; --text-secondary: #aaa; --text-muted: #666;
+      --border: #2a2a2a; --bg: #111; --bg-secondary: #1a1a1a;
+      --green-light: #0a3328; --green: #2dcf9a; --green-dark: #5ee8bb;
+      --blue-light: #0a1e33; --blue: #5aaaf0;
+      --purple-light: #1a1540; --purple: #a99ef7;
+      --amber-light: #2a1e08; --amber: #f5b95a;
+      --pink-light: #2a0d1a; --pink: #f08aac;
+      --red-text: #f08080;
+    }
+  }
+  body { font-family: 'Vazirmatn', sans-serif; background: var(--bg); color: var(--text-primary); font-size: 15px; line-height: 1.8; }
+
+  nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; height: 56px; }
+  .nav-logo { font-size: 15px; font-weight: 600; color: var(--text-primary); text-decoration: none; }
+  .nav-back { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-secondary); text-decoration: none; transition: color 0.15s; }
+  .nav-back:hover { color: var(--green); }
+  .nav-back svg { transform: rotate(180deg); }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .case-header { padding: 3rem 0 2.5rem; border-bottom: 1px solid var(--border); }
+  .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; }
+  .case-tag { display: inline-block; font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 20px; }
+  .case-header h1 { font-size: 28px; font-weight: 600; line-height: 1.35; margin-bottom: 0.75rem; }
+  .case-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.25rem; }
+  .meta-item { font-size: 13px; color: var(--text-muted); }
+  .meta-item strong { color: var(--text-secondary); }
+
+  .kpi-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 2rem 0; border-bottom: 1px solid var(--border); }
+  @media (max-width: 480px) { .kpi-bar { grid-template-columns: 1fr 1fr; } }
+  .kpi { background: var(--bg-secondary); border-radius: var(--radius); padding: 1.25rem; text-align: center; }
+  .kpi-num { font-size: 26px; font-weight: 600; color: var(--green); line-height: 1; }
+  .kpi-label { font-size: 12px; color: var(--text-muted); margin-top: 6px; }
+
+  .content-section { padding: 2.5rem 0; border-bottom: 1px solid var(--border); }
+  .content-section:last-of-type { border-bottom: none; }
+  .section-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; }
+  .section-title { font-size: 18px; font-weight: 600; margin-bottom: 1rem; }
+  .prose { font-size: 15px; color: var(--text-secondary); line-height: 1.85; }
+  .prose p { margin-bottom: 1rem; }
+  .prose p:last-child { margin-bottom: 0; }
+
+  .highlight-box { background: var(--green-light); border-right: 3px solid var(--green); border-radius: var(--radius-sm); padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 14px; color: var(--green-dark); line-height: 1.7; }
+
+  /* NICHE COMPARISON */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 1.25rem; }
+  @media (max-width: 480px) { .compare-grid { grid-template-columns: 1fr; } }
+  .compare-card { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1rem 1.25rem; }
+  .compare-title { font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-primary); }
+  .compare-item { font-size: 13px; color: var(--text-secondary); padding: 4px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; }
+  .compare-item:last-child { border-bottom: none; }
+  .compare-val { color: var(--green); font-weight: 500; font-size: 12px; }
+
+  .steps { display: flex; flex-direction: column; margin-top: 1.25rem; }
+  .step { display: flex; gap: 1.25rem; padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+  .step:last-child { border-bottom: none; padding-bottom: 0; }
+  .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--green-light); color: var(--green-dark); font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .step-title { font-size: 15px; font-weight: 600; margin-bottom: 5px; }
+  .step-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+
+  .campaign-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 1.25rem; }
+  @media (max-width: 480px) { .campaign-cards { grid-template-columns: 1fr; } }
+  .campaign-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
+  .campaign-tag { font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px; display: inline-block; margin-bottom: 8px; }
+  .campaign-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+  .campaign-items { display: flex; flex-direction: column; gap: 4px; margin-top: 8px; }
+  .campaign-item { font-size: 12px; color: var(--text-muted); display: flex; gap: 6px; align-items: flex-start; }
+  .campaign-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--green); flex-shrink: 0; margin-top: 8px; }
+
+  .collab-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 1.25rem; }
+  @media (max-width: 480px) { .collab-grid { grid-template-columns: 1fr 1fr; } }
+  .collab-item { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.875rem 1rem; text-align: center; }
+  .collab-name { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+  .collab-desc { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+
+  .lessons-list { display: flex; flex-direction: column; gap: 10px; margin-top: 1.25rem; }
+  .lesson-item { display: flex; gap: 10px; align-items: flex-start; background: var(--bg-secondary); border-radius: var(--radius-sm); padding: 0.875rem 1rem; font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+  .lesson-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; margin-top: 7px; }
+
+  .next-cases { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 1.25rem; }
+  @media (max-width: 480px) { .next-cases { grid-template-columns: 1fr; } }
+  .next-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; text-decoration: none; color: inherit; transition: border-color 0.15s; display: block; }
+  .next-card:hover { border-color: var(--green); }
+  .next-tag { font-size: 11px; color: var(--text-muted); margin-bottom: 5px; }
+  .next-title { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .next-kpi { font-size: 13px; color: var(--green); font-weight: 500; }
+
+  footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border); margin-top: 1rem; }
+  .reveal { opacity: 0; transform: translateY(12px); transition: opacity 0.4s, transform 0.4s; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">خانه</a>
+  <a class="nav-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    بازگشت
+  </a>
+</nav>
+
+<div class="container">
+
+  <div class="case-header">
+    <div class="tags">
+      <span class="case-tag" style="background:var(--green-light); color:var(--green-dark);">سئو</span>
+      <span class="case-tag" style="background:var(--amber-light); color:var(--amber);">کمپین فصلی</span>
+      <span class="case-tag" style="background:var(--blue-light); color:var(--blue);">بازار نیچ</span>
+    </div>
+    <h1>سئو، بازطراحی و کمپین‌های فصلی<br>برای فروشگاه تخصصی لوازم کمپینگ و آفرود</h1>
+    <div class="case-meta">
+      <div class="meta-item"><strong>صنعت:</strong> خرده‌فروشی تخصصی</div>
+      <div class="meta-item"><strong>مدت:</strong> ۶ ماه</div>
+      <div class="meta-item"><strong>نقش:</strong> مدیر دیجیتال مارکتینگ</div>
+      <div class="meta-item"><strong>همکاری:</strong> طراح UX و توسعه‌دهنده وردپرس</div>
+    </div>
+  </div>
+
+  <div class="kpi-bar reveal">
+    <div class="kpi"><div class="kpi-num">نیچ</div><div class="kpi-label">بازار تخصصی با قصد خرید بالا</div></div>
+    <div class="kpi"><div class="kpi-num">۶ ماه</div><div class="kpi-label">مدت همکاری</div></div>
+    <div class="kpi"><div class="kpi-num">۲ کمپین</div><div class="kpi-label">یلدا و بلک فرایدی</div></div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">زمینه پروژه</div>
+    <div class="section-title">بازار نیچ — چالش‌ها و فرصت‌های متفاوت</div>
+    <div class="prose">
+      <p>فروشگاه تخصصی لوازم کمپینگ و آفرود در یک بازار نیچ فعالیت می‌کرد. برخلاف فروشگاه‌های عمومی، مخاطبان این حوزه دانش تخصصی بالایی دارند و قبل از خرید تحقیق مفصلی انجام می‌دهند. این ویژگی، رویکرد سئو را نسبت به بازارهای عمومی کاملاً متفاوت می‌کند.</p>
+      <p>فروشگاه نمایندگی برندهای معتبر خارجی را داشت — مزیتی که با استراتژی سئوی درست می‌توانست به رتبه‌گیری سریع‌تر منجر شود.</p>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <div class="compare-title">بازار عمومی</div>
+        <div class="compare-item"><span>حجم جستجو</span><span class="compare-val">بالا</span></div>
+        <div class="compare-item"><span>رقابت</span><span class="compare-val">بسیار بالا</span></div>
+        <div class="compare-item"><span>قصد خرید</span><span class="compare-val">متوسط</span></div>
+        <div class="compare-item"><span>تخصص مخاطب</span><span class="compare-val">پایین</span></div>
+      </div>
+      <div class="compare-card" style="border-color: var(--green);">
+        <div class="compare-title" style="color:var(--green);">بازار نیچ (آفرود)</div>
+        <div class="compare-item"><span>حجم جستجو</span><span class="compare-val">کم‌تر</span></div>
+        <div class="compare-item"><span>رقابت</span><span class="compare-val">کم‌تر</span></div>
+        <div class="compare-item"><span>قصد خرید</span><span class="compare-val">بسیار بالا</span></div>
+        <div class="compare-item"><span>تخصص مخاطب</span><span class="compare-val">بالا</span></div>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      در بازار نیچ، کیفیت محتوا از کمیت مهم‌تر است. یک مقاله تخصصی که دقیقاً به سوال مخاطب پاسخ می‌دهد، بیشتر از ده مقاله عمومی ارزش دارد.
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">اقدام — سئو</div>
+    <div class="section-title">رویکرد تخصص‌محور برای بازار نیچ</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">۱</div>
+        <div>
+          <div class="step-title">بهینه‌سازی صفحات محصول و دسته‌بندی</div>
+          <div class="step-desc">تمرکز اصلی روی صفحات برند بود. محتوای توضیحات محصولات با کلیدواژه‌های تخصصی حوزه آفرود و کمپینگ بازنویسی شد. دسته‌بندی‌ها و تگ‌های محصول ساختار منطقی و سئوپسندی پیدا کردند.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">۲</div>
+        <div>
+          <div class="step-title">محتوای تخصصی برای مخاطب آگاه</div>
+          <div class="step-desc">محتوای بلاگ برای مخاطبی طراحی شد که اطلاعات فنی داره و دنبال راهنمای عمیق می‌گرده — نه محتوای سطحی. مقالاتی مثل «راهنمای انتخاب چادر کوهنوردی»، «مقایسه برندهای چراغ‌قوه تاکتیکال»، و «تجهیزات ضروری آفرود در ایران» با دقت فنی بالا تولید شدند.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">۳</div>
+        <div>
+          <div class="step-title">لینک‌سازی داخلی و رپورتاژ</div>
+          <div class="step-desc">شبکه لینک‌های داخلی بین صفحات محصول، دسته‌بندی‌ها و مقالات تخصصی طراحی شد. رپورتاژهای هدفمند در سایت‌های مرتبط با حوزه طبیعت‌گردی، آفرود و ورزش‌های بیرونی منتشر شد.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">۴</div>
+        <div>
+          <div class="step-title">همراهی در بازطراحی UI/UX</div>
+          <div class="step-desc">در فرآیند بازطراحی سایت، نظرات سئو در معماری اطلاعات، ساختار URL‌ها و صفحات فرود محصول لحاظ شد. هدف حفظ رتبه‌های موجود و بهبود نرخ تبدیل همزمان بود.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">اقدام — کمپین‌های فصلی</div>
+    <div class="section-title">کمپین‌هایی متناسب با فرهنگ مخاطب</div>
+    <div class="campaign-cards">
+      <div class="campaign-card">
+        <span class="campaign-tag" style="background:var(--purple-light); color:var(--purple);">یلدا</span>
+        <div class="campaign-title">کمپین شب یلدا</div>
+        <div class="campaign-items">
+          <div class="campaign-item"><div class="campaign-dot"></div>ایده‌پردازی با محوریت هدیه به ماجراجو</div>
+          <div class="campaign-item"><div class="campaign-dot"></div>تعریف شعار و مفهوم خلاقانه کمپین</div>
+          <div class="campaign-item"><div class="campaign-dot"></div>هدایت اجرای طرح‌های گرافیکی</div>
+          <div class="campaign-item"><div class="campaign-dot"></div>اجرای کمپین کلیکی هدفمند</div>
+        </div>
+      </div>
+      <div class="campaign-card">
+        <span class="campaign-tag" style="background:var(--amber-light); color:var(--amber);">بلک فرایدی</span>
+        <div class="campaign-title">کمپین بلک فرایدی</div>
+        <div class="campaign-items">
+          <div class="campaign-item"><div class="campaign-dot"></div>انتخاب محصولات پرتقاضا برای تخفیف</div>
+          <div class="campaign-item"><div class="campaign-dot"></div>طراحی ساختار تخفیف و پیام‌رسانی</div>
+          <div class="campaign-item"><div class="campaign-dot"></div>هدایت اجرای طرح‌های بصری</div>
+          <div class="campaign-item"><div class="campaign-dot"></div>اجرا و پایش کمپین کلیکی</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">همکاری تیمی</div>
+    <div class="collab-grid">
+      <div class="collab-item" style="border-color: var(--green);">
+        <div class="collab-name" style="color:var(--green);">دیجیتال مارکتینگ</div>
+        <div class="collab-desc">استراتژی، سئو، کمپین، محتوا</div>
+      </div>
+      <div class="collab-item">
+        <div class="collab-name">طراح UX</div>
+        <div class="collab-desc">بازطراحی تجربه کاربری</div>
+      </div>
+      <div class="collab-item">
+        <div class="collab-name">توسعه‌دهنده</div>
+        <div class="collab-desc">پیاده‌سازی وردپرس</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">نتیجه</div>
+    <div class="section-title">رتبه‌گیری در کلیدواژه‌های تخصصی برند</div>
+    <div class="prose">
+      <p>فروشگاه برای کلیدواژه‌های برند (نام برندهای معتبر خارجی که نمایندگی‌شان را داشت) و کلیدواژه‌های تخصصی حوزه آفرود رتبه‌های خوبی کسب کرد. در بازار نیچ، این رتبه‌ها ارزش بیشتری نسبت به رتبه در کلیدواژه‌های عمومی دارند — چون مخاطب دقیقاً همان کسیه که می‌خواد خرید کنه.</p>
+      <p>کمپین‌های فصلی یلدا و بلک فرایدی با موفقیت اجرا شدند و در هر دو دوره فروش فصلی ایجاد کردند.</p>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">درس‌های این پروژه</div>
+    <div class="section-title">آنچه از این پروژه آموختم</div>
+    <div class="lessons-list">
+      <div class="lesson-item"><div class="lesson-dot"></div>در بازار نیچ، کمتر رقابت کردن برای کلیدواژه‌های پرحجم و بیشتر تمرکز کردن روی Long-tail های تخصصی، مسیر سریع‌تری به نتیجه است.</div>
+      <div class="lesson-item"><div class="lesson-dot"></div>مخاطب آگاه و تخصصی، محتوای سطحی را نمی‌پذیرد — کیفیت و دقت فنی محتوا در بازارهای نیچ از اهمیت بالاتری برخوردار است.</div>
+      <div class="lesson-item"><div class="lesson-dot"></div>نمایندگی برندهای معتبر خارجی یک مزیت سئویی قابل توجه است که با بهینه‌سازی صفحات برند می‌توان از آن بهره برد.</div>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">پروژه‌های دیگر</div>
+    <div class="next-cases">
+      <a href="stationery.html" class="next-card">
+        <div class="next-tag">سئو + کمپین — اجرا شده</div>
+        <div class="next-title">سئو و کمپین‌های فصلی فروشگاه نوشت‌افزار</div>
+        <div class="next-kpi">رتبه‌های برند و غیربرند</div>
+      </a>
+      <a href="auto-seo.html" class="next-card">
+        <div class="next-tag">سئو — اجرا شده</div>
+        <div class="next-title">رشد ترافیک ارگانیک به ۱۰۰۰ بازدیدکننده روزانه</div>
+        <div class="next-kpi">در ۶ ماه از صفر</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>© ۱۴۰۵</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

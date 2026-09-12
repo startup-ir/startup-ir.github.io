@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>پروپوزال — استراتژی جامع دیجیتال مارکتینگ فروشگاه قطعات خودرو</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green: #1D9E75; --green-light: #E1F5EE; --green-dark: #0F6E56;
+    --blue: #185FA5; --blue-light: #E6F1FB;
+    --purple: #534AB7; --purple-light: #EEEDFE;
+    --amber: #854F0B; --amber-light: #FAEEDA;
+    --pink: #993556; --pink-light: #FBEAF0;
+    --text-primary: #1a1a1a; --text-secondary: #555; --text-muted: #888;
+    --border: #e5e5e5; --bg: #ffffff; --bg-secondary: #f7f7f5;
+    --radius: 10px; --radius-sm: 6px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text-primary: #f0f0f0; --text-secondary: #aaa; --text-muted: #666;
+      --border: #2a2a2a; --bg: #111; --bg-secondary: #1a1a1a;
+      --green-light: #0a3328; --green: #2dcf9a; --green-dark: #5ee8bb;
+      --blue-light: #0a1e33; --blue: #5aaaf0;
+      --purple-light: #1a1540; --purple: #a99ef7;
+      --amber-light: #2a1e08; --amber: #f5b95a;
+      --pink-light: #2a0d1a; --pink: #f08aac;
+    }
+  }
+  body { font-family: 'Vazirmatn', sans-serif; background: var(--bg); color: var(--text-primary); font-size: 15px; line-height: 1.8; }
+
+  nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; height: 56px; }
+  .nav-logo { font-size: 15px; font-weight: 600; color: var(--text-primary); text-decoration: none; }
+  .nav-back { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-secondary); text-decoration: none; transition: color 0.15s; }
+  .nav-back:hover { color: var(--green); }
+  .nav-back svg { transform: rotate(180deg); }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .case-header { padding: 3rem 0 2.5rem; border-bottom: 1px solid var(--border); }
+  .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; }
+  .case-tag { display: inline-block; font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 20px; }
+  .case-header h1 { font-size: 28px; font-weight: 600; line-height: 1.35; margin-bottom: 0.75rem; }
+  .case-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.25rem; }
+  .meta-item { font-size: 13px; color: var(--text-muted); }
+  .meta-item strong { color: var(--text-secondary); }
+
+  .kpi-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 2rem 0; border-bottom: 1px solid var(--border); }
+  @media (max-width: 480px) { .kpi-bar { grid-template-columns: 1fr 1fr; } }
+  .kpi { background: var(--bg-secondary); border-radius: var(--radius); padding: 1.25rem; text-align: center; }
+  .kpi-num { font-size: 24px; font-weight: 600; color: var(--green); line-height: 1; }
+  .kpi-label { font-size: 12px; color: var(--text-muted); margin-top: 6px; }
+
+  .content-section { padding: 2.5rem 0; border-bottom: 1px solid var(--border); }
+  .content-section:last-of-type { border-bottom: none; }
+  .section-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; }
+  .section-title { font-size: 18px; font-weight: 600; margin-bottom: 1rem; }
+  .prose { font-size: 15px; color: var(--text-secondary); line-height: 1.85; }
+  .prose p { margin-bottom: 1rem; }
+  .prose p:last-child { margin-bottom: 0; }
+
+  .highlight-box { background: var(--green-light); border-right: 3px solid var(--green); border-radius: var(--radius-sm); padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 14px; color: var(--green-dark); line-height: 1.7; }
+  .note-box { background: var(--amber-light); border-right: 3px solid var(--amber); border-radius: var(--radius-sm); padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 14px; color: var(--amber); line-height: 1.7; }
+
+  /* COMPETITOR TABLE */
+  .comp-table { width: 100%; border-collapse: collapse; margin-top: 1.25rem; font-size: 13px; }
+  .comp-table th { text-align: right; padding: 10px 12px; background: var(--bg-secondary); border-bottom: 1px solid var(--border); font-weight: 600; color: var(--text-secondary); font-size: 12px; }
+  .comp-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); color: var(--text-secondary); }
+  .comp-table tr:last-child td { border-bottom: none; }
+  .comp-badge { font-size: 11px; padding: 2px 8px; border-radius: 20px; }
+
+  /* PILLARS GRID */
+  .pillars { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 1.25rem; }
+  @media (max-width: 480px) { .pillars { grid-template-columns: 1fr; } }
+  .pillar-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
+  .pillar-icon { font-size: 20px; margin-bottom: 8px; }
+  .pillar-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+  .pillar-items { display: flex; flex-direction: column; gap: 4px; }
+  .pillar-item { font-size: 13px; color: var(--text-secondary); display: flex; gap: 6px; align-items: flex-start; }
+  .pillar-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--green); flex-shrink: 0; margin-top: 9px; }
+
+  .lessons-list { display: flex; flex-direction: column; gap: 10px; margin-top: 1.25rem; }
+  .lesson-item { display: flex; gap: 10px; align-items: flex-start; background: var(--bg-secondary); border-radius: var(--radius-sm); padding: 0.875rem 1rem; font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+  .lesson-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; margin-top: 7px; }
+
+  .next-cases { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 1.25rem; }
+  @media (max-width: 480px) { .next-cases { grid-template-columns: 1fr; } }
+  .next-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; text-decoration: none; color: inherit; transition: border-color 0.15s; display: block; }
+  .next-card:hover { border-color: var(--green); }
+  .next-tag { font-size: 11px; color: var(--text-muted); margin-bottom: 5px; }
+  .next-title { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .next-kpi { font-size: 13px; color: var(--green); font-weight: 500; }
+
+  footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border); margin-top: 1rem; }
+  .reveal { opacity: 0; transform: translateY(12px); transition: opacity 0.4s, transform 0.4s; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">خانه</a>
+  <a class="nav-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    بازگشت
+  </a>
+</nav>
+
+<div class="container">
+
+  <div class="case-header">
+    <div class="tags">
+      <span class="case-tag" style="background:var(--blue-light); color:var(--blue);">تحلیل رقبا</span>
+      <span class="case-tag" style="background:var(--purple-light); color:var(--purple);">تحلیل داده</span>
+      <span class="case-tag" style="background:var(--bg-secondary); color:var(--text-muted); border:1px solid var(--border);">استراتژی دیجیتال مارکتینگ</span>
+    </div>
+    <h1>استراتژی جامع دیجیتال مارکتینگ<br>برای فروشگاه آنلاین قطعات خودرو</h1>
+    <div class="case-meta">
+      <div class="meta-item"><strong>صنعت:</strong> فروش آنلاین قطعات خودرو</div>
+      <div class="meta-item"><strong>بازار:</strong> B2C و B2B</div>
+      <div class="meta-item"><strong>وضعیت:</strong> استراتژی دیجیتال مارکتینگ</div>
+    </div>
+  </div>
+
+  <div class="kpi-bar reveal">
+    <div class="kpi"><div class="kpi-num">۴ رقیب</div><div class="kpi-label">تحلیل داده‌محور</div></div>
+    <div class="kpi"><div class="kpi-num">۷ محور</div><div class="kpi-label">استراتژی جامع</div></div>
+    <div class="kpi"><div class="kpi-num">داده‌محور</div><div class="kpi-label">مبتنی بر تحلیل واقعی</div></div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">زمینه پروژه</div>
+    <div class="section-title">بازار رقابتی با پتانسیل بالا</div>
+    <div class="prose">
+      <p>فروشگاه آنلاین قطعات خودروهای لوکس و اروپایی در بازاری فعالیت می‌کرد که رقبای متعددی با سابقه طولانی در آن حضور داشتند. هدف طراحی یک استراتژی جامع دیجیتال مارکتینگ بود که بتواند در این بازار رقابتی جایگاه متمایزی ایجاد کند.</p>
+      <p>نقطه شروع، تحلیل دقیق رقبا بود — نه بر اساس حدس، بلکه با داده‌های واقعی.</p>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">تحلیل رقبا</div>
+    <div class="section-title">چهار رقیب اصلی با داده واقعی</div>
+    <div class="prose">
+      <p>کلیدواژه‌های اصلی، صفحات پرترافیک، و ساختار سئوی چهار رقیب اصلی بازار با ابزار تخصصی استخراج و تحلیل شد. این تحلیل نقاط قوت رقبا، شکاف‌های محتوایی، و فرصت‌های کلیدواژه‌ای که رقبا از آن‌ها غافل بودند را مشخص کرد.</p>
+    </div>
+    <table class="comp-table">
+      <tr>
+        <th>رقیب</th>
+        <th>تمرکز اصلی</th>
+        <th>نقطه قوت</th>
+        <th>شکاف</th>
+      </tr>
+      <tr>
+        <td>bbshop.ir</td>
+        <td>لوازم جانبی BMW</td>
+        <td>برند قوی</td>
+        <td>محتوای بلاگ ضعیف</td>
+      </tr>
+      <tr>
+        <td>luxyadak.com</td>
+        <td>قطعات پورشه و بنز</td>
+        <td>تنوع محصول</td>
+        <td>سئوی تکنیکال ضعیف</td>
+      </tr>
+      <tr>
+        <td>nikyadak.com</td>
+        <td>قطعات یدکی عمومی</td>
+        <td>حجم بالای کلیدواژه</td>
+        <td>تجربه کاربری ضعیف</td>
+      </tr>
+      <tr>
+        <td>bmpart.co</td>
+        <td>قطعات BMW</td>
+        <td>تخصص بالا</td>
+        <td>پوشش محدود برند</td>
+      </tr>
+    </table>
+    <div class="highlight-box">
+      فرصت اصلی: هیچ‌کدام از رقبا محتوای آموزشی باکیفیت برای خریداران قطعات خودروهای لوکس نداشتند — این خلأ بزرگ‌ترین فرصت برای تمایز بود.
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">استراتژی جامع</div>
+    <div class="section-title">هفت محور موازی — از برند تا داده</div>
+    <div class="pillars">
+
+      <div class="pillar-card">
+        <div class="pillar-title">سئو</div>
+        <div class="pillar-items">
+          <div class="pillar-item"><div class="pillar-dot"></div>سئوی داخلی — بهینه‌سازی صفحات محصول و دسته‌بندی بر اساس کلیدواژه‌های هدف</div>
+          <div class="pillar-item"><div class="pillar-dot"></div>سئوی فنی — بهبود شاخص‌های Core Web Vitals و سرعت بارگذاری</div>
+          <div class="pillar-item"><div class="pillar-dot"></div>سئوی خارجی — رپورتاژ آگهی در رسانه‌های خودرویی و درج در پورتال‌های آگهی</div>
+        </div>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-title">محتوا</div>
+        <div class="pillar-items">
+          <div class="pillar-item"><div class="pillar-dot"></div>ایجاد پرسونا برای درک بهتر نیاز مخاطبان هدف</div>
+          <div class="pillar-item"><div class="pillar-dot"></div>مقالات بلاگ تخصصی — راهنمای تشخیص قطعات اصل، مقایسه برندها</div>
+          <div class="pillar-item"><div class="pillar-dot"></div>بهینه‌سازی صفحات محصول با محتوای منحصربه‌فرد</div>
+          <div class="pillar-item"><div class="pillar-dot"></div>ایجاد استراتژی و ساختار مناسب محتوا در کانال‌های مختلف</div>
+        </div>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-title">تبلیغات</div>
+        <div class="pillar-items">
+          <div class="pillar-item"><div class="pillar-dot"></div>گوگل ادز — کمپین‌های Shopping و Search برای کلیدواژه‌های تراکنشی</div>
+          <div class="pillar-item"><div class="pillar-dot"></div>ادنتورک‌های داخلی — نمایش بنر در سایت‌های خودرویی و موتوری</div>
+          <div class="pillar-item"><div class="pillar-dot"></div>شبکه‌های اجتماعی — کمپین‌های هدفمند در اینستاگرام</div>
+          <div class="pillar-item"><div class="pillar-dot"></div>ریتارگتینگ — بازگرداندن بازدیدکنندگانی که خرید نکردند</div>
+        </div>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-title">وبسایت</div>
+        <div class="pillar-items">
+          <div class="pillar-item"><div class="pillar-dot"></div>بازطراحی UI/UX با تمرکز بر تجربه خرید قطعات تخصصی</div>
+          <div class="pillar-item"><div class="pillar-dot"></div>کپی‌رایتینگ صفحات اصلی — متنی که هم به کاربر و هم به گوگل کمک کند</div>
+          <div class="pillar-item"><div class="pillar-dot"></div>بهینه‌سازی صفحات فرود برای افزایش نرخ تبدیل</div>
+        </div>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-title">تحلیل داده</div>
+        <div class="pillar-items">
+          <div class="pillar-item"><div class="pillar-dot"></div>تحلیل داده‌های Google Analytics و Search Console</div>
+          <div class="pillar-item"><div class="pillar-dot"></div>بخش‌بندی مشتریان بر اساس رفتار خرید</div>
+          <div class="pillar-item"><div class="pillar-dot"></div>مدل RFM برای شناسایی مشتریان ارزشمند و طراحی کمپین‌های هدفمند</div>
+        </div>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-title">باشگاه مشتریان</div>
+        <div class="pillar-items">
+          <div class="pillar-item"><div class="pillar-dot"></div>طراحی سیستم امتیازدهی برای تشویق به خرید مجدد</div>
+          <div class="pillar-item"><div class="pillar-dot"></div>پیشنهادات ویژه برای مشتریان وفادار بر اساس تاریخچه خرید</div>
+          <div class="pillar-item"><div class="pillar-dot"></div>کمپین‌های ایمیل و پیامک هدفمند برای هر سگمنت</div>
+        </div>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-title">برندبوک</div>
+        <div class="pillar-items">
+          <div class="pillar-item"><div class="pillar-dot"></div>تهیه برندبوک برای انسجام‌بخشیدن به محتوا در کانال‌های مختلف</div>
+          <div class="pillar-item"><div class="pillar-dot"></div>تعریف لحن برند، پالت رنگی، و سبک بصری یکپارچه</div>
+          <div class="pillar-item"><div class="pillar-dot"></div>دستورالعمل استفاده از برند در تبلیغات و محتوا</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">درس‌های این پروژه</div>
+    <div class="section-title">آنچه از این پروژه آموختم</div>
+    <div class="lessons-list">
+      <div class="lesson-item"><div class="lesson-dot"></div>تحلیل رقبا با داده واقعی — نه حدس — مشخص می‌کند کجا باید وارد شد و کجا باید از رقابت مستقیم پرهیز کرد.</div>
+      <div class="lesson-item"><div class="lesson-dot"></div>در بازارهای تخصصی مثل قطعات خودروهای لوکس، محتوای آموزشی باکیفیت می‌تواند سریع‌ترین مسیر تمایز از رقبا باشد.</div>
+      <div class="lesson-item"><div class="lesson-dot"></div>مدل RFM در کنار تحلیل رفتار کاربر، ابزار قدرتمندی برای شخصی‌سازی کمپین‌ها و افزایش نرخ بازگشت مشتری است.</div>
+      <div class="lesson-item"><div class="lesson-dot"></div>استراتژی جامع بدون تیم کافی برای اجرا ممکن است محقق نشود — تناسب بین ابعاد استراتژی و ظرفیت اجرایی از همان ابتدا باید سنجیده شود.</div>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">پروژه‌های دیگر</div>
+    <div class="next-cases">
+      <a href="proposal-fintech.html" class="next-card">
+        <div class="next-tag">استراتژی دیجیتال مارکتینگ</div>
+        <div class="next-title">استراتژی جامع دیجیتال مارکتینگ شرکت تامین مالی</div>
+        <div class="next-kpi">۵ کانال — ۳ پرسونا</div>
+      </a>
+      <a href="auto-seo.html" class="next-card">
+        <div class="next-tag">سئو — اجرا شده</div>
+        <div class="next-title">رشد ترافیک ارگانیک به ۱۰۰۰ بازدیدکننده روزانه</div>
+        <div class="next-kpi">در ۶ ماه از صفر</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>© ۱۴۰۵</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

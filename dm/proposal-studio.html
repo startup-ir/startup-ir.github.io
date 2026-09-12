@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>پروپوزال — استراتژی دیجیتال مارکتینگ استودیو تولید محتوا</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green: #1D9E75; --green-light: #E1F5EE; --green-dark: #0F6E56;
+    --blue: #185FA5; --blue-light: #E6F1FB;
+    --purple: #534AB7; --purple-light: #EEEDFE;
+    --amber-light: #FAEEDA; --amber-dark: #854F0B;
+    --text-primary: #1a1a1a; --text-secondary: #555; --text-muted: #888;
+    --border: #e5e5e5; --bg: #ffffff; --bg-secondary: #f7f7f5;
+    --radius: 10px; --radius-sm: 6px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text-primary: #f0f0f0; --text-secondary: #aaa; --text-muted: #666;
+      --border: #2a2a2a; --bg: #111; --bg-secondary: #1a1a1a;
+      --green-light: #0a3328; --green: #2dcf9a; --green-dark: #5ee8bb;
+      --blue-light: #0a1e33; --blue: #5aaaf0;
+      --purple-light: #1a1540; --purple: #a99ef7;
+      --amber-light: #2a1e08; --amber-dark: #f5b95a;
+    }
+  }
+  body { font-family: 'Vazirmatn', sans-serif; background: var(--bg); color: var(--text-primary); font-size: 15px; line-height: 1.8; }
+
+  nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; height: 56px; }
+  .nav-logo { font-size: 15px; font-weight: 600; color: var(--text-primary); text-decoration: none; }
+  .nav-back { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-secondary); text-decoration: none; transition: color 0.15s; }
+  .nav-back:hover { color: var(--green); }
+  .nav-back svg { transform: rotate(180deg); }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .case-header { padding: 3rem 0 2.5rem; border-bottom: 1px solid var(--border); }
+  .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; }
+  .case-tag { display: inline-block; font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 20px; }
+  .case-header h1 { font-size: 28px; font-weight: 600; line-height: 1.35; margin-bottom: 0.75rem; }
+  .case-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.25rem; }
+  .meta-item { font-size: 13px; color: var(--text-muted); display: flex; align-items: center; gap: 5px; }
+  .meta-item strong { color: var(--text-secondary); }
+
+  .kpi-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 2rem 0; border-bottom: 1px solid var(--border); }
+  @media (max-width: 480px) { .kpi-bar { grid-template-columns: 1fr 1fr; } }
+  .kpi { background: var(--bg-secondary); border-radius: var(--radius); padding: 1.25rem; text-align: center; }
+  .kpi-num { font-size: 28px; font-weight: 600; color: var(--green); line-height: 1; }
+  .kpi-label { font-size: 12px; color: var(--text-muted); margin-top: 6px; }
+
+  .content-section { padding: 2.5rem 0; border-bottom: 1px solid var(--border); }
+  .content-section:last-of-type { border-bottom: none; }
+  .section-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; }
+  .section-title { font-size: 18px; font-weight: 600; margin-bottom: 1rem; }
+  .prose { font-size: 15px; color: var(--text-secondary); line-height: 1.85; }
+  .prose p { margin-bottom: 1rem; }
+  .prose p:last-child { margin-bottom: 0; }
+
+  .highlight-box { background: var(--green-light); border-right: 3px solid var(--green); border-radius: var(--radius-sm); padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 14px; color: var(--green-dark); line-height: 1.7; }
+  .note-box { background: var(--amber-light); border-right: 3px solid var(--amber-dark); border-radius: var(--radius-sm); padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 14px; color: var(--amber-dark); line-height: 1.7; }
+
+  .phase-grid { display: flex; flex-direction: column; gap: 12px; margin-top: 1.25rem; }
+  .phase-card { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .phase-header { padding: 1rem 1.25rem; display: flex; justify-content: space-between; align-items: center; background: var(--bg-secondary); }
+  .phase-title { font-size: 15px; font-weight: 600; }
+  .phase-period { font-size: 12px; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); padding: 3px 10px; border-radius: 20px; }
+  .phase-body { padding: 1rem 1.25rem; }
+  .phase-items { display: flex; flex-direction: column; gap: 6px; }
+  .phase-item { font-size: 13px; color: var(--text-secondary); display: flex; align-items: flex-start; gap: 8px; }
+  .phase-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green); flex-shrink: 0; margin-top: 8px; }
+
+  .keywords-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 1.25rem; }
+  @media (max-width: 480px) { .keywords-grid { grid-template-columns: 1fr; } }
+  .kw-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.875rem 1rem; }
+  .kw-title { font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-primary); }
+  .kw-item { font-size: 12px; color: var(--text-secondary); padding: 3px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; }
+  .kw-item:last-child { border-bottom: none; }
+  .kw-comp { font-size: 11px; color: var(--text-muted); }
+
+  .timeline-table { width: 100%; border-collapse: collapse; margin-top: 1.25rem; font-size: 13px; }
+  .timeline-table th { text-align: right; padding: 10px 12px; background: var(--bg-secondary); border-bottom: 1px solid var(--border); font-weight: 600; color: var(--text-secondary); font-size: 12px; }
+  .timeline-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); color: var(--text-secondary); vertical-align: top; }
+  .timeline-table tr:last-child td { border-bottom: none; }
+
+  .goals-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 1.25rem; }
+  @media (max-width: 480px) { .goals-grid { grid-template-columns: 1fr; } }
+  .goal-card { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1rem 1.25rem; }
+  .goal-period { font-size: 11px; color: var(--text-muted); margin-bottom: 8px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+  .goal-item { font-size: 13px; color: var(--text-secondary); padding: 4px 0; display: flex; align-items: flex-start; gap: 6px; }
+  .goal-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green); flex-shrink: 0; margin-top: 7px; }
+
+  .next-cases { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 1.25rem; }
+  @media (max-width: 480px) { .next-cases { grid-template-columns: 1fr; } }
+  .next-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; text-decoration: none; color: inherit; transition: border-color 0.15s; display: block; }
+  .next-card:hover { border-color: var(--green); }
+  .next-tag { font-size: 11px; color: var(--text-muted); margin-bottom: 5px; }
+  .next-title { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .next-kpi { font-size: 13px; color: var(--green); font-weight: 500; }
+
+  footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border); margin-top: 1rem; }
+  .reveal { opacity: 0; transform: translateY(12px); transition: opacity 0.4s, transform 0.4s; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">خانه</a>
+  <a class="nav-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    بازگشت
+  </a>
+</nav>
+
+<div class="container">
+
+  <div class="case-header">
+    <div class="tags">
+      <span class="case-tag" style="background:var(--green-light); color:var(--green-dark);">سئو</span>
+      <span class="case-tag" style="background:var(--blue-light); color:var(--blue);">طراحی سایت</span>
+      <span class="case-tag" style="background:var(--purple-light); color:var(--purple);">پروپوزال</span>
+    </div>
+    <h1>استراتژی دیجیتال مارکتینگ<br>برای استودیو تولید محتوای ویدیویی</h1>
+    <div class="case-meta">
+      <div class="meta-item"><strong>صنعت:</strong> تولید محتوا و موشن گرافیک</div>
+      <div class="meta-item"><strong>بازار هدف:</strong> B2B و B2C</div>
+      <div class="meta-item"><strong>افق زمانی:</strong> ۶ ماه</div>
+      <div class="meta-item"><strong>وضعیت:</strong> پروپوزال ارائه‌شده</div>
+    </div>
+  </div>
+
+  <div class="kpi-bar reveal">
+    <div class="kpi"><div class="kpi-num">۳۰۰+</div><div class="kpi-label">بازدید ارگانیک ماهانه (هدف‌گذاری)</div></div>
+    <div class="kpi"><div class="kpi-num">۱۰+</div><div class="kpi-label">کلیدواژه صفحه اول (هدف‌گذاری)</div></div>
+    <div class="kpi"><div class="kpi-num">۲ فاز</div><div class="kpi-label">طراحی سایت + سئو</div></div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">زمینه پروژه</div>
+    <div class="section-title">استودیویی با تخصص بالا و حضور دیجیتال صفر</div>
+    <div class="prose">
+      <p>استودیو تولید محتوای ویدیویی با تخصص در ساخت تیزر تبلیغاتی، موشن گرافیک، و محتوای شبکه‌های اجتماعی، اکثر مشتریان خود را از طریق معرفی و شبکه شخصی جذب می‌کرد. سایت در دسترس بود اما فاقد هرگونه محتوا، ساختار سئو، یا ترافیک ارگانیک بود.</p>
+      <p>هدف اصلی: تبدیل سایت به کانال اصلی جذب مشتری از طریق موتورهای جستجو و کاهش وابستگی به معرفی شخصی.</p>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">مساله</div>
+    <div class="section-title">سه چالش اصلی</div>
+    <div class="prose">
+      <p>بررسی وضعیت موجود سه چالش اساسی را نشان داد. اول، سایت از نظر فنی و محتوایی آماده دریافت ترافیک ارگانیک نبود — فاقد ساختار URL مناسب، Schema Markup، و محتوای بهینه‌شده بود. دوم، رقبا با سابقه ۲ تا ۵ ساله حضور در گوگل، جایگاه‌های برتر را در اختیار داشتند. سوم، محتوای تخصصی درباره خدمات استودیو (قیمت‌گذاری، مقایسه، راهنمای خرید) در فضای فارسی وب بسیار کم بود — فرصتی برای ورود سریع‌تر.</p>
+    </div>
+    <div class="highlight-box">
+      شکاف بازار اصلی: محتوای باکیفیت درباره «هزینه و فرآیند سفارش» خدمات تولید محتوا در فارسی تقریباً وجود نداشت — این فرصت اصلی برای رشد سریع‌تر بود.
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">رویکرد</div>
+    <div class="section-title">استراتژی دو فازی در ۶ ماه</div>
+
+    <div class="phase-grid">
+      <div class="phase-card">
+        <div class="phase-header">
+          <div class="phase-title">فاز ۱ — طراحی و راه‌اندازی سایت</div>
+          <div class="phase-period">۸ هفته</div>
+        </div>
+        <div class="phase-body">
+          <div class="phase-items">
+            <div class="phase-item"><div class="phase-dot"></div>طراحی ساختار سایت بر پایه کلیدواژه‌های هدف (نه صرفاً زیبایی‌شناسی)</div>
+            <div class="phase-item"><div class="phase-dot"></div>۱۳ صفحه شامل: خانه، خدمات اصلی، ۵ صفحه خدمت مجزا، نمونه‌کارها، درباره ما، تماس</div>
+            <div class="phase-item"><div class="phase-dot"></div>پیاده‌سازی Technical SEO پایه: URL ساختار، Schema، Sitemap، SSL</div>
+            <div class="phase-item"><div class="phase-dot"></div>بهینه‌سازی سرعت و Mobile-first</div>
+            <div class="phase-item"><div class="phase-dot"></div>اتصال Google Analytics 4 و Search Console</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-card">
+        <div class="phase-header">
+          <div class="phase-title">فاز ۲ — سئو و تولید محتوا</div>
+          <div class="phase-period">۶ ماه</div>
+        </div>
+        <div class="phase-body">
+          <div class="phase-items">
+            <div class="phase-item"><div class="phase-dot"></div>بهینه‌سازی On-page تمام صفحات خدمات</div>
+            <div class="phase-item"><div class="phase-dot"></div>تولید ۳۰+ مقاله تخصصی بر اساس کلاستر موضوعی</div>
+            <div class="phase-item"><div class="phase-dot"></div>تمرکز اولیه بر کلیدواژه‌های Long-tail با قصد خرید</div>
+            <div class="phase-item"><div class="phase-dot"></div>لینک‌سازی از رسانه‌ها و وبلاگ‌های مرتبط</div>
+            <div class="phase-item"><div class="phase-dot"></div>گزارش‌دهی ماهانه و بهینه‌سازی مستمر</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">تحقیق کلیدواژه</div>
+    <div class="section-title">اولویت‌بندی کلیدواژه‌ها بر اساس رقابت و قصد خرید</div>
+    <div class="keywords-grid">
+      <div class="kw-card">
+        <div class="kw-title">اولویت اول — ماه ۱ تا ۳</div>
+        <div class="kw-item"><span>استودیو تولید محتوا تهران</span><span class="kw-comp">متوسط</span></div>
+        <div class="kw-item"><span>قیمت ساخت موشن گرافیک</span><span class="kw-comp">کم</span></div>
+        <div class="kw-item"><span>سفارش تیزر تبلیغاتی</span><span class="kw-comp">متوسط</span></div>
+        <div class="kw-item"><span>تولید محتوای ویدیویی تهران</span><span class="kw-comp">کم</span></div>
+        <div class="kw-item"><span>هزینه ساخت تیزر تبلیغاتی</span><span class="kw-comp">کم</span></div>
+      </div>
+      <div class="kw-card">
+        <div class="kw-title">Long-tail — قصد خرید بالا</div>
+        <div class="kw-item"><span>استودیو تولید محتوا ارزان تهران</span><span class="kw-comp">کم</span></div>
+        <div class="kw-item"><span>قیمت موشن گرافیک یک دقیقه</span><span class="kw-comp">کم</span></div>
+        <div class="kw-item"><span>سفارش تیزر تبلیغاتی حرفه‌ای</span><span class="kw-comp">کم</span></div>
+        <div class="kw-item"><span>تولید محتوا برای کسب‌وکار کوچک</span><span class="kw-comp">کم</span></div>
+        <div class="kw-item"><span>هزینه تولید محتوای ویدیویی</span><span class="kw-comp">کم</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">هدف‌گذاری</div>
+    <div class="section-title">نتایج قابل انتظار در بازه‌های زمانی مشخص</div>
+    <div class="goals-grid">
+      <div class="goal-card">
+        <div class="goal-period">پس از ۳ ماه</div>
+        <div class="goal-item"><div class="goal-dot"></div>ورود به صفحه اول برای ۳ تا ۵ کلیدواژه کم‌رقابت</div>
+        <div class="goal-item"><div class="goal-dot"></div>۵۰ تا ۱۰۰ بازدید ارگانیک ماهانه</div>
+        <div class="goal-item"><div class="goal-dot"></div>۱۴ مقاله تخصصی منتشر شده</div>
+      </div>
+      <div class="goal-card">
+        <div class="goal-period">پس از ۶ ماه</div>
+        <div class="goal-item"><div class="goal-dot"></div>رتبه‌های برتر برای ۱۰+ کلیدواژه</div>
+        <div class="goal-item"><div class="goal-dot"></div>۳۰۰ تا ۵۰۰ بازدید ارگانیک ماهانه</div>
+        <div class="goal-item"><div class="goal-dot"></div>جریان پایدار درخواست از مشتریان جدید</div>
+      </div>
+    </div>
+    <div class="note-box" style="margin-top: 1.25rem;">
+      سئو یک سرمایه‌گذاری بلندمدت است. نتایج اصلی از ماه چهارم به بعد محسوس می‌شود — این موضوع از ابتدا به صراحت در پروپوزال ذکر شد.
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">جدول زمانی</div>
+    <div class="section-title">برنامه اجرایی ماه به ماه</div>
+    <table class="timeline-table">
+      <tr>
+        <th>زمان</th>
+        <th>فعالیت کلیدی</th>
+        <th>خروجی</th>
+      </tr>
+      <tr>
+        <td>هفته ۱ تا ۸</td>
+        <td>طراحی و راه‌اندازی سایت</td>
+        <td>سایت آنلاین با ۱۳+ صفحه</td>
+      </tr>
+      <tr>
+        <td>ماه ۱</td>
+        <td>Audit، کیورد ریسرچ، Technical SEO</td>
+        <td>پایه فنی کامل</td>
+      </tr>
+      <tr>
+        <td>ماه ۲</td>
+        <td>On-page SEO، ۸ مقاله اول</td>
+        <td>محتوای اولیه منتشر</td>
+      </tr>
+      <tr>
+        <td>ماه ۳</td>
+        <td>۶ مقاله، شروع لینک‌سازی</td>
+        <td>۱۰ تا ۱۵ بک‌لینک اولیه</td>
+      </tr>
+      <tr>
+        <td>ماه ۴ تا ۶</td>
+        <td>تولید محتوای مستمر، بهینه‌سازی</td>
+        <td>۳۰+ بک‌لینک، گزارش جامع</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">پروژه‌های دیگر</div>
+    <div class="next-cases">
+      <a href="auto-seo.html" class="next-card">
+        <div class="next-tag">سئو — اجرا شده</div>
+        <div class="next-title">رشد ترافیک ارگانیک به ۱۰۰۰ بازدیدکننده روزانه</div>
+        <div class="next-kpi">در ۶ ماه از صفر</div>
+      </a>
+      <a href="auto-blog-migration.html" class="next-card">
+        <div class="next-tag">سئو تکنیکال — اجرا شده</div>
+        <div class="next-title">انتقال بلاگ از ساب‌دامین به ساب‌دایرکتوری</div>
+        <div class="next-kpi">بدون افت ترافیک</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>© ۱۴۰۵</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>پروژه — انتقال بلاگ از ساب‌دامین به ساب‌دایرکتوری</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green: #1D9E75; --green-light: #E1F5EE; --green-dark: #0F6E56;
+    --blue: #185FA5; --blue-light: #E6F1FB;
+    --purple: #534AB7; --purple-light: #EEEDFE;
+    --amber-light: #FAEEDA; --amber-dark: #854F0B;
+    --red-text: #A32D2D;
+    --text-primary: #1a1a1a; --text-secondary: #555; --text-muted: #888;
+    --border: #e5e5e5; --bg: #ffffff; --bg-secondary: #f7f7f5;
+    --radius: 10px; --radius-sm: 6px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text-primary: #f0f0f0; --text-secondary: #aaa; --text-muted: #666;
+      --border: #2a2a2a; --bg: #111; --bg-secondary: #1a1a1a;
+      --green-light: #0a3328; --green: #2dcf9a; --green-dark: #5ee8bb;
+      --blue-light: #0a1e33; --blue: #5aaaf0;
+      --purple-light: #1a1540; --purple: #a99ef7;
+      --amber-light: #2a1e08; --amber-dark: #f5b95a;
+      --red-text: #f08080;
+    }
+  }
+  body { font-family: 'Vazirmatn', sans-serif; background: var(--bg); color: var(--text-primary); font-size: 15px; line-height: 1.8; }
+
+  nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; height: 56px; }
+  .nav-logo { font-size: 15px; font-weight: 600; color: var(--text-primary); text-decoration: none; }
+  .nav-back { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-secondary); text-decoration: none; transition: color 0.15s; }
+  .nav-back:hover { color: var(--green); }
+  .nav-back svg { transform: rotate(180deg); }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .case-header { padding: 3rem 0 2.5rem; border-bottom: 1px solid var(--border); }
+  .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; }
+  .case-tag { display: inline-block; font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 20px; }
+  .case-header h1 { font-size: 28px; font-weight: 600; line-height: 1.35; margin-bottom: 0.75rem; }
+  .case-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.25rem; }
+  .meta-item { font-size: 13px; color: var(--text-muted); display: flex; align-items: center; gap: 5px; }
+  .meta-item strong { color: var(--text-secondary); }
+
+  .kpi-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 2rem 0; border-bottom: 1px solid var(--border); }
+  @media (max-width: 480px) { .kpi-bar { grid-template-columns: 1fr 1fr; } }
+  .kpi { background: var(--bg-secondary); border-radius: var(--radius); padding: 1.25rem; text-align: center; }
+  .kpi-num { font-size: 28px; font-weight: 600; color: var(--green); line-height: 1; }
+  .kpi-label { font-size: 12px; color: var(--text-muted); margin-top: 6px; }
+
+  .content-section { padding: 2.5rem 0; border-bottom: 1px solid var(--border); }
+  .content-section:last-of-type { border-bottom: none; }
+  .section-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; }
+  .section-title { font-size: 18px; font-weight: 600; margin-bottom: 1rem; }
+  .prose { font-size: 15px; color: var(--text-secondary); line-height: 1.85; }
+  .prose p { margin-bottom: 1rem; }
+  .prose p:last-child { margin-bottom: 0; }
+
+  .highlight-box { background: var(--green-light); border-right: 3px solid var(--green); border-radius: var(--radius-sm); padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 14px; color: var(--green-dark); line-height: 1.7; }
+  .warning-box { background: var(--amber-light); border-right: 3px solid var(--amber-dark); border-radius: var(--radius-sm); padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 14px; color: var(--amber-dark); line-height: 1.7; }
+
+  .steps { display: flex; flex-direction: column; margin-top: 1.25rem; }
+  .step { display: flex; gap: 1.25rem; padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+  .step:last-child { border-bottom: none; padding-bottom: 0; }
+  .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--green-light); color: var(--green-dark); font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .step-title { font-size: 15px; font-weight: 600; margin-bottom: 5px; }
+  .step-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+
+  .teams-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 1.25rem; }
+  @media (max-width: 480px) { .teams-grid { grid-template-columns: 1fr 1fr; } }
+  .team-item { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.875rem 1rem; text-align: center; }
+  .team-name { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+  .team-role { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+
+  .lessons-list { display: flex; flex-direction: column; gap: 10px; margin-top: 1.25rem; }
+  .lesson-item { display: flex; gap: 10px; align-items: flex-start; background: var(--bg-secondary); border-radius: var(--radius-sm); padding: 0.875rem 1rem; font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+  .lesson-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; margin-top: 7px; }
+
+  .next-cases { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 1.25rem; }
+  @media (max-width: 480px) { .next-cases { grid-template-columns: 1fr; } }
+  .next-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; text-decoration: none; color: inherit; transition: border-color 0.15s; display: block; }
+  .next-card:hover { border-color: var(--green); }
+  .next-tag { font-size: 11px; color: var(--text-muted); margin-bottom: 5px; }
+  .next-title { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .next-kpi { font-size: 13px; color: var(--green); font-weight: 500; }
+
+  footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border); margin-top: 1rem; }
+  .reveal { opacity: 0; transform: translateY(12px); transition: opacity 0.4s, transform 0.4s; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">خانه</a>
+  <a class="nav-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    بازگشت
+  </a>
+</nav>
+
+<div class="container">
+
+  <div class="case-header">
+    <div class="tags">
+      <span class="case-tag" style="background:var(--green-light); color:var(--green-dark);">سئو تکنیکال</span>
+    </div>
+    <h1>انتقال بلاگ از ساب‌دامین<br>به ساب‌دایرکتوری بدون افت ترافیک</h1>
+    <div class="case-meta">
+      <div class="meta-item"><strong>صنعت:</strong> پلتفرم خودرو</div>
+      <div class="meta-item"><strong>مدت:</strong> ۳ ماه</div>
+      <div class="meta-item"><strong>نقش:</strong> مدیر دیجیتال مارکتینگ</div>
+      <div class="meta-item"><strong>فناوری‌ها:</strong> WordPress / Next.js</div>
+    </div>
+  </div>
+
+  <div class="kpi-bar reveal">
+    <div class="kpi"><div class="kpi-num">صفر</div><div class="kpi-label">افت ترافیک ارگانیک</div></div>
+    <div class="kpi"><div class="kpi-num">۳ ماه</div><div class="kpi-label">از برنامه‌ریزی تا اجرا</div></div>
+    <div class="kpi"><div class="kpi-num">۵ تیم</div><div class="kpi-label">هماهنگی همزمان</div></div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">زمینه پروژه</div>
+    <div class="section-title">بلاگی که Link Equity را هدر می‌داد</div>
+    <div class="prose">
+      <p>بلاگ پلتفرم روی ساب‌دامین مجزا (blog.domain.com) میزبانی می‌شد. این معماری به این معنا بود که تمام اعتبار لینک‌های ورودی به بلاگ، به جای تقویت دامنه اصلی، در ساب‌دامین باقی می‌ماند و به Domain Authority سایت اصلی منتقل نمی‌شد.</p>
+      <p>پیچیدگی فنی اصلی این بود که بلاگ روی WordPress اجرا می‌شد، در حالی که سایت اصلی با Next.js ساخته شده بود. این ترکیب نیازمند پیاده‌سازی Reverse Proxy برای یکپارچه‌سازی دو محیط کاملاً متفاوت بود.</p>
+    </div>
+    <div class="warning-box">
+      اجرای نادرست این انتقال می‌توانست به کاهش شدید ترافیک ارگانیک و از دست رفتن رتبه‌های کسب‌شده منجر شود — به همین دلیل برنامه‌ریزی دقیق و اجرای مرحله‌ای ضروری بود.
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">مساله</div>
+    <div class="section-title">دو چالش موازی: فنی و مدیریتی</div>
+    <div class="prose">
+      <p>این پروژه دو لایه چالش داشت. از نظر فنی، یکپارچه‌سازی WordPress با Next.js از طریق Reverse Proxy پیچیدگی‌های خاص خود را داشت — از تنظیمات سرور و SSL گرفته تا حفظ ساختار URL‌ها و پیاده‌سازی Redirect های 301 برای تمام صفحات موجود.</p>
+      <p>از نظر مدیریتی، پروژه نیازمند هماهنگی همزمان پنج تیم مختلف بود که هر کدام مسئولیت‌های مشخصی داشتند و هرگونه خطا در هماهنگی می‌توانست به مشکلات جدی منجر شود.</p>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">اقدام</div>
+    <div class="section-title">اجرا در چهار فاز با هماهنگی پنج تیم</div>
+
+    <div class="teams-grid">
+      <div class="team-item">
+        <div class="team-name">تیم فنی</div>
+        <div class="team-role">Redirect، Reverse Proxy، دیتابیس</div>
+      </div>
+      <div class="team-item">
+        <div class="team-name">تیم DevOps</div>
+        <div class="team-role">سرور، CDN، SSL، مانیتورینگ</div>
+      </div>
+      <div class="team-item">
+        <div class="team-name">تیم محتوا</div>
+        <div class="team-role">لینک‌های داخلی، توقف انتشار</div>
+      </div>
+      <div class="team-item">
+        <div class="team-name">تیم محصول</div>
+        <div class="team-role">تأیید معماری، تخصیص منابع</div>
+      </div>
+      <div class="team-item">
+        <div class="team-name">تیم آنالیتیکس</div>
+        <div class="team-role">GA4، Tag Manager، داشبورد</div>
+      </div>
+      <div class="team-item" style="border-color: var(--green);">
+        <div class="team-name" style="color:var(--green);">تیم سئو</div>
+        <div class="team-role">هماهنگ‌کننده اصلی پروژه</div>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">۱</div>
+        <div>
+          <div class="step-title">برنامه‌ریزی و ممیزی</div>
+          <div class="step-desc">ممیزی کامل تکنیکال، محتوایی و سئو انجام شد. تمام URL‌های موجود استخراج و نقشه Redirect جامع تهیه گردید. ریسک‌های احتمالی شناسایی و برای هر کدام برنامه پیشگیرانه تعریف شد. RACI Matrix برای تعیین مسئولیت‌های هر تیم تنظیم گردید.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">۲</div>
+        <div>
+          <div class="step-title">آماده‌سازی فنی و زیرساخت</div>
+          <div class="step-desc">تیم فنی Reverse Proxy را برای یکپارچه‌سازی WordPress با Next.js پیاده‌سازی کرد. Redirect های 301 در سطح سرور تنظیم شدند تا تمام URL‌های قدیمی به مسیرهای جدید هدایت شوند. تمام تغییرات ابتدا در محیط Staging تست شد.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">۳</div>
+        <div>
+          <div class="step-title">اجرای انتقال</div>
+          <div class="step-desc">انتقال در یک بازه زمانی کم‌ترافیک اجرا شد. تمام تیم‌ها در حالت آماده‌باش کامل بودند و از طریق کانال‌های ارتباطی تعریف‌شده هماهنگی مستمر داشتند. در ۲۴ ساعت اول مانیتورینگ فشرده انجام شد.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">۴</div>
+        <div>
+          <div class="step-title">پایش و تثبیت</div>
+          <div class="step-desc">سه ماه پس از انتقال، پایش مستمر ترافیک، رتبه‌بندی کلیدواژه‌ها، و خطاهای خزش ادامه یافت. Sitemap.xml به‌روز شد و به Google Search Console ارسال گردید. گزارش‌های هفتگی به ذینفعان ارائه شد.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      نقش تیم سئو در این پروژه صرفاً فنی نبود — هماهنگی بین پنج تیم با اولویت‌های متفاوت، یکی از اصلی‌ترین مسئولیت‌ها بود.
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">نتیجه</div>
+    <div class="section-title">انتقال موفق بدون هیچ افت ترافیکی</div>
+    <div class="prose">
+      <p>پروژه با موفقیت کامل به پایان رسید — ترافیک ارگانیک هیچ افتی نداشت و تمام رتبه‌های کسب‌شده حفظ شدند. تمام Redirect های 301 به‌درستی عمل کردند و هیچ صفحه‌ای از ایندکس گوگل حذف نشد.</p>
+      <p>از این پس، Link Equity تمام بک‌لینک‌های ورودی به بلاگ به دامنه اصلی منتقل می‌شد و به تقویت Domain Authority کمک می‌کرد. این پروژه پیش از رسیدن سایت به ۱۰۰۰ بازدید روزانه اجرا شد تا اثر آن در مسیر رشد ارگانیک لحاظ گردد.</p>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">درس‌های این پروژه</div>
+    <div class="section-title">آنچه از این پروژه آموختم</div>
+    <div class="lessons-list">
+      <div class="lesson-item"><div class="lesson-dot"></div>در پروژه‌های چندتیمی، تعریف دقیق مسئولیت‌ها از ابتدا (RACI Matrix) از بسیاری از سوءتفاهم‌ها جلوگیری می‌کند.</div>
+      <div class="lesson-item"><div class="lesson-dot"></div>تست کامل در محیط Staging پیش از اجرا، تنها راه مطمئن برای کاهش ریسک در پروژه‌های حساس سئو است.</div>
+      <div class="lesson-item"><div class="lesson-dot"></div>یکپارچه‌سازی WordPress با Next.js از طریق Reverse Proxy چالش‌های فنی خاص خود دارد که نیازمند همکاری نزدیک تیم سئو و تیم فنی است.</div>
+      <div class="lesson-item"><div class="lesson-dot"></div>زمان‌بندی اجرا اهمیت دارد — انتخاب بازه کم‌ترافیک برای انتقال، فرصت واکنش سریع در صورت بروز مشکل را فراهم می‌کند.</div>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">پروژه‌های دیگر</div>
+    <div class="next-cases">
+      <a href="auto-seo.html" class="next-card">
+        <div class="next-tag">سئو</div>
+        <div class="next-title">رشد ترافیک ارگانیک به ۱۰۰۰ بازدیدکننده روزانه</div>
+        <div class="next-kpi">در ۶ ماه از صفر</div>
+      </a>
+      <a href="auto-funnel.html" class="next-card">
+        <div class="next-tag">بهینه‌سازی فانل</div>
+        <div class="next-title">بهینه‌سازی فانل چندمرحله‌ای خرید اقساطی</div>
+        <div class="next-kpi">نرخ تبدیل لید: ۴٪</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>© ۱۴۰۵</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>پورتفولیو — دیجیتال مارکتینگ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --red: #E03E3E;
+    --orange: #D4610A;
+    --violet: #7C3AED;
+    --teal: #0D9488;
+    --rose: #E11D6A;
+    --indigo: #4338CA;
+    --green: #1D9E75;
+    --green-light: #E1F5EE;
+    --green-dark: #0F6E56;
+    --blue: #185FA5;
+    --blue-light: #E6F1FB;
+    --amber-light: #FAEEDA;
+    --amber-dark: #854F0B;
+    --pink-light: #FBEAF0;
+    --pink-dark: #993556;
+    --purple-light: #EEEDFE;
+    --purple-dark: #534AB7;
+    --red-text: #A32D2D;
+    --text-primary: #1a1a1a;
+    --text-secondary: #555;
+    --text-muted: #888;
+    --border: #e5e5e5;
+    --bg: #ffffff;
+    --bg-secondary: #f7f7f5;
+    --radius: 10px;
+    --radius-sm: 6px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text-primary: #f0f0f0;
+      --text-secondary: #aaa;
+      --text-muted: #666;
+      --border: #2a2a2a;
+      --bg: #111;
+      --bg-secondary: #1a1a1a;
+      --green-light: #0a3328;
+      --green: #2dcf9a;
+      --green-dark: #5ee8bb;
+      --blue-light: #0a1e33;
+      --blue: #5aaaf0;
+      --amber-light: #2a1e08;
+      --amber-dark: #f5b95a;
+      --pink-light: #2a0d1a;
+      --pink-dark: #f08aac;
+      --purple-light: #1a1540;
+      --purple-dark: #a99ef7;
+      --red-text: #f08080;
+    }
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Vazirmatn', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 56px;
+  }
+  .nav-logo { font-size: 15px; font-weight: 600; color: var(--text-primary); text-decoration: none; }
+  .nav-links { display: flex; gap: 1.5rem; }
+  .nav-links a { font-size: 13px; color: var(--text-secondary); text-decoration: none; transition: color 0.15s; }
+  .nav-links a:hover { color: var(--green); }
+
+  /* LAYOUT */
+  .container { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* HERO */
+  .hero { padding: 4rem 0 3rem; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--green-light); color: var(--green-dark);
+    font-size: 12px; font-weight: 500;
+    padding: 4px 12px; border-radius: 20px; margin-bottom: 1.25rem;
+  }
+  .hero h1 { font-size: 32px; font-weight: 600; line-height: 1.35; margin-bottom: 1rem; }
+  .hero h1 em { font-style: normal; color: var(--green); }
+  .hero p { font-size: 16px; color: var(--text-secondary); max-width: 520px; margin-bottom: 2rem; }
+  .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 10px 20px; border-radius: var(--radius-sm);
+    font-size: 14px; font-weight: 500; font-family: inherit;
+    cursor: pointer; text-decoration: none; transition: all 0.15s;
+    border: 1px solid transparent;
+  }
+  .btn-primary { background: var(--green); color: white; }
+  .btn-primary:hover { opacity: 0.9; }
+  .btn-outline { background: transparent; color: var(--text-primary); border-color: var(--border); }
+  .btn-outline:hover { border-color: var(--text-muted); }
+
+  /* STATS */
+  .stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 12px; padding: 2rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .stat { text-align: center; }
+  .stat-num { font-size: 24px; font-weight: 600; color: var(--text-primary); }
+  .stat-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+  /* SECTION */
+  section { padding: 3rem 0; border-bottom: 1px solid var(--border); }
+  section:last-of-type { border-bottom: none; }
+  .section-eyebrow {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+  #cases .section-eyebrow { text-align: center; font-size: 15px; letter-spacing: 0; text-transform: none; color: var(--text-primary); }
+  #cases .click-hint { justify-content: center; }
+  .case-link { justify-content: center; }
+
+  /* CASE CARDS */
+  .case-list { display: flex; flex-direction: column; gap: 12px; }
+  .case-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: border-color 0.15s;
+  }
+  .case-card:hover { border-color: #ccc; }
+
+  .case-header {
+    padding: 1.25rem 1.5rem;
+    display: flex; justify-content: space-between; align-items: flex-start;
+    cursor: pointer;
+    user-select: none;
+    gap: 1rem;
+  }
+  .case-left { flex: 1; min-width: 0; }
+  .case-tag {
+    display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 3px 10px; border-radius: 20px; margin-bottom: 7px;
+  }
+  .case-title { font-size: 15px; font-weight: 600; margin-bottom: 3px; }
+  .case-meta { font-size: 13px; color: var(--text-muted); }
+  .case-right { text-align: left; flex-shrink: 0; }
+  .case-kpi { font-size: 24px; font-weight: 600; color: var(--green); line-height: 1; }
+  .case-kpi-label { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+  .toggle-icon {
+    display: flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--bg-secondary); border: 1px solid var(--border);
+    color: var(--text-muted); flex-shrink: 0;
+    transition: transform 0.25s, background 0.15s, border-color 0.15s;
+  }
+  .case-card:hover .toggle-icon { border-color: var(--green); color: var(--green); }
+  .case-card.open .toggle-icon { transform: rotate(180deg); background: var(--green-light); border-color: var(--green); color: var(--green); }
+
+  .click-hint {
+    font-size: 12px; color: var(--text-muted);
+    display: flex; align-items: center; gap: 5px;
+    margin-bottom: 1rem;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  .click-hint svg { flex-shrink: 0; }
+  @keyframes pulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+
+  .case-link {
+    display: flex; align-items: center; justify-content: center; gap: 5px;
+    font-size: 13px; color: var(--blue); font-weight: 500;
+    text-decoration: none; margin-top: 14px;
+    transition: gap 0.15s;
+  }
+  .case-link:hover { gap: 8px; }
+
+  .case-body {
+    display: none;
+    padding: 1.25rem 1.5rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+  }
+  .case-card.open .case-body { display: block; }
+
+  .par-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 1rem; }
+  @media (max-width: 520px) { .par-grid { grid-template-columns: 1fr; } }
+
+  .par-block {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.875rem 1rem;
+  }
+  .par-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+    text-transform: uppercase; margin-bottom: 6px;
+    display: flex; align-items: center; gap: 5px;
+  }
+  .par-text { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+
+  .results-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .result-pill {
+    flex: 1; min-width: 80px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 1rem;
+    text-align: center;
+  }
+  .result-num { font-size: 18px; font-weight: 600; color: var(--green); }
+  .result-label { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+
+  /* SKILLS */
+  .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+  .skill-item {
+    display: flex; align-items: center; gap: 8px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+  .skill-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--green); flex-shrink: 0;
+  }
+
+  /* EXPERIENCE */
+  .exp-list { display: flex; flex-direction: column; gap: 0; }
+  .exp-item {
+    display: flex; gap: 1.25rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .exp-item:last-child { border-bottom: none; }
+  .exp-timeline { display: flex; flex-direction: column; align-items: center; padding-top: 5px; }
+  .exp-dot-outer {
+    width: 10px; height: 10px; border-radius: 50%;
+    border: 2px solid var(--green); background: var(--bg);
+    flex-shrink: 0;
+  }
+  .exp-line { flex: 1; width: 1px; background: var(--border); margin-top: 6px; }
+  .exp-item:last-child .exp-line { display: none; }
+  .exp-content { flex: 1; padding-bottom: 0.5rem; }
+  .exp-company { font-size: 15px; font-weight: 600; }
+  .exp-role { font-size: 14px; color: var(--text-secondary); margin-top: 2px; }
+  .exp-date { font-size: 12px; color: var(--text-muted); margin-top: 5px; }
+
+  /* CONTACT */
+  .contact-block {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    display: flex; justify-content: space-between; align-items: center; gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .contact-title { font-size: 18px; font-weight: 600; margin-bottom: 6px; }
+  .contact-sub { font-size: 14px; color: var(--text-secondary); }
+  .contact-links { display: flex; gap: 10px; flex-wrap: wrap; }
+  .contact-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 9px 16px; border-radius: var(--radius-sm);
+    font-size: 13px; font-weight: 500; text-decoration: none;
+    border: 1px solid var(--border); color: var(--text-primary);
+    background: var(--bg); transition: all 0.15s;
+  }
+  .contact-link:hover { border-color: var(--green); color: var(--green); }
+  @media (max-width: 520px) {
+    .contact-block { flex-direction: column; align-items: center; text-align: center; }
+    .contact-links { width: 100%; flex-direction: column; }
+    .contact-link { justify-content: center; }
+    .contact-title { justify-content: center; }
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center; padding: 2rem;
+    font-size: 12px; color: var(--text-muted);
+    border-top: 1px solid var(--border);
+  }
+
+  /* SCROLL REVEAL */
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.4s, transform 0.4s; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* PULSE DOT */
+  .pulse-dot {
+    display: inline-block;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--green);
+    position: relative;
+    margin-left: 8px;
+    vertical-align: middle;
+    flex-shrink: 0;
+  }
+  .pulse-dot::before, .pulse-dot::after {
+    content: ''; position: absolute; inset: 0;
+    border-radius: 50%; background: var(--green);
+    animation: pulse-ring 2s ease-out infinite;
+  }
+  .pulse-dot::after { animation-delay: 0.7s; }
+  @keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(3); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">پورتفولیو</a>
+  <div class="nav-links">
+    <a href="#cases">پروژه‌ها</a>
+    <a href="#skills">مهارت‌ها</a>
+    <a href="#tools">ابزارها</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- HERO -->
+  <section class="hero" style="border-bottom: 1px solid var(--border);">
+    <h1>رشد کسب‌وکار<br>با <em>استراتژی داده‌محور</em></h1>
+    <p>متخصص بازاریابی دیجیتال — با سابقه رشد واقعی برای برندهای مختلف.</p>
+    <div class="hero-actions">
+      <a href="#cases" class="btn btn-primary">مشاهده پروژه‌ها</a>
+      <a href="#contact" class="btn btn-outline">تماس با من</a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats reveal">
+    <div class="stat"><div class="stat-num">+۴۰</div><div class="stat-label">پروژه اجرا شده</div></div>
+    <div class="stat"><div class="stat-num">+۱۰ سال</div><div class="stat-label">تجربه کاری</div></div>
+    <div class="stat"><div class="stat-num">+۵</div><div class="stat-label">صنعت مختلف</div></div>
+  </div>
+
+  <!-- CASE STUDIES -->
+  <section id="cases" class="reveal">
+    <div class="section-eyebrow">پروژه‌ها</div>
+    <div class="click-hint">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1v6M7 7l-2-2M7 7l2-2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 9c0 2 1.5 3.5 4 3.5s4-1.5 4-3.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      برای مشاهده خلاصه هر کیس، روی کارت کلیک کنید
+    </div>
+    <div class="case-list">
+
+      <div class="case-card" onclick="toggleCase(this)">
+        <div class="case-header">
+          <div class="case-left">
+            <span class="case-tag" style="background:var(--green-light); color:var(--green-dark);">سئو</span>
+            <div class="case-title">رشد ترافیک ارگانیک به ۱۰۰۰ بازدیدکننده روزانه</div>
+            <div class="case-meta">پلتفرم خرید و فروش خودرو</div>
+          </div>
+          <div class="toggle-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="par-grid">
+            <div class="par-block">
+              <div class="par-label" style="color:var(--red-text);">مساله</div>
+              <div class="par-text">سایت نوپا بدون جایگاه در نتایج جستجو. مشکلات متعدد فنی در ساختار URL، متا، و اسکیما مانع رتبه‌گیری بود.</div>
+            </div>
+            <div class="par-block">
+              <div class="par-label" style="color:var(--blue);">اقدام</div>
+              <div class="par-text">کیورد ریسرچ جامع، رفع مشکلات فنی، طراحی کلاستر محتوا، و پایش هفتگی با همکاری تیم فنی و محصول.</div>
+            </div>
+            <div class="par-block">
+              <div class="par-label" style="color:var(--green-dark);">نتیجه</div>
+              <div class="par-text">در ۶ ماه از صفر به بیش از ۱۰۰۰ بازدیدکننده ارگانیک روزانه رسید و کانال ارگانیک به منبع اصلی جذب لید تبدیل شد.</div>
+            </div>
+          </div>
+          <div class="results-row">
+            <div class="result-pill"><div class="result-num">۱۰۰۰+</div><div class="result-label">بازدید روزانه</div></div>
+            <div class="result-pill"><div class="result-num">۶ ماه</div><div class="result-label">از صفر تا نتیجه</div></div>
+            <div class="result-pill"><div class="result-num">از صفر</div><div class="result-label">شروع پروژه</div></div>
+          </div>
+          <a href="auto-seo.html" class="case-link">
+            مطالعه کامل این پروژه
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="case-card" onclick="toggleCase(this)">
+        <div class="case-header">
+          <div class="case-left">
+            <span class="case-tag" style="background:var(--amber-light); color:var(--amber-dark);">بهینه‌سازی کمپین</span>
+            <div class="case-title">بهینه‌سازی قیف فروش چندمرحله‌ای خرید اقساطی</div>
+            <div class="case-meta">پلتفرم خرید و فروش خودرو</div>
+          </div>
+          <div class="toggle-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="par-grid">
+            <div class="par-block">
+              <div class="par-label" style="color:var(--red-text);">مساله</div>
+              <div class="par-text">ریزش بالا در فانل پنج‌مرحله‌ای؛ لندینگ پیج ضعیف و مشکل فنی در Date Picker فرم چندمرحله‌ای نرخ تکمیل را پایین نگه می‌داشت.</div>
+            </div>
+            <div class="par-block">
+              <div class="par-label" style="color:var(--blue);">اقدام</div>
+              <div class="par-text">شناسایی نقاط ریزش با داده، بازطراحی لندینگ، رفع باگ فرم با تیم فنی (Next.js/Go)، و بهینه‌سازی فرآیند کال‌سنتر.</div>
+            </div>
+            <div class="par-block">
+              <div class="par-label" style="color:var(--green-dark);">نتیجه</div>
+              <div class="par-text">بهبود نرخ تکمیل فرم، نرخ پاسخ‌دهی ۹۰٪ به لیدها، و نرخ تبدیل ۴٪ لید به مراجعه حضوری — عدد قابل قبول در صنعت خودرو.</div>
+            </div>
+          </div>
+          <div class="results-row">
+            <div class="result-pill"><div class="result-num">۴٪</div><div class="result-label">لید به حضوری</div></div>
+            <div class="result-pill"><div class="result-num">۹۰٪</div><div class="result-label">نرخ پاسخ‌دهی</div></div>
+            <div class="result-pill"><div class="result-num">۱۲h</div><div class="result-label">حداکثر زمان تماس</div></div>
+          </div>
+          <a href="auto-funnel.html" class="case-link">
+            مطالعه کامل این پروژه
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="case-card" onclick="toggleCase(this)">
+        <div class="case-header">
+          <div class="case-left">
+            <span class="case-tag" style="background:var(--purple-light); color:var(--purple-dark);">مدیریت کمپین</span>
+            <div class="case-title">مدیریت کمپین‌های پرفورمنس</div>
+            <div class="case-meta">پلتفرم خرید و فروش خودرو</div>
+          </div>
+          <div class="toggle-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="par-grid">
+            <div class="par-block">
+              <div class="par-label" style="color:var(--red-text);">مساله</div>
+              <div class="par-text">نیاز به جذب لید واجد شرایط برای سرویس خرید اقساطی خودرو از طریق کانال‌های تبلیغاتی داخلی با بهترین نسبت هزینه به نتیجه.</div>
+            </div>
+            <div class="par-block">
+              <div class="par-label" style="color:var(--blue);">اقدام</div>
+              <div class="par-text">آزمون موازی سه کانال، تخصیص پویای بودجه بر اساس CPL، و تمرکز روی دیوار به دلیل هدفمندی بالای مخاطب.</div>
+            </div>
+            <div class="par-block">
+              <div class="par-label" style="color:var(--green-dark);">نتیجه</div>
+              <div class="par-text">رسیدن به ۵۰ لید روزانه در اوج کمپین. کمپین دیوار در دسته‌بندی خودرو بهترین نرخ تبدیل را در میان کانال‌ها داشت.</div>
+            </div>
+          </div>
+          <div class="results-row">
+            <div class="result-pill"><div class="result-num">۵۰</div><div class="result-label">لید روزانه</div></div>
+            <div class="result-pill"><div class="result-num">۳ کانال</div><div class="result-label">مدیریت همزمان</div></div>
+            <div class="result-pill"><div class="result-num">B2C</div><div class="result-label">بازار هدف</div></div>
+          </div>
+          <a href="auto-campaign.html" class="case-link">
+            مطالعه کامل این پروژه
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+
+      <div class="case-card" onclick="toggleCase(this)">
+        <div class="case-header">
+          <div class="case-left">
+            <span class="case-tag" style="background:var(--green-light); color:var(--green-dark);">سئو تکنیکال</span>
+            <div class="case-title">انتقال بلاگ از ساب‌دامین به ساب‌دایرکتوری</div>
+            <div class="case-meta">پلتفرم آنلاین خدمات خودرو</div>
+          </div>
+          <div class="toggle-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="par-grid">
+            <div class="par-block">
+              <div class="par-label" style="color:var(--red-text);">مساله</div>
+              <div class="par-text">بلاگ روی ساب‌دامین مجزا بود و Link Equity به دامنه اصلی منتقل نمی‌شد. یکپارچه‌سازی WordPress با Next.js چالش فنی اصلی بود.</div>
+            </div>
+            <div class="par-block">
+              <div class="par-label" style="color:var(--blue);">اقدام</div>
+              <div class="par-text">هماهنگی پنج تیم همزمان، پیاده‌سازی Reverse Proxy، تنظیم Redirect های 301 و اجرای کامل در محیط Staging.</div>
+            </div>
+            <div class="par-block">
+              <div class="par-label" style="color:var(--green-dark);">نتیجه</div>
+              <div class="par-text">انتقال موفق بدون هیچ افت ترافیکی در بازه ۳ ماهه. تمام رتبه‌های کسب‌شده حفظ شدند.</div>
+            </div>
+          </div>
+          <div class="results-row">
+            <div class="result-pill"><div class="result-num">صفر</div><div class="result-label">افت ترافیک</div></div>
+            <div class="result-pill"><div class="result-num">۵ تیم</div><div class="result-label">هماهنگی همزمان</div></div>
+            <div class="result-pill"><div class="result-num">۳ ماه</div><div class="result-label">اجرا</div></div>
+          </div>
+          <a href="auto-blog-migration.html" class="case-link">
+            مطالعه کامل این پروژه
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="case-card" onclick="toggleCase(this)">
+        <div class="case-header">
+          <div class="case-left">
+            <span class="case-tag" style="background:var(--green-light); color:var(--green-dark);">سئو + کمپین دیجیتال</span>
+            <div class="case-title">رشد ارگانیک و کمپین های مناسبتی</div>
+            <div class="case-meta">فروشگاه آنلاین نوشت افزار</div>
+          </div>
+          <div class="toggle-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="par-grid">
+            <div class="par-block">
+              <div class="par-label" style="color:var(--red-text);">مساله</div>
+              <div class="par-text">فروشگاه با نمایندگی برندهای معروف قلم، پتانسیل سئویی بالایی داشت که استفاده نمی‌شد. ساختار محصولات و محتوا نیاز به بازسازی داشت.</div>
+            </div>
+            <div class="par-block">
+              <div class="par-label" style="color:var(--blue);">اقدام</div>
+              <div class="par-text">بهینه‌سازی صفحات محصول و دسته‌بندی، استراتژی محتوای Pillar-Cluster، لینک‌سازی داخلی، رپورتاژ، و همراهی در بازطراحی UI/UX.</div>
+            </div>
+            <div class="par-block">
+              <div class="par-label" style="color:var(--green-dark);">نتیجه</div>
+              <div class="par-text">رتبه‌های خوب برای کلیدواژه‌های برند و غیربرند. کمپین‌های یلدا و بلک فرایدی با موفقیت اجرا شدند.</div>
+            </div>
+          </div>
+          <div class="results-row">
+            <div class="result-pill"><div class="result-num">رتبه ۴-۵</div><div class="result-label">کلیدواژه‌های هدف</div></div>
+            <div class="result-pill"><div class="result-num">۲ کمپین</div><div class="result-label">یلدا و بلک فرایدی</div></div>
+            <div class="result-pill"><div class="result-num">B2C</div><div class="result-label">بازار هدف</div></div>
+          </div>
+          <a href="stationery.html" class="case-link">
+            مطالعه کامل این پروژه
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="case-card" onclick="toggleCase(this)">
+        <div class="case-header">
+          <div class="case-left">
+            <span class="case-tag" style="background:var(--amber-light); color:var(--amber-dark);">سئو + کمپین آنلاین</span>
+            <div class="case-title">کمپین آنلاین و سئو تخصصی</div>
+            <div class="case-meta">فروشگاه لوازم کمپینگ و آفرود</div>
+          </div>
+          <div class="toggle-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="par-grid">
+            <div class="par-block">
+              <div class="par-label" style="color:var(--red-text);">مساله</div>
+              <div class="par-text">بازار نیچ با مخاطب تخصصی و آگاه. رقابت کمتر ولی نیاز به محتوای فنی دقیق. نمایندگی برندهای معتبر خارجی فرصت سئویی بود.</div>
+            </div>
+            <div class="par-block">
+              <div class="par-label" style="color:var(--blue);">اقدام</div>
+              <div class="par-text">تمرکز بر کلیدواژه‌های برند و Long-tail تخصصی، تولید محتوای فنی عمیق، رپورتاژ در سایت‌های طبیعت‌گردی، و همراهی در بازطراحی.</div>
+            </div>
+            <div class="par-block">
+              <div class="par-label" style="color:var(--green-dark);">نتیجه</div>
+              <div class="par-text">رتبه‌گیری در کلیدواژه‌های تخصصی برند با قصد خرید بالا. اجرای موفق کمپین‌های فصلی یلدا و بلک فرایدی.</div>
+            </div>
+          </div>
+          <div class="results-row">
+            <div class="result-pill"><div class="result-num">نیچ</div><div class="result-label">بازار تخصصی</div></div>
+            <div class="result-pill"><div class="result-num">۲ کمپین</div><div class="result-label">یلدا و بلک فرایدی</div></div>
+            <div class="result-pill"><div class="result-num">WordPress</div><div class="result-label">پلتفرم</div></div>
+          </div>
+          <a href="offroad.html" class="case-link">
+            مطالعه کامل این پروژه
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="case-card" onclick="toggleCase(this)">
+        <div class="case-header">
+          <div class="case-left">
+            <span class="case-tag" style="background:var(--bg-secondary); color:var(--text-muted); border: 1px solid var(--border);">استراتژی دیجیتال مارکتینگ</span>
+            <div class="case-title">استراتژی دیجیتال مارکتینگ استودیو تولید محتوا</div>
+            <div class="case-meta">استودیو ویدیو و موشن گرافیک — پروپوزال</div>
+          </div>
+          <div class="toggle-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="par-grid">
+            <div class="par-block">
+              <div class="par-label" style="color:var(--red-text);">مساله</div>
+              <div class="par-text">استودیو با تخصص بالا تمام مشتریان را از معرفی شخصی جذب می‌کرد. حضور دیجیتال نداشت و ترافیک ارگانیک صفر بود.</div>
+            </div>
+            <div class="par-block">
+              <div class="par-label" style="color:var(--blue);">اقدام</div>
+              <div class="par-text">طراحی سایت بر پایه کلیدواژه‌های هدف، استراتژی محتوای ۳۰+ مقاله، و تمرکز بر Long-tail با قصد خرید بالا.</div>
+            </div>
+            <div class="par-block">
+              <div class="par-label" style="color:var(--green-dark);">هدف‌گذاری</div>
+              <div class="par-text">در ۶ ماه: ۳۰۰ تا ۵۰۰ بازدید ارگانیک ماهانه و رتبه‌های برتر برای ۱۰+ کلیدواژه تخصصی.</div>
+            </div>
+          </div>
+          <div class="results-row">
+            <div class="result-pill"><div class="result-num">۳۰۰+</div><div class="result-label">بازدید هدف</div></div>
+            <div class="result-pill"><div class="result-num">۱۰+</div><div class="result-label">کلیدواژه هدف</div></div>
+            <div class="result-pill"><div class="result-num">۶ ماه</div><div class="result-label">افق زمانی</div></div>
+          </div>
+          <a href="proposal-studio.html" class="case-link">
+            مطالعه کامل این پروژه
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="case-card" onclick="toggleCase(this)">
+        <div class="case-header">
+          <div class="case-left">
+            <span class="case-tag" style="background:var(--bg-secondary); color:var(--text-muted); border: 1px solid var(--border);">استراتژی دیجیتال مارکتینگ</span>
+            <div class="case-title">استراتژی جذب لید برای شرکت ساخت سقف های صنعتی</div>
+            <div class="case-meta">ساخت و ساز صنعتی — پروپوزال</div>
+          </div>
+          <div class="toggle-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="par-grid">
+            <div class="par-block">
+              <div class="par-label" style="color:var(--red-text);">مساله</div>
+              <div class="par-text">شرکت با چرخه فروش طولانی، تمام مشتریان را از معرفی جذب می‌کرد. حضور دیجیتال متناسب با پتانسیل بازار نبود.</div>
+            </div>
+            <div class="par-block">
+              <div class="par-label" style="color:var(--blue);">اقدام</div>
+              <div class="par-text">طراحی فانل سه‌مرحله‌ای تبلیغاتی، تولید محتوای تخصصی با قصد خرید بالا، و سیستم ردیابی لید از روز اول.</div>
+            </div>
+            <div class="par-block">
+              <div class="par-label" style="color:var(--green-dark);">هدف‌گذاری</div>
+              <div class="par-text">ایجاد جریان پایدار لید واجد شرایط از طریق گوگل و تبلیغات در بازه ۳ ماهه.</div>
+            </div>
+          </div>
+          <div class="results-row">
+            <div class="result-pill"><div class="result-num">۳ ماه</div><div class="result-label">برنامه اجرایی</div></div>
+            <div class="result-pill"><div class="result-num">۳ کانال</div><div class="result-label">سئو، تبلیغات، محتوا</div></div>
+            <div class="result-pill"><div class="result-num" style="font-size:16px;">B2B<br>B2C</div><div class="result-label">بازار هدف</div></div>
+          </div>
+          <a href="proposal-roofing.html" class="case-link">
+            مطالعه کامل این پروژه
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="case-card" onclick="toggleCase(this)">
+        <div class="case-header">
+          <div class="case-left">
+            <span class="case-tag" style="background:var(--bg-secondary); color:var(--text-muted); border:1px solid var(--border);">استراتژی دیجیتال مارکتینگ</span>
+            <div class="case-title">استراتژی جامع دیجیتال مارکتینگ برای شرکت تامین مالی</div>
+            <div class="case-meta">پلتفرم تامین مالی و تسهیلات — پروپوزال</div>
+          </div>
+          <div class="toggle-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="par-grid">
+            <div class="par-block">
+              <div class="par-label" style="color:var(--red-text);">مساله</div>
+              <div class="par-text">شرکت تامین مالی با سه پرسونای متمایز، فاقد استراتژی یکپارچه دیجیتال بود. اعتمادسازی در این صنعت چالش اصلی است.</div>
+            </div>
+            <div class="par-block">
+              <div class="par-label" style="color:var(--blue);">اقدام</div>
+              <div class="par-text">طراحی استراتژی چهار ستونی با پوشش پنج کانال — سئو، اینستاگرام، تلگرام، لینکدین، و ایمیل مارکتینگ.</div>
+            </div>
+            <div class="par-block">
+              <div class="par-label" style="color:var(--green-dark);">هدف‌گذاری</div>
+              <div class="par-text">در ۶ ماه: ۱۰۰۰۰ بازدید ارگانیک ماهانه، ۵۰۰۰ فالوور هدفمند، و جریان پایدار لید واجد شرایط.</div>
+            </div>
+          </div>
+          <div class="results-row">
+            <div class="result-pill"><div class="result-num">۵ کانال</div><div class="result-label">پوشش همزمان</div></div>
+            <div class="result-pill"><div class="result-num">۳ پرسونا</div><div class="result-label">مخاطب هدف</div></div>
+            <div class="result-pill"><div class="result-num">۱۲ ماه</div><div class="result-label">افق زمانی</div></div>
+          </div>
+          <a href="proposal-fintech.html" class="case-link">
+            مطالعه کامل این پروژه
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="reveal">
+    <div class="section-eyebrow" style="text-align:center; font-size:15px; letter-spacing:0; text-transform:none; color:var(--text-primary);">مهارت‌ها</div>
+    <div class="skills-grid">
+      <div class="skill-item"><span class="skill-dot"></span>سئو (Technical, On-page, Off-page)</div>
+      <div class="skill-item"><span class="skill-dot"></span>تبلیغات پرفورمنس</div>
+      <div class="skill-item"><span class="skill-dot"></span>بازاریابی محتوا</div>
+      <div class="skill-item"><span class="skill-dot"></span>استراتژی دیجیتال مارکتینگ</div>
+      <div class="skill-item"><span class="skill-dot"></span>آنالیتیکس و گزارش‌دهی</div>
+      <div class="skill-item"><span class="skill-dot"></span>ایمیل مارکتینگ</div>
+      <div class="skill-item"><span class="skill-dot"></span>اینفلوئنسر مارکتینگ</div>
+      <div class="skill-item"><span class="skill-dot"></span>بهینه‌سازی نرخ تبدیل (CRO)</div>
+      <div class="skill-item"><span class="skill-dot"></span>مدیریت تیم و بودجه</div>
+      <div class="skill-item"><span class="skill-dot"></span>SMS مارکتینگ</div>
+    </div>
+  </section>
+
+  <!-- TOOLS -->
+  <section id="tools" class="reveal">
+    <div class="section-eyebrow" style="text-align:center; font-size:15px; letter-spacing:0; text-transform:none; color:var(--text-primary);">ابزارها</div>
+    <div class="skills-grid">
+      <div class="skill-item"><span class="skill-dot" style="background:var(--blue);"></span>Google Analytics 4</div>
+      <div class="skill-item"><span class="skill-dot" style="background:var(--blue);"></span>Tag Manager</div>
+      <div class="skill-item"><span class="skill-dot" style="background:var(--blue);"></span>Looker Studio</div>
+      <div class="skill-item"><span class="skill-dot" style="background:var(--blue);"></span>Google Search Console</div>
+      <div class="skill-item"><span class="skill-dot" style="background:var(--blue);"></span>Ahrefs</div>
+      <div class="skill-item"><span class="skill-dot" style="background:var(--blue);"></span>Semrush</div>
+      <div class="skill-item"><span class="skill-dot" style="background:var(--blue);"></span>Moz</div>
+      <div class="skill-item"><span class="skill-dot" style="background:var(--blue);"></span>GTmetrix</div>
+      <div class="skill-item"><span class="skill-dot" style="background:var(--blue);"></span>KWFinder</div>   
+      <div class="skill-item"><span class="skill-dot" style="background:var(--blue);"></span>Screaming Frog</div>
+      <div class="skill-item"><span class="skill-dot" style="background:var(--blue);"></span>PageSpeed Insights</div>
+      <div class="skill-item"><span class="skill-dot" style="background:var(--red);"></span>Notion</div>
+      <div class="skill-item"><span class="skill-dot" style="background:var(--red);"></span>Trello</div>
+      <div class="skill-item"><span class="skill-dot" style="background:var(--red);"></span>Jira</div>
+      <div class="skill-item"><span class="skill-dot" style="background:var(--red);"></span>ClickUp</div>
+      <div class="skill-item"><span class="skill-dot" style="background:var(--blue);"></span>Microsoft Clarity</div>
+      <div class="skill-item"><span class="skill-dot" style="background:var(--blue);"></span>Hotjar</div>
+      <div class="skill-item"><span class="skill-dot" style="background:var(--indigo);"></span>Mailchimp</div>
+      <div class="skill-item"><span class="skill-dot" style="background:var(--indigo);"></span>Mailerlite</div>
+      <div class="skill-item"><span class="skill-dot" style="background:var(--amber-dark);"></span>WordPress</div>
+    </div>
+  </section>
+
+</div>
+
+<footer>© ۱۴۰۵</footer>
+
+<script>
+  function toggleCase(card) {
+    card.classList.toggle('open');
+  }
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

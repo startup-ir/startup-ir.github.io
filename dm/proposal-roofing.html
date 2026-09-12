@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>پروپوزال — استراتژی دیجیتال مارکتینگ شرکت ساخت سوله</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green: #1D9E75; --green-light: #E1F5EE; --green-dark: #0F6E56;
+    --blue: #185FA5; --blue-light: #E6F1FB;
+    --purple: #534AB7; --purple-light: #EEEDFE;
+    --amber: #854F0B; --amber-light: #FAEEDA;
+    --text-primary: #1a1a1a; --text-secondary: #555; --text-muted: #888;
+    --border: #e5e5e5; --bg: #ffffff; --bg-secondary: #f7f7f5;
+    --radius: 10px; --radius-sm: 6px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text-primary: #f0f0f0; --text-secondary: #aaa; --text-muted: #666;
+      --border: #2a2a2a; --bg: #111; --bg-secondary: #1a1a1a;
+      --green-light: #0a3328; --green: #2dcf9a; --green-dark: #5ee8bb;
+      --blue-light: #0a1e33; --blue: #5aaaf0;
+      --purple-light: #1a1540; --purple: #a99ef7;
+      --amber-light: #2a1e08; --amber: #f5b95a;
+    }
+  }
+  body { font-family: 'Vazirmatn', sans-serif; background: var(--bg); color: var(--text-primary); font-size: 15px; line-height: 1.8; }
+
+  nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; height: 56px; }
+  .nav-logo { font-size: 15px; font-weight: 600; color: var(--text-primary); text-decoration: none; }
+  .nav-back { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-secondary); text-decoration: none; transition: color 0.15s; }
+  .nav-back:hover { color: var(--green); }
+  .nav-back svg { transform: rotate(180deg); }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .case-header { padding: 3rem 0 2.5rem; border-bottom: 1px solid var(--border); }
+  .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; }
+  .case-tag { display: inline-block; font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 20px; }
+  .case-header h1 { font-size: 28px; font-weight: 600; line-height: 1.35; margin-bottom: 0.75rem; }
+  .case-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.25rem; }
+  .meta-item { font-size: 13px; color: var(--text-muted); }
+  .meta-item strong { color: var(--text-secondary); }
+
+  .kpi-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 2rem 0; border-bottom: 1px solid var(--border); }
+  @media (max-width: 480px) { .kpi-bar { grid-template-columns: 1fr 1fr; } }
+  .kpi { background: var(--bg-secondary); border-radius: var(--radius); padding: 1.25rem; text-align: center; }
+  .kpi-num { font-size: 24px; font-weight: 600; color: var(--green); line-height: 1; }
+  .kpi-label { font-size: 12px; color: var(--text-muted); margin-top: 6px; }
+
+  .content-section { padding: 2.5rem 0; border-bottom: 1px solid var(--border); }
+  .content-section:last-of-type { border-bottom: none; }
+  .section-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; }
+  .section-title { font-size: 18px; font-weight: 600; margin-bottom: 1rem; }
+  .prose { font-size: 15px; color: var(--text-secondary); line-height: 1.85; }
+  .prose p { margin-bottom: 1rem; }
+  .prose p:last-child { margin-bottom: 0; }
+
+  .highlight-box { background: var(--green-light); border-right: 3px solid var(--green); border-radius: var(--radius-sm); padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 14px; color: var(--green-dark); line-height: 1.7; }
+  .note-box { background: var(--amber-light); border-right: 3px solid var(--amber); border-radius: var(--radius-sm); padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 14px; color: var(--amber); line-height: 1.7; }
+
+  /* MONTH PHASES */
+  .months { display: flex; flex-direction: column; gap: 16px; margin-top: 1.25rem; }
+  .month-card { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .month-header { padding: 1rem 1.25rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
+  .month-label { font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px; }
+  .month-title { font-size: 15px; font-weight: 600; }
+  .month-body { padding: 1rem 1.25rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  @media (max-width: 480px) { .month-body { grid-template-columns: 1fr; } }
+  .month-col-title { font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .month-item { font-size: 13px; color: var(--text-secondary); display: flex; gap: 7px; align-items: flex-start; padding: 3px 0; }
+  .month-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green); flex-shrink: 0; margin-top: 8px; }
+  .month-output { background: var(--bg-secondary); border-radius: var(--radius-sm); padding: 0.75rem 1rem; margin: 0.75rem 1.25rem 1rem; }
+  .month-output-label { font-size: 11px; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .month-output-items { display: flex; flex-wrap: wrap; gap: 6px; }
+  .output-pill { font-size: 12px; background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 3px 10px; color: var(--text-secondary); }
+
+  /* CAMPAIGN FUNNEL */
+  .campaign-funnel { display: flex; flex-direction: column; gap: 8px; margin-top: 1.25rem; }
+  .funnel-stage { border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
+  .funnel-stage-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.875rem; }
+  .funnel-stage-title { font-size: 15px; font-weight: 600; }
+  .funnel-stage-goal { font-size: 12px; color: var(--text-muted); }
+  .funnel-stage-body { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  @media (max-width: 520px) { .funnel-stage-body { grid-template-columns: 1fr; } }
+  .funnel-col-title { font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+  .funnel-col-item { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+  .funnel-arrow { text-align: center; color: var(--text-muted); font-size: 18px; }
+
+  /* KPI TABLE */
+  .kpi-table { width: 100%; border-collapse: collapse; margin-top: 1.25rem; font-size: 13px; }
+  .kpi-table th { text-align: right; padding: 10px 12px; background: var(--bg-secondary); border-bottom: 1px solid var(--border); font-weight: 600; color: var(--text-secondary); font-size: 12px; }
+  .kpi-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); color: var(--text-secondary); vertical-align: top; }
+  .kpi-table tr:last-child td { border-bottom: none; }
+  .kpi-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-left: 6px; }
+
+  .next-cases { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 1.25rem; }
+  @media (max-width: 480px) { .next-cases { grid-template-columns: 1fr; } }
+  .next-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; text-decoration: none; color: inherit; transition: border-color 0.15s; display: block; }
+  .next-card:hover { border-color: var(--green); }
+  .next-tag { font-size: 11px; color: var(--text-muted); margin-bottom: 5px; }
+  .next-title { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .next-kpi { font-size: 13px; color: var(--green); font-weight: 500; }
+
+  footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border); margin-top: 1rem; }
+  .reveal { opacity: 0; transform: translateY(12px); transition: opacity 0.4s, transform 0.4s; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">خانه</a>
+  <a class="nav-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    بازگشت
+  </a>
+</nav>
+
+<div class="container">
+
+  <div class="case-header">
+    <div class="tags">
+      <span class="case-tag" style="background:var(--green-light); color:var(--green-dark);">سئو</span>
+      <span class="case-tag" style="background:var(--blue-light); color:var(--blue);">کمپین تبلیغاتی</span>
+      <span class="case-tag" style="background:var(--amber-light); color:var(--amber);">بازاریابی محتوا</span>
+      <span class="case-tag" style="background:var(--purple-light); color:var(--purple);">پروپوزال</span>
+    </div>
+    <h1>استراتژی جذب لید برای<br>شرکت ساخت سوله و سازه‌های صنعتی</h1>
+    <div class="case-meta">
+      <div class="meta-item"><strong>صنعت:</strong> ساخت و ساز صنعتی</div>
+      <div class="meta-item"><strong>بازار:</strong> B2B و B2C</div>
+      <div class="meta-item"><strong>افق زمانی:</strong> ۳ ماه</div>
+      <div class="meta-item"><strong>وضعیت:</strong> پروپوزال ارائه‌شده</div>
+    </div>
+  </div>
+
+  <div class="kpi-bar reveal">
+    <div class="kpi"><div class="kpi-num">۳ کانال</div><div class="kpi-label">سئو، تبلیغات، محتوا</div></div>
+    <div class="kpi"><div class="kpi-num">۳ فاز</div><div class="kpi-label">کمپین Awareness تا Retargeting</div></div>
+    <div class="kpi"><div class="kpi-num">لید</div><div class="kpi-label">هدف اصلی — نه ترافیک</div></div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">زمینه پروژه</div>
+    <div class="section-title">صنعتی پرسود با چرخه فروش طولانی</div>
+    <div class="prose">
+      <p>شرکت ساخت سوله و سازه‌های فلزی با مشتریانی از حوزه‌های صنعتی، کشاورزی، و دامداری کار می‌کرد. تصمیم خرید در این حوزه پرریسک و طولانی است — مشتری پیش از تماس، ماه‌ها در حال تحقیق است. بیشتر مشتریان از طریق معرفی جذب می‌شدند و حضور دیجیتال شرکت متناسب با پتانسیل بازار نبود.</p>
+      <p>هدف اصلی پروپوزال: طراحی یک سیستم پایدار جذب لید از طریق گوگل و تبلیغات، با تمرکز بر کیفیت لید — نه صرفاً حجم ترافیک.</p>
+    </div>
+    <div class="highlight-box">
+      نکته کلیدی این بازار: مشتری قبل از تماس با فروشنده، به دنبال اطلاعات قیمت، فرآیند اجرا، و مقایسه گزینه‌هاست — محتوای پاسخ‌دهنده به این سوالات، مستقیم‌ترین مسیر جذب لید واجد شرایط است.
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">رویکرد</div>
+    <div class="section-title">برنامه سه‌ماهه — از زیرساخت تا لید</div>
+    <div class="months">
+
+      <!-- ماه اول -->
+      <div class="month-card">
+        <div class="month-header">
+          <div class="month-title">ماه اول — زیرساخت و پایه‌گذاری</div>
+          <span class="month-label" style="background:var(--blue-light); color:var(--blue);">پایه</span>
+        </div>
+        <div class="month-body">
+          <div>
+            <div class="month-col-title">اقدامات</div>
+            <div class="month-item"><div class="month-dot"></div>شناسایی مشتریان هدف و نیاز اطلاعاتی آن‌ها</div>
+            <div class="month-item"><div class="month-dot"></div>طراحی ساختار سایت بر پایه کلیدواژه‌های هدف</div>
+            <div class="month-item"><div class="month-dot"></div>طراحی مسیر تبدیل: فرم برآورد قیمت، CTA واتساپ</div>
+            <div class="month-item"><div class="month-dot"></div>راه‌اندازی GA4، Tag Manager، تعریف Conversion</div>
+            <div class="month-item"><div class="month-dot"></div>تدوین استراتژی محتوا و لیست ۲۰ تا ۳۰ مقاله</div>
+          </div>
+          <div>
+            <div class="month-col-title">منطق</div>
+            <div class="month-item"><div class="month-dot"></div>بدون زیرساخت ردیابی، بهینه‌سازی کمپین ممکن نیست</div>
+            <div class="month-item"><div class="month-dot"></div>ساختار سایت باید از ابتدا بر اساس قصد خرید کاربر طراحی شود</div>
+            <div class="month-item"><div class="month-dot"></div>تعریف Conversion از روز اول، دقت اندازه‌گیری را تضمین می‌کند</div>
+          </div>
+        </div>
+        <div class="month-output">
+          <div class="month-output-label">خروجی</div>
+          <div class="month-output-items">
+            <span class="output-pill">سایت آماده تبدیل</span>
+            <span class="output-pill">ردیابی کامل</span>
+            <span class="output-pill">استراتژی محتوا</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ماه دوم -->
+      <div class="month-card">
+        <div class="month-header">
+          <div class="month-title">ماه دوم — تولید محتوا و جذب ترافیک</div>
+          <span class="month-label" style="background:var(--green-light); color:var(--green-dark);">اجرا</span>
+        </div>
+        <div class="month-body">
+          <div>
+            <div class="month-col-title">اقدامات</div>
+            <div class="month-item"><div class="month-dot"></div>تبلیغات کلیکی روی کلیدواژه‌های با Intent بالا</div>
+            <div class="month-item"><div class="month-dot"></div>تولید ۸ تا ۱۶ مقاله تخصصی (قیمت، راهنما، مقایسه)</div>
+            <div class="month-item"><div class="month-dot"></div>انتشار نمونه پروژه‌های اجراشده به عنوان Case Study</div>
+            <div class="month-item"><div class="month-dot"></div>هر مقاله با CTA مستقیم برای درخواست برآورد قیمت</div>
+          </div>
+          <div>
+            <div class="month-col-title">نمونه موضوعات</div>
+            <div class="month-item"><div class="month-dot"></div>«قیمت سوله صنعتی چگونه محاسبه می‌شود؟»</div>
+            <div class="month-item"><div class="month-dot"></div>«سوله سبک یا سنگین — کدام برای شما مناسب‌تر است؟»</div>
+            <div class="month-item"><div class="month-dot"></div>«هزینه ساخت سوله در سال جاری»</div>
+            <div class="month-item"><div class="month-dot"></div>«مراحل ساخت سوله از صفر تا اجرا»</div>
+          </div>
+        </div>
+        <div class="month-output">
+          <div class="month-output-label">خروجی</div>
+          <div class="month-output-items">
+            <span class="output-pill">شروع جذب لید از محتوا</span>
+            <span class="output-pill">تثبیت برند در گوگل</span>
+            <span class="output-pill">۸+ مقاله منتشر</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ماه سوم -->
+      <div class="month-card">
+        <div class="month-header">
+          <div class="month-title">ماه سوم — بهینه‌سازی و مقیاس‌پذیری</div>
+          <span class="month-label" style="background:var(--amber-light); color:var(--amber);">بهینه‌سازی</span>
+        </div>
+        <div class="month-body">
+          <div>
+            <div class="month-col-title">اقدامات</div>
+            <div class="month-item"><div class="month-dot"></div>حذف کلمات کم‌بازده از کمپین‌ها</div>
+            <div class="month-item"><div class="month-dot"></div>صفحه قیمت با بازه‌های شفاف و فرم برآورد</div>
+            <div class="month-item"><div class="month-dot"></div>Local SEO برای جذب مشتریان منطقه‌ای</div>
+            <div class="month-item"><div class="month-dot"></div>استانداردسازی فرآیند پاسخ به لید</div>
+          </div>
+          <div>
+            <div class="month-col-title">منطق</div>
+            <div class="month-item"><div class="month-dot"></div>داده‌های ماه دوم مشخص می‌کند کجا بودجه متمرکز شود</div>
+            <div class="month-item"><div class="month-dot"></div>صفحه قیمت شفاف، نرخ تبدیل را به‌طور مستقیم بالا می‌برد</div>
+            <div class="month-item"><div class="month-dot"></div>سرعت پاسخ به لید، مهم‌ترین عامل تبدیل در این صنعت است</div>
+          </div>
+        </div>
+        <div class="month-output">
+          <div class="month-output-label">خروجی</div>
+          <div class="month-output-items">
+            <span class="output-pill">کاهش CPL</span>
+            <span class="output-pill">افزایش نرخ تبدیل</span>
+            <span class="output-pill">سیستم پایدار لید</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">ساختار کمپین تبلیغاتی</div>
+    <div class="section-title">فانل سه‌مرحله‌ای — از آگاهی تا تبدیل</div>
+    <div class="prose">
+      <p>با توجه به چرخه طولانی تصمیم در این صنعت، کمپین تبلیغاتی به سه لایه مجزا تقسیم شد تا مشتری در هر مرحله از سفر خرید، پیام مناسب دریافت کند.</p>
+    </div>
+
+    <div class="campaign-funnel">
+      <div class="funnel-stage" style="border-right: 3px solid var(--blue);">
+        <div class="funnel-stage-header">
+          <div class="funnel-stage-title">فاز ۱ — Awareness</div>
+          <div class="funnel-stage-goal">هدف: ایجاد آگاهی و جذب اولیه</div>
+        </div>
+        <div class="funnel-stage-body">
+          <div class="funnel-col">
+            <div class="funnel-col-title">مخاطب</div>
+            <div class="funnel-col-item">کاربران سایت‌های صنعتی، اقتصادی، و خبری که احتمالاً در آینده نیاز به سوله خواهند داشت</div>
+          </div>
+          <div class="funnel-col">
+            <div class="funnel-col-title">پیام</div>
+            <div class="funnel-col-item">«هزینه ساخت سوله صنعتی چقدر است؟» — هدایت به مقاله اطلاعاتی، نه مستقیم به فرم</div>
+          </div>
+          <div class="funnel-col">
+            <div class="funnel-col-title">KPI</div>
+            <div class="funnel-col-item">CTR، Time on Page، Scroll Depth</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="funnel-arrow">↓</div>
+
+      <div class="funnel-stage" style="border-right: 3px solid var(--amber);">
+        <div class="funnel-stage-header">
+          <div class="funnel-stage-title">فاز ۲ — Consideration</div>
+          <div class="funnel-stage-goal">هدف: اعتمادسازی و تبدیل کنجکاوی به نیاز فعال</div>
+        </div>
+        <div class="funnel-stage-body">
+          <div class="funnel-col">
+            <div class="funnel-col-title">مخاطب</div>
+            <div class="funnel-col-item">بازدیدکنندگان قبلی سایت و کاربران مشابه (Lookalike)</div>
+          </div>
+          <div class="funnel-col">
+            <div class="funnel-col-title">پیام</div>
+            <div class="funnel-col-item">«اجرای X پروژه سوله صنعتی — مشاهده نمونه واقعی» — نمایش پروژه‌ها</div>
+          </div>
+          <div class="funnel-col">
+            <div class="funnel-col-title">KPI</div>
+            <div class="funnel-col-item">Engagement Rate، Return Visits، Pages per Session</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="funnel-arrow">↓</div>
+
+      <div class="funnel-stage" style="border-right: 3px solid var(--green);">
+        <div class="funnel-stage-header">
+          <div class="funnel-stage-title">فاز ۳ — Retargeting</div>
+          <div class="funnel-stage-goal">هدف: تبدیل بازدیدکننده به لید واجد شرایط</div>
+        </div>
+        <div class="funnel-stage-body">
+          <div class="funnel-col">
+            <div class="funnel-col-title">مخاطب</div>
+            <div class="funnel-col-item">بازدیدکنندگان ۷ تا ۳۰ روز گذشته که صفحه قیمت یا پروژه‌ها را دیده‌اند</div>
+          </div>
+          <div class="funnel-col">
+            <div class="funnel-col-title">پیام</div>
+            <div class="funnel-col-item">«برآورد قیمت در کمتر از ۲۴ ساعت» — هدایت مستقیم به Landing Page</div>
+          </div>
+          <div class="funnel-col">
+            <div class="funnel-col-title">KPI</div>
+            <div class="funnel-col-item">Conversion Rate، Cost per Lead، Lead Quality Rate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">چارچوب اندازه‌گیری</div>
+    <div class="section-title">KPIهایی که واقعاً اهمیت دارند</div>
+    <div class="prose">
+      <p>این کمپین با فالوور یا Impression سنجیده نمی‌شود. معیارهای موفقیت مستقیماً به کسب‌وکار متصلند.</p>
+    </div>
+    <table class="kpi-table">
+      <tr>
+        <th>دسته</th>
+        <th>KPI</th>
+        <th>دلیل اهمیت</th>
+      </tr>
+      <tr>
+        <td><span class="kpi-dot" style="background:var(--blue);"></span>جذب</td>
+        <td>CTR، CPC، ترافیک ارگانیک</td>
+        <td>کارایی کانال‌های جذب را نشان می‌دهد</td>
+      </tr>
+      <tr>
+        <td><span class="kpi-dot" style="background:var(--amber);"></span>تعامل</td>
+        <td>Time on Site، رتبه کلیدواژه‌ها</td>
+        <td>کیفیت محتوا و تطابق با نیاز کاربر را می‌سنجد</td>
+      </tr>
+      <tr>
+        <td><span class="kpi-dot" style="background:var(--green);"></span>تبدیل</td>
+        <td>تماس، فرم قیمت، واتساپ</td>
+        <td>خروجی مستقیم قابل اندازه‌گیری</td>
+      </tr>
+      <tr>
+        <td><span class="kpi-dot" style="background:var(--purple);"></span>کسب‌وکار</td>
+        <td>CPL، Lead Quality، قراردادهای بسته‌شده</td>
+        <td>ROI واقعی کمپین را مشخص می‌کند</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">پروژه‌های دیگر</div>
+    <div class="next-cases">
+      <a href="auto-campaign.html" class="next-card">
+        <div class="next-tag">کمپین — اجرا شده</div>
+        <div class="next-title">مدیریت کمپین‌های پرفورمنس در پلتفرم خودرو</div>
+        <div class="next-kpi">۵۰ لید روزانه</div>
+      </a>
+      <a href="proposal-studio.html" class="next-card">
+        <div class="next-tag">سئو + طراحی سایت — پروپوزال</div>
+        <div class="next-title">استراتژی دیجیتال مارکتینگ استودیو تولید محتوا</div>
+        <div class="next-kpi">هدف: ۳۰۰+ بازدید ماهانه</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>© ۱۴۰۵</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

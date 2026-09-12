@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>کیس استادی — سئو پلتفرم خودرو</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green: #1D9E75; --green-light: #E1F5EE; --green-dark: #0F6E56;
+    --blue: #185FA5; --blue-light: #E6F1FB;
+    --red-text: #A32D2D;
+    --text-primary: #1a1a1a; --text-secondary: #555; --text-muted: #888;
+    --border: #e5e5e5; --bg: #ffffff; --bg-secondary: #f7f7f5;
+    --radius: 10px; --radius-sm: 6px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text-primary: #f0f0f0; --text-secondary: #aaa; --text-muted: #666;
+      --border: #2a2a2a; --bg: #111; --bg-secondary: #1a1a1a;
+      --green-light: #0a3328; --green: #2dcf9a; --green-dark: #5ee8bb;
+      --blue-light: #0a1e33; --blue: #5aaaf0; --red-text: #f08080;
+    }
+  }
+  body { font-family: 'Vazirmatn', sans-serif; background: var(--bg); color: var(--text-primary); font-size: 15px; line-height: 1.8; }
+
+  nav {
+    position: sticky; top: 0; z-index: 100; background: var(--bg);
+    border-bottom: 1px solid var(--border); padding: 0 2rem;
+    display: flex; justify-content: space-between; align-items: center; height: 56px;
+  }
+  .nav-logo { font-size: 15px; font-weight: 600; color: var(--text-primary); text-decoration: none; }
+  .nav-back { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-secondary); text-decoration: none; transition: color 0.15s; }
+  .nav-back:hover { color: var(--green); }
+  .nav-back svg { transform: rotate(180deg); }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .case-header { padding: 3rem 0 2.5rem; border-bottom: 1px solid var(--border); }
+  .case-tag { display: inline-block; font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 20px; margin-bottom: 1rem; background: var(--green-light); color: var(--green-dark); }
+  .case-header h1 { font-size: 28px; font-weight: 600; line-height: 1.35; margin-bottom: 0.75rem; }
+  .case-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.25rem; }
+  .meta-item { font-size: 13px; color: var(--text-muted); display: flex; align-items: center; gap: 5px; }
+  .meta-item strong { color: var(--text-secondary); }
+
+  .kpi-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 2rem 0; border-bottom: 1px solid var(--border); }
+  @media (max-width: 480px) { .kpi-bar { grid-template-columns: 1fr 1fr; } }
+  .kpi { background: var(--bg-secondary); border-radius: var(--radius); padding: 1.25rem; text-align: center; }
+  .kpi-num { font-size: 28px; font-weight: 600; color: var(--green); line-height: 1; }
+  .kpi-label { font-size: 12px; color: var(--text-muted); margin-top: 6px; }
+
+  .content-section { padding: 2.5rem 0; border-bottom: 1px solid var(--border); }
+  .content-section:last-of-type { border-bottom: none; }
+  .section-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; }
+  .section-title { font-size: 18px; font-weight: 600; margin-bottom: 1rem; }
+  .prose { font-size: 15px; color: var(--text-secondary); line-height: 1.85; }
+  .prose p { margin-bottom: 1rem; }
+  .prose p:last-child { margin-bottom: 0; }
+
+  .highlight-box { background: var(--green-light); border-right: 3px solid var(--green); border-radius: var(--radius-sm); padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 14px; color: var(--green-dark); line-height: 1.7; }
+
+  .steps { display: flex; flex-direction: column; margin-top: 1.25rem; }
+  .step { display: flex; gap: 1.25rem; padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+  .step:last-child { border-bottom: none; padding-bottom: 0; }
+  .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--green-light); color: var(--green-dark); font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .step-title { font-size: 15px; font-weight: 600; margin-bottom: 5px; }
+  .step-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+
+  .chart-wrap { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin-top: 1.25rem; }
+  .chart-title { font-size: 13px; font-weight: 500; color: var(--text-muted); margin-bottom: 1rem; }
+  .bar-chart { display: flex; align-items: flex-end; gap: 8px; height: 120px; }
+  .bar-group { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .bar { width: 100%; border-radius: 4px 4px 0 0; background: var(--border); min-height: 4px; }
+  .bar.highlight { background: var(--green); }
+  .bar-label { font-size: 10px; color: var(--text-muted); text-align: center; }
+  .bar-val { font-size: 10px; font-weight: 600; }
+
+  .collab-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 1.25rem; }
+  @media (max-width: 480px) { .collab-grid { grid-template-columns: 1fr 1fr; } }
+  .collab-item { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.875rem 1rem; text-align: center; }
+  .collab-name { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+  .collab-desc { font-size: 12px; color: var(--text-muted); margin-top: 3px; }
+
+  .lessons-list { display: flex; flex-direction: column; gap: 10px; margin-top: 1.25rem; }
+  .lesson-item { display: flex; gap: 10px; align-items: flex-start; background: var(--bg-secondary); border-radius: var(--radius-sm); padding: 0.875rem 1rem; font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+  .lesson-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; margin-top: 7px; }
+
+  .next-cases { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 1.25rem; }
+  @media (max-width: 480px) { .next-cases { grid-template-columns: 1fr; } }
+  .next-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; text-decoration: none; color: inherit; transition: border-color 0.15s; display: block; }
+  .next-card:hover { border-color: var(--green); }
+  .next-tag { font-size: 11px; color: var(--text-muted); margin-bottom: 5px; }
+  .next-title { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .next-kpi { font-size: 13px; color: var(--green); font-weight: 500; }
+
+  footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border); margin-top: 1rem; }
+  .reveal { opacity: 0; transform: translateY(12px); transition: opacity 0.4s, transform 0.4s; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* PULSE DOT */
+  .pulse-dot {
+    display: inline-block;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--green);
+    position: relative;
+    margin-left: 8px;
+    vertical-align: middle;
+    flex-shrink: 0;
+  }
+  .pulse-dot::before, .pulse-dot::after {
+    content: ''; position: absolute; inset: 0;
+    border-radius: 50%; background: var(--green);
+    animation: pulse-ring 2s ease-out infinite;
+  }
+  .pulse-dot::after { animation-delay: 0.7s; }
+  @keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(3); opacity: 0; }
+  }
+  @media (max-width: 520px) {
+    .contact-title { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">خانه</a>
+  <a class="nav-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    بازگشت
+  </a>
+</nav>
+
+<div class="container">
+
+  <div class="case-header">
+    <span class="case-tag">سئو</span>
+    <h1>رشد ترافیک ارگانیک به ۱۰۰۰ بازدیدکننده روزانه<br>در پلتفرم خرید و فروش خودرو</h1>
+    <div class="case-meta">
+      <div class="meta-item"><strong>صنعت:</strong> پلتفرم خودرو</div>
+      <div class="meta-item"><strong>مدت:</strong> ۶ ماه</div>
+      <div class="meta-item"><strong>نقش:</strong> مدیر دیجیتال مارکتینگ</div>
+      <div class="meta-item"><strong>ابزارها:</strong> Google Search Console، Screaming Frog، اسکیما</div>
+      <div class="meta-item"><strong>فناوری‌ها:</strong> Next.js / Go</div>
+    </div>
+  </div>
+
+  <div class="kpi-bar reveal">
+    <div class="kpi"><div class="kpi-num">۱۰۰۰+</div><div class="kpi-label">بازدیدکننده ارگانیک روزانه</div></div>
+    <div class="kpi"><div class="kpi-num">۶ ماه</div><div class="kpi-label">از صفر تا نتیجه</div></div>
+    <div class="kpi"><div class="kpi-num">B2B+B2C</div><div class="kpi-label">پوشش هر دو بازار</div></div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">زمینه پروژه</div>
+    <div class="section-title">پلتفرمی نوپا در بازار رقابتی خودرو</div>
+    <div class="prose">
+      <p>پلتفرم خرید و فروش خودرو در مرحله رشد اولیه قرار داشت و در بازاری فعالیت می‌کرد که رقبای بزرگ و باسابقه حضور داشتند. سایت از دو بخش اصلی تشکیل شده بود: بخش B2C شامل لیستینگ آگهی‌های رایگان و سرویس خرید اقساطی خودرو، و بخش B2B شامل پنل اختصاصی نمایشگاه‌داران.</p>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">مساله</div>
+    <div class="section-title">سایت جدید، ترافیک ارگانیک صفر، رقبای قدرتمند</div>
+    <div class="prose">
+      <p>سایت در ابتدا هیچ جایگاهی در نتایج جستجوی گوگل نداشت. با توجه به رقابتی بودن کلیدواژه‌های حوزه خودرو، رتبه‌گیری نیازمند یک رویکرد سیستماتیک و اولویت‌بندی دقیق بود.</p>
+      <p>بررسی اولیه سایت نشان داد که مشکلات متعددی در سطح فنی وجود دارد: ساختار URL‌ها نامناسب بود، تایتل و متا دیسکریپشن صفحات به‌درستی تنظیم نشده بودند، اسکیمای محصول تعریف نشده بود و معماری اطلاعات سایت برای خزش موتورهای جستجو بهینه نبود.</p>
+    </div>
+    <div class="highlight-box">
+      بدون رفع مشکلات فنی، هیچ اقدام محتوایی نمی‌توانست نتیجه پایداری به همراه داشته باشد — اولویت اول، آماده‌سازی بنیان فنی سایت بود.
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">اقدام</div>
+    <div class="section-title">رویکرد سیستماتیک در چهار مرحله</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">۱</div>
+        <div>
+          <div class="step-title">کیورد ریسرچ و معماری محتوا</div>
+          <div class="step-desc">تحقیق جامع کلیدواژه در سه سطح انجام شد: کلیدواژه‌های اطلاعاتی (راهنمای خرید خودرو)، تراکنشی (خرید اقساطی خودرو)، و ناوبری (برندها و مدل‌های خاص). بر اساس این تحقیق، معماری محتوایی سایت طراحی و اولویت‌بندی صفحات مشخص شد.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">۲</div>
+        <div>
+          <div class="step-title">رفع مشکلات فنی</div>
+          <div class="step-desc">ساختار URL‌ها بازطراحی شد تا هم برای کاربر و هم برای موتور جستجو خوانا باشد. تایتل و متا دیسکریپشن تمام صفحات کلیدی بر اساس کلیدواژه‌های هدف بازنویسی شدند. اسکیمای مناسب برای آگهی‌های خودرو، محصولات اقساطی و سازمان پیاده‌سازی شد. در همکاری با تیم فرانت‌اند، Sitemap.xml برای اولین بار برای سایت پیاده‌سازی شد و پس از ارسال به Google Search Console، فرآیند ایندکس‌شدن صفحات آغاز گردید. این مرحله نیازمند همکاری نزدیک با تیم فنی بود.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">۳</div>
+        <div>
+          <div class="step-title">استراتژی و تولید محتوا</div>
+          <div class="step-desc">استراتژی محتوایی برای بلاگ سایت بر اساس کلاستر موضوعی طراحی شد. محتوا در دو گروه اصلی دسته‌بندی شد: راهنماهای خرید خودرو برای جذب ترافیک اطلاعاتی، و محتوای مقایسه‌ای مدل‌ها برای جذب کاربران در مرحله تصمیم‌گیری. تیم محتوا بر اساس این استراتژی تولید محتوا را آغاز کرد.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">۴</div>
+        <div>
+          <div class="step-title">پایش و بهینه‌سازی مستمر</div>
+          <div class="step-desc">عملکرد صفحات به‌صورت هفتگی از طریق Google Search Console رصد شد. صفحاتی که در رتبه‌های ۴ تا ۱۵ قرار داشتند شناسایی و با بهینه‌سازی هدفمند به صفحه اول منتقل شدند.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-wrap">
+      <div class="chart-title">روند رشد ترافیک ارگانیک روزانه (بازدیدکننده)</div>
+      <div class="bar-chart" id="chart"></div>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">همکاری تیمی</div>
+    <div class="section-title">نتیجه محصول همکاری چند تیم</div>
+    <div class="prose">
+      <p>اجرای موفق این پروژه مستلزم هماهنگی و همکاری مستمر با تیم‌های مختلف سازمان بود.</p>
+    </div>
+    <div class="collab-grid">
+      <div class="collab-item">
+        <div class="collab-name">تیم فنی</div>
+        <div class="collab-desc">پیاده‌سازی تغییرات URL، اسکیما و سرعت سایت</div>
+      </div>
+      <div class="collab-item">
+        <div class="collab-name">تیم محصول</div>
+        <div class="collab-desc">هماهنگی معماری اطلاعات و ساختار صفحات</div>
+      </div>
+      <div class="collab-item">
+        <div class="collab-name">تیم محتوا</div>
+        <div class="collab-desc">تولید محتوا بر اساس استراتژی کلاستر موضوعی</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">نتیجه</div>
+    <div class="section-title">از صفر به ۱۰۰۰ بازدیدکننده روزانه در ۶ ماه</div>
+    <div class="prose">
+      <p>پس از رفع مشکلات فنی در ماه‌های اول، از ماه سوم رشد ترافیک ارگانیک به‌وضوح قابل مشاهده شد. در پایان ماه ششم، سایت به بیش از ۱۰۰۰ بازدیدکننده ارگانیک روزانه رسید — عددی که در ابتدای پروژه صفر بود.</p>
+      <p>این ترافیک هم به بخش B2C (صفحات آگهی و خرید اقساطی) و هم به بخش B2B (پنل نمایشگاه‌داران) منتهی شد و کانال ارگانیک به یکی از منابع اصلی جذب لید تبدیل گردید.</p>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">درس‌های این پروژه</div>
+    <div class="section-title">آنچه از این پروژه آموختم</div>
+    <div class="lessons-list">
+      <div class="lesson-item"><div class="lesson-dot"></div>در بازارهای رقابتی، اولویت‌بندی کلیدواژه‌های با رقابت پایین‌تر در ابتدا، سرعت رسیدن به نتیجه را به‌طور قابل توجهی افزایش می‌دهد.</div>
+      <div class="lesson-item"><div class="lesson-dot"></div>بدون همکاری تیم فنی، اجرای سئو تکنیکال ممکن نیست — ایجاد درک مشترک از اهمیت سئو در میان تیم‌های غیرمارکتینگ، بخشی جدایی‌ناپذیر از کار است.</div>
+      <div class="lesson-item"><div class="lesson-dot"></div>پایش هفتگی و بهینه‌سازی صفحات در رتبه‌های میانی، یکی از سریع‌ترین روش‌ها برای افزایش ترافیک بدون تولید محتوای جدید است.</div>
+    </div>
+  </div>
+
+  <div class="content-section reveal">
+    <div class="section-eyebrow">پروژه‌های دیگر</div>
+    <div class="next-cases">
+      <a href="auto-funnel.html" class="next-card">
+        <div class="next-tag">بهینه‌سازی فانل تبدیل</div>
+        <div class="next-title">بهینه‌سازی فانل چندمرحله‌ای خرید اقساطی خودرو</div>
+        <div class="next-kpi">نرخ تکمیل فرم: +۴۰٪</div>
+      </a>
+      <a href="auto-campaign.html" class="next-card">
+        <div class="next-tag">مدیریت کمپین</div>
+        <div class="next-title">مدیریت کمپین‌های پرفورمنس در پلتفرم خرید و فروش خودرو</div>
+        <div class="next-kpi">۵۰ لید روزانه</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>© ۱۴۰۵</footer>
+
+<script>
+  const data = [
+    { label: 'ماه ۱', val: 30, h: 3 },
+    { label: 'ماه ۲', val: 80, h: 8 },
+    { label: 'ماه ۳', val: 200, h: 20 },
+    { label: 'ماه ۴', val: 450, h: 45 },
+    { label: 'ماه ۵', val: 750, h: 75 },
+    { label: 'ماه ۶', val: 1000, h: 100, highlight: true },
+  ];
+  const chart = document.getElementById('chart');
+  data.forEach(d => {
+    chart.innerHTML += `
+      <div class="bar-group">
+        <div class="bar-val" style="color:${d.highlight ? 'var(--green)' : 'var(--text-muted)'}">${d.val}</div>
+        <div class="bar ${d.highlight ? 'highlight' : ''}" style="height:${d.h}%"></div>
+        <div class="bar-label">${d.label}</div>
+      </div>`;
+  });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
