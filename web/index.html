@@ -280,6 +280,9 @@
     color:var(--c-auto); transition:border-color .2s ease;
   }
   .theme-toggle:hover{ border-color:var(--c-auto); }
+  .sun-spin{ animation: spin 6s linear infinite; }
+  @keyframes spin{ from{ transform:rotate(0deg); } to{ transform:rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce){ .sun-spin{ animation:none; } }
 
   .theme-switcher{ position:relative; }
   .theme-menu{
@@ -323,7 +326,7 @@
   .theme-option:hover .option-tip, .theme-option:focus-visible .option-tip{
     opacity:1; transform:translate(-50%, 0);
   }
-  .theme-toggle svg{ width:18px; height:18px; }
+  .theme-toggle svg{ width:21px; height:21px; }
   .menu-btn{
     display:none; width:38px; height:38px; border-radius:10px;
     border:1px solid var(--line); background:var(--glass-bg);
@@ -556,7 +559,7 @@
     <div class="nav-actions">
       <div class="theme-switcher" id="themeSwitcher">
         <button class="theme-toggle" id="themeToggle" aria-label="تغییر تم" aria-haspopup="true" aria-expanded="false">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.4 4.4l1.7 1.7M17.9 17.9l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.4 19.6l1.7-1.7M17.9 6.1l1.7-1.7"/></svg>
+          <svg class="sun-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 19.1v2.4M4.4 4.4l1.7 1.7M17.9 17.9l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.4 19.6l1.7-1.7M17.9 6.1l1.7-1.7"/><path d="M12 1.2v3.7"/><circle cx="12" cy="1.2" r="0.9" fill="currentColor" stroke="none"/></svg>
         </button>
         <div class="theme-menu" id="themeMenu" role="menu">
           <button class="theme-option" type="button" data-theme-value="dark" role="menuitem" aria-label="تیره · رنگی">
@@ -958,7 +961,7 @@
             <p class="project-desc"><!-- TODO: توضیح واقعی پروژه -->فروشگاه آنلاین طلازرین؛ زیورآلات و جواهرات طلا با طراحی امروزی و گارانتی اصالت کالا.</p>
             <div class="project-plaque">
               <!-- TODO: لینک واقعی پروژه را جایگزین # کنید -->
-              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">مشاهده سایت</a>
+              <a href="https://zarringold.netlify.app/" class="project-link" target="_blank" rel="noopener noreferrer">مشاهده سایت</a>
             </div>
           </div>
         </article>
@@ -979,7 +982,7 @@
             <p class="project-desc"><!-- TODO: توضیح واقعی پروژه -->فروشگاه آنلاین پوشاک نورا؛ لباس زنانه و مردانه با طراحی روزآمد و راهنمای انتخاب سایز.</p>
             <div class="project-plaque">
               <!-- TODO: لینک واقعی پروژه را جایگزین # کنید -->
-              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">مشاهده سایت</a>
+              <a href="https://nuraclothes.netlify.app/" class="project-link" target="_blank" rel="noopener noreferrer">مشاهده سایت</a>
             </div>
           </div>
         </article>
@@ -1000,7 +1003,7 @@
             <p class="project-desc"><!-- TODO: توضیح واقعی پروژه -->فروشگاه آنلاین زعفران زرین؛ عرضه‌ی زعفران درجه‌یک و محصولات سنتی ایرانی با بسته‌بندی مطمئن.</p>
             <div class="project-plaque">
               <!-- TODO: لینک واقعی پروژه را جایگزین # کنید -->
-              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">مشاهده سایت</a>
+              <a href="https://zarrinsaffron.netlify.app/" class="project-link" target="_blank" rel="noopener noreferrer">مشاهده سایت</a>
             </div>
           </div>
         </article>
