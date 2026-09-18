@@ -36,6 +36,26 @@
     --c-art:#8452ea;
     --c-camp:#8a6d3b;
     --c-watch:#1f9e93;
+    --c-jewelry:#a6791f;
+    --c-clothing:#4f6a8f;
+    --c-saffron:#cc5500;
+
+    --brand-gradient: linear-gradient(135deg, var(--c-auto), var(--c-cosmetics));
+    --brand-mark-text: #fff;
+    --btn-shadow: rgba(59,127,242,.55);
+    --btn-shadow-hover: rgba(232,71,143,.55);
+    --blob-c1: var(--c-auto);
+    --blob-c2: var(--c-cosmetics);
+    --blob-c3: var(--c-stationery);
+    --blob-op1: .35;
+    --blob-op2: .35;
+    --blob-op3: .22;
+
+    --radius-card: 20px;
+    --radius-full: 999px;
+    --radius-badge: 50%;
+    --panel-blur: blur(18px) saturate(160%);
+    --header-blur: blur(14px) saturate(160%);
   }
   [data-theme="dark"]{
     --bg:#14121b;
@@ -50,7 +70,128 @@
     --tag-mix-base: #201c2c;
     --tag-mix-contrast: #ffffff;
   }
+  [data-theme="muted"]{
+    --bg:#14121b;
+    --text:#f1eef7;
+    --text-dim:#b3aec2;
+    --glass-bg: rgba(32,28,44,.55);
+    --glass-border: rgba(255,255,255,.12);
+    --line: rgba(255,255,255,.1);
+    --header-bg: rgba(20,18,27,.7);
+    --field-bg: rgba(255,255,255,.07);
+    --panel-soft: rgba(255,255,255,.06);
+    --tag-mix-base: #201c2c;
+    --tag-mix-contrast: #ffffff;
+
+    --brand-gradient: linear-gradient(135deg, #5b6478, #6b5f74);
+    --brand-mark-text: #fff;
+    --btn-shadow: rgba(91,100,120,.45);
+    --btn-shadow-hover: rgba(107,95,116,.45);
+    --blob-op1: .12;
+    --blob-op2: .12;
+    --blob-op3: .08;
+  }
+  [data-theme="mono"]{
+    --bg:#17171a;
+    --text:#f0f0f2;
+    --text-dim:#9a9aa0;
+    --glass-bg: rgba(255,255,255,.05);
+    --glass-border: rgba(255,255,255,.1);
+    --line: rgba(255,255,255,.09);
+    --header-bg: rgba(23,23,26,.75);
+    --field-bg: rgba(255,255,255,.06);
+    --panel-soft: rgba(255,255,255,.05);
+    --tag-mix-base: #1e1e22;
+    --tag-mix-contrast: #ffffff;
+
+    --brand-gradient: #2c2c31;
+    --brand-mark-text: var(--text);
+    --btn-shadow: rgba(0,0,0,.4);
+    --btn-shadow-hover: rgba(0,0,0,.5);
+    --blob-c1: #6b6b74;
+    --blob-c2: #6b6b74;
+    --blob-c3: #6b6b74;
+    --blob-op1: .06;
+    --blob-op2: .06;
+    --blob-op3: .04;
+  }
+  [data-theme="angular"]{
+    --bg:#12161c;
+    --text:#ede7da;
+    --text-dim:#a29e92;
+    --glass-bg: rgba(26,33,43,.94);
+    --glass-border: rgba(201,162,39,.25);
+    --line: rgba(237,231,218,.14);
+    --header-bg: rgba(18,22,28,.92);
+    --field-bg: rgba(237,231,218,.06);
+    --panel-soft: rgba(237,231,218,.05);
+    --tag-mix-base: #1a212b;
+    --tag-mix-contrast: #ede7da;
+
+    --brand-gradient: #c9a227;
+    --brand-mark-text: #12161c;
+    --btn-shadow: rgba(0,0,0,.4);
+    --btn-shadow-hover: rgba(0,0,0,.5);
+    --blob-op1: .05;
+    --blob-op2: .05;
+    --blob-op3: .03;
+
+    --radius-card: 6px;
+    --radius-full: 6px;
+    --radius-badge: 14px;
+    --panel-blur: none;
+    --header-blur: none;
+  }
+  [data-theme="outline"]{
+    --bg:#faf8f4;
+    --text:#17171a;
+    --text-dim:#6b6b70;
+    --glass-bg: rgba(255,255,255,.92);
+    --glass-border: rgba(23,23,26,.18);
+    --line: rgba(23,23,26,.12);
+    --header-bg: rgba(250,248,244,.88);
+    --field-bg: rgba(23,23,26,.04);
+    --panel-soft: rgba(23,23,26,.03);
+    --tag-mix-base: #ffffff;
+    --tag-mix-contrast: #17171a;
+
+    --brand-gradient: #17171a;
+    --brand-mark-text: #faf8f4;
+    --btn-shadow: rgba(23,23,26,.25);
+    --btn-shadow-hover: rgba(23,23,26,.35);
+    --blob-c1: #17171a;
+    --blob-c2: #17171a;
+    --blob-c3: #17171a;
+    --blob-op1: .04;
+    --blob-op2: .04;
+    --blob-op3: .03;
+
+    --radius-card: 6px;
+    --radius-full: 6px;
+    --radius-badge: 14px;
+    --panel-blur: none;
+    --header-blur: none;
+  }
+  /* آیکون‌های ردیف بالا: به‌جای پرشدن با رنگ دسته‌بندی، فقط قاب مشکی + آیکون مشکی */
+  [data-theme="outline"] .sign{
+    --sign-bg: var(--glass-bg);
+    --sign-fg: #17171a;
+    --sign-border-w: 1.8px;
+    --sign-border-color: #17171a;
+    box-shadow: 0 6px 14px -8px rgba(23,23,26,.18);
+  }
+  [data-theme="outline"] .sign:hover, [data-theme="outline"] .sign:focus-visible{
+    box-shadow: 0 10px 20px -8px rgba(23,23,26,.25);
+  }
+  /* کارت‌های پروژه: هم‌راستا با آیکون‌ها، رنگ دسته‌بندی حذف و یک‌دست مشکی */
+  [data-theme="outline"] .project-card{
+    --card-shadow: #17171a;
+    --card-text: #17171a;
+    --card-visual: #e7e4dd;
+  }
+  [data-theme="outline"] .visual-fallback{ color:#17171a; }
   body{ transition: background .35s ease, color .35s ease; }
+
 
   *,*::before,*::after{ box-sizing:border-box; }
   html{ scroll-behavior:smooth; scroll-padding-top:88px; }
@@ -86,12 +227,11 @@
     max-width:620px; max-height:620px;
     border-radius:50%;
     filter:blur(90px);
-    opacity:.35;
     animation: drift 34s ease-in-out infinite alternate;
   }
-  .blob-1{ background:var(--c-auto); top:-12%; right:-10%; }
-  .blob-2{ background:var(--c-cosmetics); bottom:-14%; left:-8%; animation-duration:40s; animation-delay:-8s; }
-  .blob-3{ background:var(--c-stationery); top:40%; left:35%; opacity:.22; animation-duration:46s; animation-delay:-20s; }
+  .blob-1{ background:var(--blob-c1); opacity:var(--blob-op1); top:-12%; right:-10%; }
+  .blob-2{ background:var(--blob-c2); opacity:var(--blob-op2); bottom:-14%; left:-8%; animation-duration:40s; animation-delay:-8s; }
+  .blob-3{ background:var(--blob-c3); opacity:var(--blob-op3); top:40%; left:35%; animation-duration:46s; animation-delay:-20s; }
   @keyframes drift{
     from{ transform:translate(0,0) scale(1); }
     to{ transform:translate(4%,6%) scale(1.12); }
@@ -115,7 +255,7 @@
   header.site-header{
     position:fixed; inset-inline:0; top:0; z-index:50;
     background: var(--header-bg);
-    backdrop-filter: blur(14px) saturate(160%);
+    backdrop-filter: var(--header-blur);
     border-bottom:1px solid var(--line);
   }
   .header-inner{
@@ -125,25 +265,65 @@
   .brand{ font-weight:800; font-size:1.05rem; display:flex; align-items:center; gap:10px; }
   .brand-mark{
     width:32px; height:32px; border-radius:10px;
-    background:linear-gradient(135deg, var(--c-auto), var(--c-cosmetics));
+    background:var(--brand-gradient);
     display:flex; align-items:center; justify-content:center;
-    font-size:.85rem; font-weight:800; color:#fff; flex-shrink:0;
+    font-size:.85rem; font-weight:800; color:var(--brand-mark-text, #fff); flex-shrink:0;
   }
   nav.nav-links{ display:flex; gap:32px; font-size:.95rem; font-weight:500; color:var(--text-dim); }
   nav.nav-links a{ transition: color .2s ease; }
   nav.nav-links a:hover{ color:var(--c-auto); }
   .nav-actions{ display:flex; align-items:center; gap:12px; }
   .theme-toggle{
-    width:38px; height:38px; border-radius:50%;
+    width:38px; height:38px; border-radius:var(--radius-badge);
     border:1px solid var(--line); background:var(--glass-bg);
     display:flex; align-items:center; justify-content:center;
     color:var(--c-auto); transition:border-color .2s ease;
   }
   .theme-toggle:hover{ border-color:var(--c-auto); }
+
+  .theme-switcher{ position:relative; }
+  .theme-menu{
+    position:absolute; top:100%; inset-inline-end:0;
+    display:flex; gap:8px; padding:18px 10px 10px;
+    background:var(--glass-bg); border:1px solid var(--glass-border);
+    backdrop-filter:var(--panel-blur);
+    border-radius:14px;
+    box-shadow:0 16px 32px -12px rgba(0,0,0,.35);
+    opacity:0; transform:translateY(-6px) scale(.96);
+    pointer-events:none;
+    transition:opacity .18s ease, transform .18s ease;
+    z-index:60;
+  }
+  .theme-switcher:hover .theme-menu,
+  .theme-switcher.open .theme-menu{
+    opacity:1; transform:translateY(0) scale(1); pointer-events:auto;
+  }
+  .theme-option{
+    position:relative;
+    width:34px; height:34px; border-radius:10px;
+    border:1px solid var(--line); background:transparent; padding:0;
+    display:flex; align-items:center; justify-content:center;
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .theme-option:hover, .theme-option:focus-visible{ border-color:var(--c-auto); transform:translateY(-2px); }
+  .theme-option .swatch{ width:20px; height:20px; border-radius:6px; display:block; }
+  .option-tip{
+    position:absolute; bottom:calc(100% + 9px); left:50%;
+    transform:translate(-50%, 4px);
+    background:var(--text); color:var(--bg);
+    font-size:.68rem; font-weight:500; white-space:nowrap;
+    padding:4px 10px; border-radius:6px;
+    opacity:0; pointer-events:none;
+    transition:opacity .15s ease, transform .15s ease;
+  }
+  .option-tip::after{
+    content:''; position:absolute; top:100%; left:50%; translate:-50% 0;
+    border:4px solid transparent; border-top-color:var(--text);
+  }
+  .theme-option:hover .option-tip, .theme-option:focus-visible .option-tip{
+    opacity:1; transform:translate(-50%, 0);
+  }
   .theme-toggle svg{ width:18px; height:18px; }
-  .icon-sun{ display:none; }
-  [data-theme="dark"] .icon-sun{ display:block; }
-  [data-theme="dark"] .icon-moon{ display:none; }
   .menu-btn{
     display:none; width:38px; height:38px; border-radius:10px;
     border:1px solid var(--line); background:var(--glass-bg);
@@ -185,16 +365,16 @@
   .hero p.lead{ margin:26px auto 0; max-width:56ch; color:var(--text-dim); font-size:clamp(1rem,.4vw+.95rem,1.15rem); }
   .hero-ctas{ margin-top:38px; display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
   .btn{
-    padding:14px 30px; border-radius:999px; font-weight:600; font-size:.95rem;
+    padding:14px 30px; border-radius:var(--radius-full); font-weight:600; font-size:.95rem;
     border:1px solid transparent; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, color .2s ease;
     display:inline-flex; align-items:center; gap:8px;
   }
   .btn-primary{
-    background:linear-gradient(135deg, var(--c-auto), var(--c-cosmetics));
-    color:#fff;
-    box-shadow: 0 14px 30px -14px rgba(59,127,242,.55);
+    background:var(--brand-gradient);
+    color:var(--brand-mark-text, #fff);
+    box-shadow: 0 14px 30px -14px var(--btn-shadow);
   }
-  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 18px 34px -14px rgba(232,71,143,.55); }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 18px 34px -14px var(--btn-shadow-hover); }
   .btn-ghost{ border-color:var(--line); color:var(--text); background:var(--glass-bg); }
   .btn-ghost:hover{ border-color:var(--c-auto); color:var(--c-auto); }
 
@@ -203,22 +383,27 @@
   .sign{
     position:relative;
     --rest-y: 0px;
-    width:66px; height:66px; border-radius:50%;
-    background:var(--sign-color, var(--c-auto));
+    --sign-bg: var(--sign-color, var(--c-auto));
+    --sign-fg: #fff;
+    --sign-border-w: 0px;
+    --sign-border-color: var(--sign-color, var(--c-auto));
+    width:66px; height:66px; border-radius:var(--radius-badge);
+    background:var(--sign-bg);
+    border:var(--sign-border-w) solid var(--sign-border-color);
     display:flex; align-items:center; justify-content:center;
-    color:#fff;
+    color:var(--sign-fg);
     box-shadow:0 14px 26px -12px color-mix(in srgb, var(--sign-color) 70%, transparent);
     transform: translateY(var(--rest-y));
     animation: pop .55s cubic-bezier(.3,1.4,.4,1) both;
     animation-delay: calc(var(--i) * 90ms + 150ms);
-    transition: transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease;
+    transition: transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease, background .3s ease, border-color .3s ease;
   }
   .sign img{ width:26px; height:26px; object-fit:contain; pointer-events:none; }
   .sign-fallback{ display:none; width:26px; height:26px; pointer-events:none; }
   /* آیکون‌ها همه روی یک خط صاف (بدون افست عمودی) */
-  .sign:nth-child(odd):hover, .sign:nth-child(odd):focus-visible{ transform:scale(1.14) rotate(-10deg); }
-  .sign:nth-child(even):hover, .sign:nth-child(even):focus-visible{ transform:scale(1.14) rotate(10deg); }
-  .sign:hover, .sign:focus-visible{
+  .sign:nth-child(odd):hover, .sign:nth-child(odd):focus-visible, .sign:nth-child(odd).sim-hover{ transform:scale(1.14) rotate(-10deg); }
+  .sign:nth-child(even):hover, .sign:nth-child(even):focus-visible, .sign:nth-child(even).sim-hover{ transform:scale(1.14) rotate(10deg); }
+  .sign:hover, .sign:focus-visible, .sign.sim-hover{
     box-shadow:0 20px 34px -10px color-mix(in srgb, var(--sign-color) 75%, transparent);
   }
   @keyframes pop{
@@ -244,7 +429,7 @@
     content:''; position:absolute; top:100%; left:50%; translate:-50% 0;
     border:5px solid transparent; border-top-color:var(--text);
   }
-  .sign:hover .sign-tip, .sign:focus-visible .sign-tip{
+  .sign:hover .sign-tip, .sign:focus-visible .sign-tip, .sign.sim-hover .sign-tip{
     opacity:1; transform:translate(-50%, 0);
   }
 
@@ -260,8 +445,8 @@
   .glass{
     background:var(--glass-bg);
     border:1px solid var(--glass-border);
-    backdrop-filter: blur(18px) saturate(160%);
-    border-radius:20px;
+    backdrop-filter: var(--panel-blur);
+    border-radius:var(--radius-card);
     box-shadow: 0 20px 50px -30px rgba(28,26,36,.25);
   }
 
@@ -272,7 +457,7 @@
     padding:40px; 
   }
   .monogram{
-    width:170px; height:170px; border-radius:50%;
+    width:170px; height:170px; border-radius:var(--radius-badge);
     background:linear-gradient(135deg, var(--c-art), var(--c-auto));
     display:flex; align-items:center; justify-content:center;
     font-size:3rem; font-weight:700; color:#fff;
@@ -290,7 +475,7 @@
   .skill-group h3{ font-size:1rem; font-weight:600; color:var(--text-dim); margin-bottom:16px; }
   .tag-row{ display:flex; flex-wrap:wrap; gap:10px; }
   .tag{
-    padding:8px 16px; border-radius:999px; font-size:.85rem; font-weight:500;
+    padding:8px 16px; border-radius:var(--radius-full); font-size:.85rem; font-weight:500;
     background: color-mix(in srgb, var(--tag-color, var(--c-auto)) 16%, var(--tag-mix-base));
     color: color-mix(in srgb, var(--tag-color, var(--c-auto)) 65%, var(--tag-mix-contrast));
     border:1px solid color-mix(in srgb, var(--tag-color, var(--c-auto)) 30%, transparent);
@@ -305,19 +490,22 @@
   .tilt-wrap{ perspective:900px; }
   .project-card{
     position:relative;
-    border-radius:20px;
+    --card-shadow: var(--card-color);
+    --card-text: var(--card-color);
+    --card-visual: var(--card-color);
+    border-radius:var(--radius-card);
     background:var(--glass-bg);
     border:1px solid var(--glass-border);
-    backdrop-filter: blur(18px) saturate(160%);
+    backdrop-filter: var(--panel-blur);
     overflow:hidden;
     display:flex; flex-direction:column;
-    box-shadow: 0 20px 40px -28px color-mix(in srgb, var(--card-color) 60%, transparent);
+    box-shadow: 0 20px 40px -28px color-mix(in srgb, var(--card-shadow) 60%, transparent);
     transform-style:preserve-3d;
     transition: transform .15s ease, box-shadow .3s ease;
     will-change: transform;
   }
   .project-card:hover{
-    box-shadow: 0 28px 54px -24px color-mix(in srgb, var(--card-color) 65%, transparent);
+    box-shadow: 0 28px 54px -24px color-mix(in srgb, var(--card-shadow) 65%, transparent);
   }
   @media (min-width:981px){
     /* ستون وسط هر ردیف (کارت‌های ۲، ۵، ۸، ۱۱، ...) کمی پایین‌تر قرار می‌گیره — با اضافه‌کردن کارت جدید هم خودکار ادامه پیدا می‌کنه */
@@ -326,20 +514,20 @@
   .project-visual{
     height:150px; display:flex; align-items:center; justify-content:center;
     overflow:hidden;
-    background:linear-gradient(135deg, color-mix(in srgb, var(--card-color) 85%, white), var(--card-color));
+    background:linear-gradient(135deg, color-mix(in srgb, var(--card-visual) 85%, white), var(--card-visual));
   }
   .project-visual img{ width:100%; height:100%; object-fit:cover; object-position:top; }
   .visual-fallback{ display:none; align-items:center; justify-content:center; width:100%; height:100%; color:#fff; }
   .visual-fallback svg{ width:52px; height:52px; }
   .project-body{ padding:22px 22px 20px; flex:1; display:flex; flex-direction:column; gap:10px; }
-  .project-category{ font-size:.78rem; font-weight:700; color:var(--card-color); }
+  .project-category{ font-size:.78rem; font-weight:700; color:var(--card-text); }
   .project-title{ font-weight:700; font-size:1.08rem; }
   .project-desc{ color:var(--text-dim); font-size:.92rem; flex:1; }
   .project-plaque{
     margin-top:6px; padding-top:14px; border-top:1px solid var(--line);
     display:flex; align-items:center; justify-content:flex-start; font-size:.85rem;
   }
-  .project-link{ font-weight:600; color:var(--card-color); }
+  .project-link{ font-weight:600; color:var(--card-text); }
   .project-link::before{ content:''; position:absolute; inset:0; }
   .project-link:hover{ text-decoration:underline; }
 
@@ -366,10 +554,37 @@
       <a href="#about">درباره من</a>
     </nav>
     <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="تغییر حالت روشن و تیره">
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.4 4.4l1.7 1.7M17.9 17.9l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.4 19.6l1.7-1.7M17.9 6.1l1.7-1.7"/></svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4 6.8 6.8 0 0 0 20 14.5Z"/></svg>
-      </button>
+      <div class="theme-switcher" id="themeSwitcher">
+        <button class="theme-toggle" id="themeToggle" aria-label="تغییر تم" aria-haspopup="true" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.4 4.4l1.7 1.7M17.9 17.9l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.4 19.6l1.7-1.7M17.9 6.1l1.7-1.7"/></svg>
+        </button>
+        <div class="theme-menu" id="themeMenu" role="menu">
+          <button class="theme-option" type="button" data-theme-value="dark" role="menuitem" aria-label="تیره · رنگی">
+            <span class="swatch" style="background:#14121b"></span>
+            <span class="option-tip" aria-hidden="true">تیره · رنگی</span>
+          </button>
+          <button class="theme-option" type="button" data-theme-value="light" role="menuitem" aria-label="روشن · رنگی">
+            <span class="swatch" style="background:#faf9f6;border:1px solid rgba(0,0,0,.15)"></span>
+            <span class="option-tip" aria-hidden="true">روشن · رنگی</span>
+          </button>
+          <button class="theme-option" type="button" data-theme-value="muted" role="menuitem" aria-label="ملایم">
+            <span class="swatch" style="background:linear-gradient(135deg,#5b6478,#6b5f74)"></span>
+            <span class="option-tip" aria-hidden="true">ملایم</span>
+          </button>
+          <button class="theme-option" type="button" data-theme-value="mono" role="menuitem" aria-label="ساده">
+            <span class="swatch" style="background:#2c2c31;border:1px solid rgba(255,255,255,.15)"></span>
+            <span class="option-tip" aria-hidden="true">ساده</span>
+          </button>
+          <button class="theme-option" type="button" data-theme-value="angular" role="menuitem" aria-label="زاویه‌دار">
+            <span class="swatch" style="background:#12161c;border:1px solid #c9a227;border-radius:3px"></span>
+            <span class="option-tip" aria-hidden="true">زاویه‌دار</span>
+          </button>
+          <button class="theme-option" type="button" data-theme-value="outline" role="menuitem" aria-label="خطی">
+            <span class="swatch" style="background:#faf8f4;border:1.5px solid #17171a;border-radius:3px"></span>
+            <span class="option-tip" aria-hidden="true">خطی</span>
+          </button>
+        </div>
+      </div>
       <button class="menu-btn" id="menuBtn" aria-label="باز کردن منو">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
@@ -728,6 +943,69 @@
         </article>
       </div>
 
+      <div class="tilt-wrap reveal">
+        <article id="project-jewelry-1" class="project-card" style="--card-color:var(--c-jewelry)">
+          <div class="project-visual">
+            <!-- TODO: عکس این پروژه را با همین نام در پوشه‌ی images قرار دهید -->
+            <img src="images/talazarin.jpg" alt="اسکرین‌شات فروشگاه آنلاین طلازرین" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="visual-fallback">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 3 4 9l8 12 8-12z"/><path d="M4 9h16M8.5 9 12 3l3.5 6"/></svg>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">فروشگاه اینترنتی · طلا و جواهر</span>
+            <h3 class="project-title"><!-- TODO: نام واقعی پروژه -->فروشگاه آنلاین طلازرین</h3>
+            <p class="project-desc"><!-- TODO: توضیح واقعی پروژه -->فروشگاه آنلاین طلازرین؛ زیورآلات و جواهرات طلا با طراحی امروزی و گارانتی اصالت کالا.</p>
+            <div class="project-plaque">
+              <!-- TODO: لینک واقعی پروژه را جایگزین # کنید -->
+              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">مشاهده سایت</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="tilt-wrap reveal">
+        <article id="project-clothing-1" class="project-card" style="--card-color:var(--c-clothing)">
+          <div class="project-visual">
+            <!-- TODO: عکس این پروژه را با همین نام در پوشه‌ی images قرار دهید -->
+            <img src="images/noora.jpg" alt="اسکرین‌شات فروشگاه آنلاین پوشاک نورا" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="visual-fallback">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M8 4 3 8l3 3 2-1.5V20h8V9.5L18 11l3-3-5-4-2 2h-4z"/></svg>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">فروشگاه اینترنتی · پوشاک</span>
+            <h3 class="project-title"><!-- TODO: نام واقعی پروژه -->فروشگاه آنلاین پوشاک نورا</h3>
+            <p class="project-desc"><!-- TODO: توضیح واقعی پروژه -->فروشگاه آنلاین پوشاک نورا؛ لباس زنانه و مردانه با طراحی روزآمد و راهنمای انتخاب سایز.</p>
+            <div class="project-plaque">
+              <!-- TODO: لینک واقعی پروژه را جایگزین # کنید -->
+              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">مشاهده سایت</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="tilt-wrap reveal">
+        <article id="project-saffron-1" class="project-card" style="--card-color:var(--c-saffron)">
+          <div class="project-visual">
+            <!-- TODO: عکس این پروژه را با همین نام در پوشه‌ی images قرار دهید -->
+            <img src="images/zafaranzarrin.jpg" alt="اسکرین‌شات فروشگاه زعفران زرین" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="visual-fallback">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="2.5"/><path d="M12 4c-2 1.5-2 3 0 5M12 20c-2-1.5-2-3 0-5M4 12c1.5-2 3-2 5 0M20 12c-1.5-2-3-2-5 0"/></svg>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">فروشگاه اینترنتی · زعفران</span>
+            <h3 class="project-title"><!-- TODO: نام واقعی پروژه -->فروشگاه زعفران زرین</h3>
+            <p class="project-desc"><!-- TODO: توضیح واقعی پروژه -->فروشگاه آنلاین زعفران زرین؛ عرضه‌ی زعفران درجه‌یک و محصولات سنتی ایرانی با بسته‌بندی مطمئن.</p>
+            <div class="project-plaque">
+              <!-- TODO: لینک واقعی پروژه را جایگزین # کنید -->
+              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">مشاهده سایت</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
     </div>
   </section>
 
@@ -754,19 +1032,59 @@
 </footer>
 
 <script>
-  // ---- Theme toggle (session only, no persistence) ----
+  // ---- Theme switcher: hover or click to open a menu, pick a theme directly (session only) ----
   const root = document.documentElement;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const themeSwitcher = document.getElementById('themeSwitcher');
   const themeToggle = document.getElementById('themeToggle');
-  themeToggle.addEventListener('click', () => {
-    const isDark = root.getAttribute('data-theme') === 'dark';
-    if(isDark){ root.removeAttribute('data-theme'); }
-    else{ root.setAttribute('data-theme', 'dark'); }
+  const themeMenu = document.getElementById('themeMenu');
+  const themeNames = { dark: 'تیره · رنگی', light: 'روشن · رنگی', muted: 'ملایم', mono: 'ساده', angular: 'زاویه‌دار', outline: 'خطی' };
+
+  function currentTheme(){
+    const attr = root.getAttribute('data-theme');
+    return attr || 'light';
+  }
+  function applyTheme(name){
+    if(name === 'light'){ root.removeAttribute('data-theme'); }
+    else{ root.setAttribute('data-theme', name); }
+    themeToggle.setAttribute('aria-label', 'تم فعلی: ' + themeNames[name] + ' — برای دیدن گزینه‌ها کلیک کنید');
+  }
+  function closeThemeMenu(){
+    themeSwitcher.classList.remove('open');
+    themeToggle.setAttribute('aria-expanded', 'false');
+  }
+  themeToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = themeSwitcher.classList.toggle('open');
+    themeToggle.setAttribute('aria-expanded', String(isOpen));
   });
+  themeMenu.querySelectorAll('.theme-option').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      applyTheme(btn.dataset.themeValue);
+    });
+  });
+  document.addEventListener('click', closeThemeMenu);
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeThemeMenu(); });
+  applyTheme(currentTheme());
 
   // ---- Release entrance animation after it finishes, so hover transform isn't blocked ----
   document.querySelectorAll('.sign').forEach(el => {
     el.addEventListener('animationend', () => { el.style.animation = 'none'; });
   });
+
+  // ---- One-time "tour": simulate hover on each icon, one by one, shortly after load ----
+  if(!reduceMotion){
+    const signs = Array.from(document.querySelectorAll('.sign'));
+    const showDuration = 700;
+    const gap = 150;
+    let delay = 1500; // wait for the entrance pop-in animations to finish first
+    signs.forEach(sign => {
+      setTimeout(() => sign.classList.add('sim-hover'), delay);
+      setTimeout(() => sign.classList.remove('sim-hover'), delay + showDuration);
+      delay += showDuration + gap;
+    });
+  }
 
   // ---- Mobile menu ----
   const menuBtn = document.getElementById('menuBtn');
@@ -775,7 +1093,6 @@
   navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
   // ---- Scroll reveal ----
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(!reduceMotion){
     const revealEls = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver((entries) => {
